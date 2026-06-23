@@ -2,7 +2,11 @@
 name = "faim-fractal-converters"
 requires-python = ">= 3.11"
 authors = [{ name = "Jan Eglinger", email = "jan.eglinger@fmi.ch" }]
-dependencies = []
+dependencies = [
+  "ome-zarr-converters-tools>=0.10.0,<0.11",
+  "ome2xarray>=0.7.0,<0.8",
+  "loguru>=0.7.3,<0.8"
+]
 dynamic = ["version"]
 
 [dependency-groups]
@@ -30,6 +34,7 @@ faim_fractal_converters = { path = ".", editable = true }
 [tool.pixi.environments]
 default = { solve-group = "default" }
 dev = { features = ["dev"], solve-group = "default" }
+jupyter = { features = ["jupyter", "dev"], solve-group = "default" }
 
 [tool.pixi.feature.dev.tasks]
 create-manifest = { cmd = [
@@ -40,4 +45,18 @@ create-manifest = { cmd = [
 ] }
 test = "pytest --cov=src --cov-report term-missing"
 
+[tool.pixi.feature.jupyter.dependencies]
+jupyter = ">=1.1.1,<2"
+
 [tool.pixi.tasks]
+
+[tool.pixi.dependencies]
+ngio = ">=0.5.12,<0.6"
+pydantic = "<2.13"
+dask = ">=2025.10.0,<2026"
+ome-types = ">=0.6.3,<0.7"
+xarray = ">=2026.4.0,<2027"
+tifffile = ">=2026.6.1,<2027"
+s3fs = ">=2026.4.0,<2027"
+toml = ">=0.10.2,<0.11"
+tqdm = ">=4.68.2,<5"
