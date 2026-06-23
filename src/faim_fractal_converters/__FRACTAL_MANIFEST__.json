@@ -1,0 +1,7 @@
+{
+  "manifest_version": "2",
+  "task_list": [],
+  "has_args_schemas": true,
+  "args_schema_version": "fractal_schema_v1",
+  "authors": "Facility for Advanced Imaging and Microscopy (FAIM), FMI, Basel"
+}
