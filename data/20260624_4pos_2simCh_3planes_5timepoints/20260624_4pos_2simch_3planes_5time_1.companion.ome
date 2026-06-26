@@ -1,0 +1,1009 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OME xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openmicroscopy.org/Schemas/OME/2016-06 http://www.openmicroscopy.org/Schemas/OME/2016-06/ome.xsd" UUID="urn:uuid:e89bb30d-fe24-444b-afa8-272cdde050e4" xmlns="http://www.openmicroscopy.org/Schemas/OME/2016-06">
+  <Instrument ID="Instrument:0">
+    <Laser ID="LightSource:0:0" />
+    <Detector ID="Detector:0" />
+    <Objective ID="Objective:20x" LensNA="0.8" />
+  </Instrument>
+  <Experiment ID="Experiment:0">
+    <Description>StartTime: 2026-06-24T09:45:06.6519982+02:00</Description>
+  </Experiment>
+  <Image ID="Image:0" Name="20260624_4pos_2simCh_3planes_5time_1_0:5_sg:0">
+    <AcquisitionDate>2026-06-24T09:45:06.6842362+02:00</AcquisitionDate>
+    <ObjectiveSettings ID="Objective:20x" RefractiveIndex="1" />
+    <StageLabel Name="0:5_sg:0" />
+    <Pixels ID="Pixels:0:0" DimensionOrder="XYZCT" Type="uint16" SizeX="512" SizeY="512" SizeZ="3" SizeC="2" SizeT="5" PhysicalSizeX="1.29586947" PhysicalSizeY="1.29586947" PhysicalSizeZ="1" TimeIncrement="10000" TimeIncrementUnit="ms">
+      <Channel ID="Channel:0" Name="Conf488Brightfield" SamplesPerPixel="1" ExcitationWavelength="488" EmissionWavelength="550">
+        <LightSourceSettings ID="LightSource:0:0" Attenuation="0.42" Wavelength="488" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <Channel ID="Channel:1" Name="ConfBrightfield488" SamplesPerPixel="1">
+        <LightSourceSettings ID="LightSource:0:0" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <TiffData PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t1.ome.tif">urn:uuid:e120bacf-01d5-4da6-9461-59759a4fbe41</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t1.ome.tif">urn:uuid:e120bacf-01d5-4da6-9461-59759a4fbe41</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t1.ome.tif">urn:uuid:e120bacf-01d5-4da6-9461-59759a4fbe41</UUID>
+      </TiffData>
+      <TiffData FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t1.ome.tif">urn:uuid:bbe3ff99-cfc3-4845-80d3-2cfdefb9a7df</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t1.ome.tif">urn:uuid:bbe3ff99-cfc3-4845-80d3-2cfdefb9a7df</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t1.ome.tif">urn:uuid:bbe3ff99-cfc3-4845-80d3-2cfdefb9a7df</UUID>
+      </TiffData>
+      <TiffData FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t2.ome.tif">urn:uuid:2cb0e6c7-feff-47a4-a42a-f5f972965f76</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t2.ome.tif">urn:uuid:2cb0e6c7-feff-47a4-a42a-f5f972965f76</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t2.ome.tif">urn:uuid:2cb0e6c7-feff-47a4-a42a-f5f972965f76</UUID>
+      </TiffData>
+      <TiffData FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t2.ome.tif">urn:uuid:c20650a7-3100-4032-a499-a106235b4c92</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t2.ome.tif">urn:uuid:c20650a7-3100-4032-a499-a106235b4c92</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t2.ome.tif">urn:uuid:c20650a7-3100-4032-a499-a106235b4c92</UUID>
+      </TiffData>
+      <TiffData FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t3.ome.tif">urn:uuid:cfffa614-86f0-4a5b-ae43-02550abb5636</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t3.ome.tif">urn:uuid:cfffa614-86f0-4a5b-ae43-02550abb5636</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t3.ome.tif">urn:uuid:cfffa614-86f0-4a5b-ae43-02550abb5636</UUID>
+      </TiffData>
+      <TiffData FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t3.ome.tif">urn:uuid:93eeb3ac-2e99-404f-ac3e-235c60a7ee22</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t3.ome.tif">urn:uuid:93eeb3ac-2e99-404f-ac3e-235c60a7ee22</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t3.ome.tif">urn:uuid:93eeb3ac-2e99-404f-ac3e-235c60a7ee22</UUID>
+      </TiffData>
+      <TiffData FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t4.ome.tif">urn:uuid:99bf57bb-f295-40f5-af14-0c62e8da2a1c</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t4.ome.tif">urn:uuid:99bf57bb-f295-40f5-af14-0c62e8da2a1c</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t4.ome.tif">urn:uuid:99bf57bb-f295-40f5-af14-0c62e8da2a1c</UUID>
+      </TiffData>
+      <TiffData FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t4.ome.tif">urn:uuid:4c919df7-c455-4664-a24b-7fdc2831d58d</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t4.ome.tif">urn:uuid:4c919df7-c455-4664-a24b-7fdc2831d58d</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t4.ome.tif">urn:uuid:4c919df7-c455-4664-a24b-7fdc2831d58d</UUID>
+      </TiffData>
+      <TiffData FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t5.ome.tif">urn:uuid:3a7ff4a6-a34e-4dee-8c1b-2f1ae4caacb7</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t5.ome.tif">urn:uuid:3a7ff4a6-a34e-4dee-8c1b-2f1ae4caacb7</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s1_t5.ome.tif">urn:uuid:3a7ff4a6-a34e-4dee-8c1b-2f1ae4caacb7</UUID>
+      </TiffData>
+      <TiffData FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t5.ome.tif">urn:uuid:394571bd-39fa-44ee-a382-3e65374e05ef</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t5.ome.tif">urn:uuid:394571bd-39fa-44ee-a382-3e65374e05ef</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s1_t5.ome.tif">urn:uuid:394571bd-39fa-44ee-a382-3e65374e05ef</UUID>
+      </TiffData>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="0" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="0.2870569" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="0.442928" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="0.010967" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="0.2994943" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="0.4538477" PositionX="-10385.4" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="0" DeltaT="10.2246571" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="0" DeltaT="10.3811007" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="0" DeltaT="10.5127649" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="1" DeltaT="10.2367392" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="1" DeltaT="10.3686647" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="1" DeltaT="10.524951" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="0" DeltaT="20.2288322" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="0" DeltaT="20.3816071" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="0" DeltaT="20.5372772" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="1" DeltaT="20.24147" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="1" DeltaT="20.376339" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="1" DeltaT="20.5253067" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.3" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="0" DeltaT="30.3717365" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="0" DeltaT="30.5310516" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="0" DeltaT="30.6845932" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="1" DeltaT="30.3847427" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="1" DeltaT="30.5388584" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="1" DeltaT="30.6951466" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="0" DeltaT="40.3736649" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="0" DeltaT="40.5335541" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="0" DeltaT="40.6892166" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="1" DeltaT="40.3865852" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="1" DeltaT="40.54583" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="1" DeltaT="40.7010155" PositionX="-10385.5" PositionXUnit="µm" PositionY="-1449.2" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+    </Pixels>
+  </Image>
+  <StructuredAnnotations>
+    <TagAnnotation ID="Annotation:DimensionType">
+      <Description>None</Description>
+      <Value>z</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:1w1">
+      <Description>Look up table type</Description>
+      <Value>4</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:3w1">
+      <Description>XOffset</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:4w1">
+      <Description>YOffset</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TimestampAnnotation ID="Annotation:2w1">
+      <Description>ModifyDate</Description>
+      <Value>2026-06-24T09:45:51.7586211+02:00</Value>
+    </TimestampAnnotation>
+    <TagAnnotation ID="Annotation:5w1">
+      <Description>ImageRegionX</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:6w1">
+      <Description>ImageRegionY</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:7w1">
+      <Description>ImageRegionWidth</Description>
+      <Value>512</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:8w1">
+      <Description>ImageRegionHeight</Description>
+      <Value>512</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:10w1">
+      <Description>CameraChipWidth</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:9w1">
+      <Description>CameraChipHeight</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:11w1">
+      <Description>CameraName</Description>
+      <Value>Cam2</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:12w1">
+      <Description>CameraSettingFlipX</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:13w1">
+      <Description>CameraSettingFlipY</Description>
+      <Value>True</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:14w1">
+      <Description>CameraSettingRotate</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:15w1">
+      <Description>CameraSettingModeIndex</Description>
+      <Value>-1</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:16w1">
+      <Description>CameraSettingDigitizerIndex</Description>
+      <Value>1</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:17w1">
+      <Description>CameraSettingGainIndex</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:19w1">
+      <Description>ScanOverlap</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:18w1">
+      <Description>UniversalData</Description>
+      <Value />
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:21w1">
+      <Description>AcquisitionSettings</Description>
+      <Value>AWEZ,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBwEAAAAAAQAAACcAAAAEHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAIAAAAJAwAAAAkEAAAACQUAAAAJBgAAAAkHAAAACQgAAAAJCQAAAAkKAAAACQsAAAAJDAAAAAkNAAAACQ4AAAAJDwAAAAkQAAAACREAAAAJEgAAAAkTAAAACRQAAAAJFQAAAAkWAAAACRcAAAAJGAAAAAkZAAAACRoAAAAJGwAAAAkcAAAACR0AAAAJHgAAAAkfAAAACSAAAAAJIQAAAAkiAAAACSMAAAAJJAAAAAklAAAACSYAAAAJJwAAAAkoAAAACSkAAAAMKgAAAENEZXZpY2VUb29scywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQMAAAAeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50CgAAAAVzdGF0ZQ9yZW1lbWJlcmVkU3RhdGUGYWN0aXZlB2VuYWJsZWQFdmFsaWQSRGV2aWNlSGFyZHdhcmVUeXBlBFR5cGUKRGV2aWNlTmFtZQ1Db21wb25lbnROYW1lBVZhbGlkAAAAAAABBAEBAAUFAQEBHFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUqAAAAAQIAAAABMQEwAAAABisAAAAYWmVpc3MgTVRCMjAwNCBNaWNyb3Njb3BlBdT///8cVmlzaVZpZXcuRGV2aWNlQ29tcG9uZW50VHlwZQEAAAAHdmFsdWVfXwAIKgAAAAAAAAAGLQAAAAVaZWlzcwYuAAAACVJMU2h1dHRlcgEBBAAAAAMAAAABMAEwAAAACSsAAAAB0P///9T///8BAAAACS0AAAAGMgAAABBSZWZsZWN0b3JDaGFuZ2VyAQEFAAAAAwAAAAEwATAAAAAJKwAAAAHM////1P///wEAAAAJLQAAAAY2AAAAGENvbmRlbnNlckNvbnRyYXN0Q2hhbmdlcgEBBgAAAAMAAAABMAEwAAAACSsAAAAByP///9T///8BAAAACS0AAAAGOgAAABlDb25kZW5zZXJGcm9udExlbnNDaGFuZ2VyAQEHAAAAAwAAAAMxMDABMAAAAAkrAAAAAcT////U////AgAAAAktAAAABj4AAAAOVExBcGVydHVyZVN0b3ABAQgAAAADAAAAATEBMAAAAAY/AAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wBwP///9T///8AAAAABkEAAAAGVmlydGV4BkIAAAALTGFzZXI0MDUgQTABAQkAAAADAAAAATEBMAAAAAk/AAAAAbz////U////AAAAAAlBAAAABkYAAAALTGFzZXI0ODggQTEBAQoAAAADAAAAATEBMAAAAAk/AAAAAbj////U////AAAAAAlBAAAABkoAAAALTGFzZXI1NjEgQTIBAQsAAAADAAAAATEBMAAAAAk/AAAAAbT////U////AAAAAAlBAAAABk4AAAALTGFzZXI2NDAgQTMBAQwAAAADAAAAATEBMAAAAAk/AAAAAbD////U////AAAAAAlBAAAABlIAAAAML0ZSQVBDdHJsIEIyAQENAAAAAwAAAAEwATAAAAAJPwAAAAGs////1P///wAAAAAJQQAAAAZWAAAACi9VbmxvY2sgQjQBAQ4AAAADAAAAATEBMAAAAAk/AAAAAaj////U////AAAAAAlBAAAABloAAAANU2h1dHRlciBwVDEwMAEBDwAAAAMAAAABMQEwAAAACT8AAAABpP///9T///8AAAAACUEAAAAGXgAAAA1TaHV0dGVyIHBFMzAwAQEQAAAAAwAAAAExATAAAAAJPwAAAAGg////1P///wAAAAAJQQAAAAZiAAAACVNodXR0ZXJBNAEBEQAAAAMAAAABMQEwAAAACT8AAAABnP///9T///8AAAAACUEAAAAGZgAAAAlTaHV0dGVyQTUBARIAAAADAAAAAzEwMAEwAAAABmcAAAATQ29oZXJlbnQgT2JpcyBMYXNlcgGY////1P///wIAAAAGaQAAAAdPYmlzNDA1BmoAAAAITGFzZXI0MDUBARMAAAADAAAAAjQyATAAAAAGawAAABNDb2hlcmVudCBPYmlzIExhc2VyAZT////U////AgAAAAZtAAAAB09iaXM0ODgGbgAAAAhMYXNlcjQ4OAEBFAAAAAMAAAADMTAwATAAAAAGbwAAABNDb2hlcmVudCBPYmlzIExhc2VyAZD////U////AgAAAAZxAAAAB09iaXM1NjEGcgAAAAhMYXNlcjU2MQEBFQAAAAMAAAADMTAwATAAAAAGcwAAABNDb2hlcmVudCBPYmlzIExhc2VyAYz////U////AgAAAAZ1AAAAB09iaXM2NDAGdgAAAAhMYXNlcjY0MAEBFgAAAAMAAAABNgEwAAAABncAAAAUQ29vbExFRCBQcmVjaXNFeGNpdGUBiP///9T///8BAAAABnkAAAAMUHJlY2lzRXhjaXRlBnoAAAARcEUzMDAgTEVEIENoYW5nZXIBARcAAAADAAAAATEBMAAAAAl3AAAAAYT////U////AAAAAAl5AAAABn4AAAAHU2h1dHRlcgEBGAAAAAMAAAACNTABMAAAAAl3AAAAAYD////U////AgAAAAl5AAAABoIAAAAScEUzMDAgVVYgSW50ZW5zaXR5AQEZAAAAAwAAAAI1MAEwAAAACXcAAAABfP///9T///8CAAAACXkAAAAGhgAAABRwRTMwMCBCbHVlIEludGVuc2l0eQEBGgAAAAMAAAACNTABMAAAAAl3AAAAAXj////U////AgAAAAl5AAAABooAAAAVcEUzMDAgR3JlZW4gSW50ZW5zaXR5AQEbAAAAAwAAAAEwATAAAAAJdwAAAAF0////1P///wIAAAAJeQAAAAaOAAAAEEQgLS0tLSBJbnRlbnNpdHkBARwAAAADAAAAATABMAAAAAaPAAAAEVlva29nYXdhIENTVTIyL1gxAXD////U////AAAAAAaRAAAAA0NTVQaSAAAAB1NodXR0ZXIBAR0AAAADAAAAATEBMAAAAAmPAAAAAWz////U////AQAAAAmRAAAABpYAAAALRGlzayBNb3Rpb24BAR4AAAADAAAABDQwMDABMAAAAAmPAAAAAWj////U////AgAAAAmRAAAABpoAAAAOUm90YXRpb24gU3BlZWQBAR8AAAADAAAAATABMAAAAAmPAAAAAWT////U////AQAAAAmRAAAABp4AAAAPRGljaHJvaWMgRmlsdGVyAQEgAAAAAwAAAAE1ATAAAAAJjwAAAAFg////1P///wEAAAAJkQAAAAaiAAAADUZpbHRlcldoZWVsIDEBASEAAAADAAAAATEBMAAAAAmPAAAAAVz////U////AQAAAAmRAAAABqYAAAANRmlsdGVyV2hlZWwgMgEBIgAAAAMAAAABMAEwAAAACY8AAAABWP///9T///8BAAAACZEAAAAGqgAAAAtDYW1lcmEgUG9ydAEBIwAAAAMAAAABMQEwAAAACY8AAAABVP///9T///8BAAAACZEAAAAGrgAAAARQYXRoAQEkAAAAAwAAAAExATAAAAAGrwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQFQ////1P///wAAAAAGsQAAAA5QcmVjaXNFeGNpdGUtMgayAAAAB1NodXR0ZXIBASUAAAADAAAAAjE0ATAAAAAJrwAAAAFM////1P///wEAAAAJsQAAAAa2AAAAC0xFRCBDaGFuZ2VyAQEmAAAAAwAAAAEwATAAAAAJrwAAAAFI////1P///wIAAAAJsQAAAAa6AAAAEUEgNDAwbm0gSW50ZW5zaXR5AQEnAAAAAwAAAAEwATAAAAAJrwAAAAFE////1P///wIAAAAJsQAAAAa+AAAAEUIgNDkwbm0gSW50ZW5zaXR5AQEoAAAAAwAAAAEwATAAAAAJrwAAAAFA////1P///wIAAAAJsQAAAAbCAAAAEUMgNTY1bm0gSW50ZW5zaXR5AQEpAAAAAwAAAAEwATAAAAAJrwAAAAE8////1P///wIAAAAJsQAAAAbGAAAAEUQgNjM1bm0gSW50ZW5zaXR5AQs=,AS_AAEAAAD/////AQAAAAAAAAAMAgAAAENBY3F1aXNpdGlvbiwgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsDAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhDAQAAAA9U3RhZ2UsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAG1Zpc2lWaWV3LkFjcXVpc2l0aW9uc2V0dGluZ1YAAAAJVmVyc2lvbklEE19OdW1iZXJPZldhdmVsZW5ndGgcX051bWJlck9mU3BsaXRWaWV3V2F2ZWxlbmd0aBFDdXJyZW50V2F2ZWxlbmd0aBJXYXZlbGVuZ3RoU2V0dGluZ3MUSWxsdW1pbmF0aW9uU2V0dGluZ3MVVGltZUludGVydmFsVW5pdEluZGV4EUR1cmF0aW9uVW5pdEluZGV4C0NhbWVyYUluZGV4DFRpbWVJbnRlcnZhbAhEdXJhdGlvbgdCaW5uaW5nD1BpeGVsU2hpZnRMZXZlbAdMaXZlQmluCVRpbWVQb2ludA1DYW1lcmFUcmlnZ2VyEUNhbWVyYVN5bmNocm9uaXplD0xpdmVTeW5jaHJvbml6ZQ9UaW1lbGFwc2VTdHJlYW0MWlBsYW5lU3RyZWFtEFdhdmVsZW5ndGhTdHJlYW0QU2FtZUV4cG9zdXJlRmxhZxVTYW1lRXhwb3N1cmVVbml0SW5kZXgMU2FtZUV4cG9zdXJlDVNhbWVFTUNDREdhaW4GUmVnaW9uCkZ1bGxSZWdpb24PVGltZWxhcHNlU2VyaWVzEFdhdmVsZW5ndGhTZXJpZXMMWlBsYW5lU2VyaWVzD0lzQ2VudGVyZWRSYW5nZQ9Jc0ZvY3VzRWRpdE1vZGULU3RhZ2VTZXJpZXMNU3RhZ2VTZXF1ZW5jZRdTdGFnZVNwZWNpbWVuU2V0dGxlVGltZQ5DZW50ZXJlZFpSYW5nZQxUb3BaUmVsYXRpdmUPQm90dG9tWlJlbGF0aXZlCVpTdGVwU2l6ZQ5OdW1iZXJPZlpTdGVwcwpGaWxlU2F2aW5nE0ZpbGVTYXZpbmdEaXJlY3RvcnkSRmlsZVNhdmluZ0Jhc2VOYW1lEkZvcmNlU2VwYXJhdGVGaWxlcw1TZXBhcmF0ZUZpbGVzClNjYWxlUmFuZ2UPQXV0b0ZvY3VzQWN0aXZlEUF1dG9Gb2N1c0ludGVydmFsFEF1dG9FeHBvc3VyZUludGVydmFsGUF1dG9Gb2N1c0lsbHVtaW5hdGlvbk5hbWUOQXV0b0ZvY3VzUmFuZ2URQXV0b0ZvY3VzQWNjdXJhY3kYQXV0b0ZvY3VzTWF4aW11bVN0ZXBTaXplHUF1dG9Gb2N1c0ZpbmFsQ29ycmVjdGlvblN0ZXBzEUF1dG9Gb2N1c0V4cG9zdXJlEEF1dG9Gb2N1c0Jpbm5pbmcSQXV0b0ZvY3VzRU1DQ0RHYWluDUF1dG9Gb2N1c0Z1bGwPQXV0b0ZvY3VzUmVnaW9uG0F1dG9Gb2N1c0JhY2tsYXNoQ29ycmVjdGlvbgtIV0F1dG9Gb2N1cxhIV0F1dG9Gb2N1c1VzZUNvbnRpbnVvdXMaSFdBdXRvRm9jdXNEdXJpbmdTdGFnZU1vdmUdSFdBdXRvRm9jdXNEdXJpbmdUaW1lSW50ZXJ2YWwWSFdBdXRvRm9jdXNEdXJpbmdQYXVzZRtIV0F1dG9Gb2N1c01pbmltdW1UaW1lSW5TZWMVVXNlSFdBdXRvRm9jdXNPZmZzZXRzFEZvcmNlU2xpZGVyQ29sb3JNb2RlEFNhbWVBdXRvRXhwb3N1cmUWU2FtZUF1dG9FeHBvc3VyZVRhcmdldAxVc2VTcGxpdFZpZXcNVGltZWxhcHNlTGl2ZRZUaW1sYXBzZUxpdmVXaW5kb3dWaWV3HFRpbWVsYXBzZUxpdmVXYXZlbGVuZ3RoSW5kZXgdVGltZWxhcHNlTGl2ZUlsbHVtaW5hdGlvbk5hbWUKRnJhcEFjdGl2ZQxGcmFwUHJlQ291bnQZU3RvcEFjcXVpc2l0aW9uRHVyaW5nRnJhcBRGcmFwSWxsdW1pbmF0aW9uTmFtZQpGcmFwQ3ljbGVzEkZyYXBFdmVyeVRpbWVQb2ludA1TdGFnZVJlbGF0aXZlEEN1cnJlbnRBc3NheUZpbGUaQ3VycmVudEFzc2F5RmlsZU91dHB1dFR5cGUZTWF4aW11bU51bWJlck9mVGltZXBvaW50cxFGcmFwTGluZVRoaWNr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LldhdmVsZW5ndGhTZXR0aW5nJAAAAAROYW1lEUlsbHVtaW5hdGlvbkluZGV4GElsbHVtaW5hdGlvblNldHRpbmdJbmRleBJXYXZlbGVuZ3RoRmlsZU5hbWUaU2NhblNsaWVkZU92ZXJWaWV3RmlsZU5hbWUYQWNxdWlyZVdpbmRvd05lZWRzVXBkYXRlG1NjYW5TbGlkZU92ZXJWaWV3V2luZG93VmlldxZBY3F1aXJlRmlsZU5lZWRzQ2hhbmdlBUZpcnN0Ek92ZXJXcml0ZUxhc3RGcmFtZQlBdXRvU2NhbGUITG93U2NhbGUJSGlnaFNjYWxlFExvd0hpc3RvZ3JhbW1QZXJjZW50FUhpZ2hIaXN0b2dyYW1tUGVyY2VudA9TYXR1cmF0aW9uQ29sb3IOU2hvd1NhdHVyYXRpb24PU2F0dXJhdGlvbkxldmVsBUdhbW1hDERpc3BsYXlSYW5nZQpXaW5kb3dWaWV3DFpQbGFuZVNlcmllcwlWaWV3VmFsaWQSRGlzcGxheUZpbGVDaGFuZ2VkEVNwbGl0Vmlld0xhc3RQYXJ0ElNwbGl0Vmlld0ZpcnN0UGFydAxBY3RpdmUzRE1vZGUiU3BsaXRWaWV3TnVtYmVyT2ZTaW11bHRhbmVvdXNQYXJ0cxlBY3F1aXJlWFlTY2FsZUJhclBhcmFtdGVyGEFjcXVpcmVUaW1lU3RhbXBQYXJhbXRlchJSZWFsdGltZUNvcnJlY3Rpb24cUmVhbHRpbWVQcm9jZXNzaW5nUHJvcGVydGllcx1XYXZlbGVuZ3RoRW5hYmxlZE1vZHVsb0ZhY3Rvch1XYXZlbGVuZ3RoRW5hYmxlZE1vZHVsb09mZnNldBZVc2VGbGF0RmllbGRDb3JyZWN0aW9uGkFiZXJyYXRpb25Db3JyZWN0aW9uT2Zmc2V0AQAAAQEABAAAAAAAAAAABAAAAAQEAAAAAAAAAAQEAAQAAAAACAgBGFN5c3RlbS5EcmF3aW5nLlJlY3RhbmdsZQMAAAABAQEBCAgFBRRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABCAUjVmlzaVZpZXcuRGlzcGxheUR5bmFtaWNSYW5nZUluVG9vbHN4AAAAGFN5c3RlbS5EcmF3aW5nLlJlY3RhbmdsZQMAAAABAQEBAQEIHFZpc2lWaWV3LlhZU2NhbGVCYXJQYXJhbWV0ZXJ5AAAAG1Zpc2lWaWV3LlRpbWVTdGFtcFBhcmFtZXRlcnkAAAABNVZpc2lWaWV3LlByb2Nlc3NpbmdUb29scytSZWFsdGltZVByb2Nlc3NpbmdQcm9wZXJ0aWVzegAAAAgIAQUCAAAABnsAAAAUMDpDb25mNDg4QnJpZ2h0ZmllbGQWAAAAFAAAAAoKAAGE////+f///wAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAPAPAAABMAEwBYP///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAAjQABAAD+/wAAATEFgv///yNWaXNpVmlldy5EaXNwbGF5RHluYW1pY1JhbmdlSW5Ub29scwEAAAAHdmFsdWVfXwAIeAAAAAAAAAABgf////n///8pAAAAqAEAAAMBAAADAQAAAQEAAQEAAQAAAAWA////HFZpc2lWaWV3LlhZU2NhbGVCYXJQYXJhbWV0ZXIWAAAAB1Zpc2libGUMTGFiZWxWaXNpYmxlCk1vbm9jaHJvbWUOQmFyQm9yZGVyQ29sb3IYQmFyQm9yZGVyTW9ub2Nocm9tZUNvbG9yB0ZpbGxCYXIRRmlsbEJhck1vbm9jaHJvbWUMQmFyRmlsbENvbG9yFkJhckZpbGxNb25vY2hyb21lQ29sb3IKTGFibGVDb2xvchRMYWJsZU1vbm9jaHJvbWVDb2xvchRFcmFzZUxhYmxlQmFja2dyb3VuZx5FcmFzZUxhYmxlTW9ub2Nocm9tZUJhY2tncm91bmcUTGFiZWxCYWNrZ3JvdW5kQ29sb3IeTGFiZWxCYWNrZ3JvdW5kTW9ub2Nocm9tZUNvbG9yDUxhYmVsRm9udE5hbWUOTGFiZWxGb250U3l0bGUJQmFyTGVuZ3RoDUJhclNpemVIZWlnaHQMQmFyU2l6ZVdpZHRoElJlZmVyZW5jZVBvc2l0aW9uWRJSZWZlcmVuY2VQb3NpdGlvblgAAAAEBAAABAQEBAAABAQBBAAAAAAAAQEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACxWaXNpVmlldy5YWVNjYWxlQmFyUGFyYW1ldGVyK01vbm9jaHJvbWVDb2xvcnkAAAABARRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAsVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3J5AAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACxWaXNpVmlldy5YWVNjYWxlQmFyUGFyYW1ldGVyK01vbm9jaHJvbWVDb2xvcnkAAAABARRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAsVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3J5AAAAGFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQMAAAAICAgICHkAAAAAAQABf////4P///8KAAAAAAAAAACNAAEABX7///8sVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3IBAAAAB3ZhbHVlX18ACHkAAAAAAAAAAQEBff///4P///8KAAAAAAAAAAAjAAEAAXz///9+////AQAAAAF7////g////woAAAAAAAAAAI0AAQABev///37///8AAAAAAAABef///4P///8KAAAAAAAAAAAjAAEAAXj///9+////AQAAAAaJAAAAAAV2////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAABkAAAACgAAAGQAAAAeAAAACgAAAAV1////G1Zpc2lWaWV3LlRpbWVTdGFtcFBhcmFtZXRlcg8AAAAHVmlzaWJsZQpNb25vY2hyb21lCkxhYmxlQ29sb3IUTGFibGVNb25vY2hyb21lQ29sb3IURXJhc2VMYWJsZUJhY2tncm91bmceRXJhc2VMYWJsZU1vbm9jaHJvbWVCYWNrZ3JvdW5nFExhYmVsQmFja2dyb3VuZENvbG9yHkxhYmVsQmFja2dyb3VuZE1vbm9jaHJvbWVDb2xvcg1MYWJlbEZvbnROYW1lDkxhYmVsRm9udFN5dGxlElJlZmVyZW5jZVBvc2l0aW9uWRJSZWZlcmVuY2VQb3NpdGlvblgLTGFibGVIZWlnaHQVTnVtYmVyT2ZEZWNpbWFsRGlnaXRzBkZvcm1hdAAABAQAAAQEAQQAAAAAAQEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACtWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yeQAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACtWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yeQAAABhTeXN0ZW0uRHJhd2luZy5Gb250U3R5bGUDAAAACAgICHkAAAAAAAF0////g////woAAAAAAAAAAI0AAQAFc////ytWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yAQAAAAd2YWx1ZV9fAAh5AAAAAAAAAAAAAXL///+D////CgAAAAAAAAAAIwABAAFx////c////wEAAAAJiQAAAAFw////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEQAAABAAAAAGkQAAABQxOkNvbmY0ODhCcmlnaHRmaWVsZBYAAAAUAAAACgoAAW7////5////AAAAAAAAAAC8AgAAvAIAAAAAAAFLAAAA0gQAAAQwLjAxBDAuMDEBbf///4P///8KAAAAAAAAAACNAAEAAP4PAAABMQFs////gv///wAAAAABa/////n////5////IAAAAIQDAACEAwAAAQEAAAEAAgAAAAFq////gP///wABAAFp////g////woAAAAAAAAAAI0AAQABaP///37///8AAAAAAQEBZ////4P///8KAAAAAAAAAAAjAAEAAWb///9+////AQAAAAFl////g////woAAAAAAAAAAI0AAQABZP///37///8AAAAAAAABY////4P///8KAAAAAAAAAAAjAAEAAWL///9+////AQAAAAafAAAAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAWD///92////AAAAAGQAAAAKAAAAZAAAAB4AAAAKAAAAAV////91////AAABXv///4P///8KAAAAAAAAAACNAAEAAV3///9z////AAAAAAAAAVz///+D////CgAAAAAAAAAAIwABAAFb////c////wEAAAAJiQAAAAFZ////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEgAAABAAAAAGqAAAABQyOkNvbmZCcmlnaHRmaWVsZDQ4OBcAAAAVAAAACgoAAVf////5////AAAAAAAAAAC8AgAAvAIAAAAAAAEBAAAAiwAAAAQwLjAxBDAuMDEBVv///4P///8KAAAAAAAAAACNAAEAAP4PAAABMQFV////gv///wAAAAABVP////n///+RAwAAJAAAAIQDAACEAwAAAQEAAQAAAgAAAAFT////gP///wABAAFS////g////woAAAAAAAAAAI0AAQABUf///37///8AAAAAAQEBUP///4P///8KAAAAAAAAAAAjAAEAAU////9+////AQAAAAFO////g////woAAAAAAAAAAI0AAQABTf///37///8AAAAAAAABTP///4P///8KAAAAAAAAAAAjAAEAAUv///9+////AQAAAAmJAAAAAUn///92////AAAAAGQAAAAKAAAAZAAAAB4AAAAKAAAAAUj///91////AAABR////4P///8KAAAAAAAAAACNAAEAAUb///9z////AAAAAAAAAUX///+D////CgAAAAAAAAAAIwABAAFE////c////wEAAAAJiQAAAAFD////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEwAAABAAAAAGvgAAAAkzOkNvbmY0ODgBAAAAAwAAAAoKAAFB////+f///wAAAAAAAAAAAAAAAAAAAAAAAAABOwAAAMIDAAAEMC4wMQQwLjAxAUD///+D////CgAAAAAAAAAAjQABAAD+/wAAATEBP////4L///8AAAAAAT7////5////JgQAAEEAAADMAgAAzAIAAAEBAAEBAAEAAAABPf///4D///8AAQABPP///4P///8KAAAAAAAAAACNAAEAATv///9+////AAAAAAEBATr///+D////CgAAAAAAAAAAIwABAAE5////fv///wEAAAABOP///4P///8KAAAAAAAAAACNAAEAATf///9+////AAAAAAAAATb///+D////CgAAAAAAAAAAIwABAAE1////fv///wEAAAAJiQAAAAEz////dv///wAAAABkAAAACgAAAGQAAAAeAAAACgAAAAEy////df///wAAATH///+D////CgAAAAAAAAAAjQABAAEw////c////wAAAAAAAAEv////g////woAAAAAAAAAACMAAQABLv///3P///8BAAAACYkAAAABLf///3b///8AAAAAAAAAAGQAAAAMAAAAAwAAAAoACgEAAAAAAAAAAAEwARQAAAAQAAAABtQAAAAJNDpDb25mNDA1AAAAAAEAAAAKCgEBK/////n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQEq////g////woAAAAAAAAAAI0AAQAA/g8AAAExASn///+C////AAAAAAEo////+f///zwAAABgAgAAhAIAAIQCAAABAQABAQABAAAAASf///+A////AAEAASb///+D////CgAAAAAAAAAAjQABAAEl////fv///wAAAAABAQEk////g////woAAAAAAAAAACMAAQABI////37///8BAAAAASL///+D////CgAAAAAAAAAAjQABAAEh////fv///wAAAAAAAAEg////g////woAAAAAAAAAACMAAQABH////37///8BAAAACYkAAAABHf///3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABHP///3X///8AAAEb////g////woAAAAAAAAAAI0AAQABGv///3P///8AAAAAAAABGf///4P///8KAAAAAAAAAAAjAAEAARj///9z////AQAAAAmJAAAAARf///92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoBAAAAAAAAAAABMAEVAAAAEAAAAAbqAAAACDU6W05vbmVd/////wAAAAAKCgABFf////n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQEU////g////woAAAAAAAAAAI0AAQAA/g8AAAExARP///+C////AAAAAAES////+f///3oDAADYAQAArQEAAK0BAAABAQABAQABAAAAARH///+A////AAEAARD///+D////CgAAAAAAAAAAjQABAAEP////fv///wAAAAABAQEO////g////woAAAAAAAAAACMAAQABDf///37///8BAAAAAQz///+D////CgAAAAAAAAAAjQABAAEL////fv///wAAAAAAAAEK////g////woAAAAAAAAAACMAAQABCf///37///8BAAAACYkAAAABB////3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABBv///3X///8AAAEF////g////woAAAAAAAAAAI0AAQABBP///3P///8AAAAAAAABA////4P///8KAAAAAAAAAAAjAAEAAQL///9z////AQAAAAmJAAAAAQH///92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEWAAAAEAAAAAYAAQAACDY6W05vbmVd/////wAAAAAKCgAB//7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQH+/v//g////woAAAAAAAAAAI0AAQAA/g8AAAExAf3+//+C////AAAAAAH8/v//+f///zoFAADYAQAArQEAAK0BAAABAQABAQABAAAAAfv+//+A////AAEAAfr+//+D////CgAAAAAAAAAAjQABAAH5/v//fv///wAAAAABAQH4/v//g////woAAAAAAAAAACMAAQAB9/7//37///8BAAAAAfb+//+D////CgAAAAAAAAAAjQABAAH1/v//fv///wAAAAAAAAH0/v//g////woAAAAAAAAAACMAAQAB8/7//37///8BAAAACYkAAAAB8f7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAAB8P7//3X///8AAAHv/v//g////woAAAAAAAAAAI0AAQAB7v7//3P///8AAAAAAAAB7f7//4P///8KAAAAAAAAAAAjAAEAAez+//9z////AQAAAAmJAAAAAev+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEXAAAAEAAAAAYWAQAACDc6W05vbmVd/////wAAAAAKCgAB6f7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQHo/v//g////woAAAAAAAAAAI0AAQAA/g8AAAExAef+//+C////AAAAAAHm/v//+f///zcFAADVAQAArQEAAK0BAAABAQABAQABAAAAAeX+//+A////AAEAAeT+//+D////CgAAAAAAAAAAjQABAAHj/v//fv///wAAAAABAQHi/v//g////woAAAAAAAAAACMAAQAB4f7//37///8BAAAAAeD+//+D////CgAAAAAAAAAAjQABAAHf/v//fv///wAAAAAAAAHe/v//g////woAAAAAAAAAACMAAQAB3f7//37///8BAAAACYkAAAAB2/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAAB2v7//3X///8AAAHZ/v//g////woAAAAAAAAAAI0AAQAB2P7//3P///8AAAAAAAAB1/7//4P///8KAAAAAAAAAAAjAAEAAdb+//9z////AQAAAAmJAAAAAdX+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEYAAAAEAAAAAYsAQAACDg6W05vbmVd/////wAAAAAKCgAB0/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAHS/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAdH+//+C////AAAAAAHQ/v//+f///wAAAAAAAAAAAAAAAAAAAAABAAABAQABAAAAAc/+//+A////AAEAAc7+//+D////CgAAAAAAAAAAjQABAAHN/v//fv///wAAAAABAQHM/v//g////woAAAAAAAAAACMAAQABy/7//37///8BAAAAAcr+//+D////CgAAAAAAAAAAjQABAAHJ/v//fv///wAAAAAAAAHI/v//g////woAAAAAAAAAACMAAQABx/7//37///8BAAAACYkAAAABxf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABxP7//3X///8AAAHD/v//g////woAAAAAAAAAAI0AAQABwv7//3P///8AAAAAAAABwf7//4P///8KAAAAAAAAAAAjAAEAAcD+//9z////AQAAAAmJAAAAAb/+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEZAAAAEAAAAAZCAQAACDE6W05vbmVd/////wAAAAAKCgABvf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAG8/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAbv+//+C////AAAAAAG6/v//+f///zIBAABnAQAAqQAAAKkAAAABAQABAQABAAAAAbn+//+A////AAEAAbj+//+D////CgAAAAAAAAAAjQABAAG3/v//fv///wAAAAABAQG2/v//g////woAAAAAAAAAACMAAQABtf7//37///8BAAAAAbT+//+D////CgAAAAAAAAAAjQABAAGz/v//fv///wAAAAAAAAGy/v//g////woAAAAAAAAAACMAAQABsf7//37///8BAAAACYkAAAABr/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABrv7//3X///8AAAGt/v//g////woAAAAAAAAAAI0AAQABrP7//3P///8AAAAAAAABq/7//4P///8KAAAAAAAAAAAjAAEAAar+//9z////AQAAAAmJAAAAAan+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEaAAAAEAAAAAZYAQAACDI6W05vbmVd/////wAAAAAKCgABp/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAGm/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAaX+//+C////AAAAAAGk/v//+f///w0AAABlAQAAqgAAAKoAAAABAQABAQABAAAAAaP+//+A////AAEAAaL+//+D////CgAAAAAAAAAAjQABAAGh/v//fv///wAAAAABAQGg/v//g////woAAAAAAAAAACMAAQABn/7//37///8BAAAAAZ7+//+D////CgAAAAAAAAAAjQABAAGd/v//fv///wAAAAAAAAGc/v//g////woAAAAAAAAAACMAAQABm/7//37///8BAAAACYkAAAABmf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABmP7//3X///8AAAGX/v//g////woAAAAAAAAAAI0AAQABlv7//3P///8AAAAAAAABlf7//4P///8KAAAAAAAAAAAjAAEAAZT+//9z////AQAAAAmJAAAAAZP+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEbAAAAEAAAAAZuAQAACDM6W05vbmVd/////wAAAAAKCgEBkf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAGQ/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAY/+//+C////AAAAAAGO/v//+f///wwAAADDAgAAewAAAHsAAAAAAQABAQABAAAAAY3+//+A////AAEAAYz+//+D////CgAAAAAAAAAAjQABAAGL/v//fv///wAAAAABAQGK/v//g////woAAAAAAAAAACMAAQABif7//37///8BAAAAAYj+//+D////CgAAAAAAAAAAjQABAAGH/v//fv///wAAAAAAAAGG/v//g////woAAAAAAAAAACMAAQABhf7//37///8BAAAACYkAAAABg/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABgv7//3X///8AAAGB/v//g////woAAAAAAAAAAI0AAQABgP7//3P///8AAAAAAAABf/7//4P///8KAAAAAAAAAAAjAAEAAX7+//9z////AQAAAAmJAAAAAX3+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEcAAAAEAAAAAaEAQAACDQ6W05vbmVd/////wAAAAAKCgEBe/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAF6/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAXn+//+C////AAAAAAF4/v//+f///zwBAADLAgAAygAAAMoAAAAAAQABAAACAAAAAXf+//+A////AAEAAXb+//+D////CgAAAAAAAAAAjQABAAF1/v//fv///wAAAAABAQF0/v//g////woAAAAAAAAAACMAAQABc/7//37///8BAAAAAXL+//+D////CgAAAAAAAAAAjQABAAFx/v//fv///wAAAAAAAAFw/v//g////woAAAAAAAAAACMAAQABb/7//37///8BAAAACYkAAAABbf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABbP7//3X///8AAAFr/v//g////woAAAAAAAAAAI0AAQABav7//3P///8AAAAAAAABaf7//4P///8KAAAAAAAAAAAjAAEAAWj+//9z////AQAAAAmJAAAAAWf+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEdAAAAEAAAAAaaAQAACDU6W05vbmVd/////wAAAAAKCgABZf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAFk/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAWP+//+C////AAAAAAFi/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWH+//+A////AAEAAWD+//+D////CgAAAAAAAAAAjQABAAFf/v//fv///wAAAAABAQFe/v//g////woAAAAAAAAAACMAAQABXf7//37///8BAAAAAVz+//+D////CgAAAAAAAAAAjQABAAFb/v//fv///wAAAAAAAAFa/v//g////woAAAAAAAAAACMAAQABWf7//37///8BAAAACYkAAAABV/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABVv7//3X///8AAAFV/v//g////woAAAAAAAAAAI0AAQABVP7//3P///8AAAAAAAABU/7//4P///8KAAAAAAAAAAAjAAEAAVL+//9z////AQAAAAmJAAAAAVH+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEeAAAAEAAAAAawAQAACDY6W05vbmVd/////wAAAAAKCgABT/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAFO/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAU3+//+C////AAAAAAFM/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUv+//+A////AAEAAUr+//+D////CgAAAAAAAAAAjQABAAFJ/v//fv///wAAAAABAQFI/v//g////woAAAAAAAAAACMAAQABR/7//37///8BAAAAAUb+//+D////CgAAAAAAAAAAjQABAAFF/v//fv///wAAAAAAAAFE/v//g////woAAAAAAAAAACMAAQABQ/7//37///8BAAAACYkAAAABQf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABQP7//3X///8AAAE//v//g////woAAAAAAAAAAI0AAQABPv7//3P///8AAAAAAAABPf7//4P///8KAAAAAAAAAAAjAAEAATz+//9z////AQAAAAmJAAAAATv+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEfAAAAEAAAAAbGAQAACDc6W05vbmVd/////wAAAAAKCgABOf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAE4/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwATf+//+C////AAAAAAE2/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATX+//+A////AAEAATT+//+D////CgAAAAAAAAAAjQABAAEz/v//fv///wAAAAABAQEy/v//g////woAAAAAAAAAACMAAQABMf7//37///8BAAAAATD+//+D////CgAAAAAAAAAAjQABAAEv/v//fv///wAAAAAAAAEu/v//g////woAAAAAAAAAACMAAQABLf7//37///8BAAAACYkAAAABK/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABKv7//3X///8AAAEp/v//g////woAAAAAAAAAAI0AAQABKP7//3P///8AAAAAAAABJ/7//4P///8KAAAAAAAAAAAjAAEAASb+//9z////AQAAAAmJAAAAASX+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEgAAAAEAAAAAbcAQAACDg6W05vbmVd/////wAAAAAKCgABI/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAEi/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwASH+//+C////AAAAAAEg/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR/+//+A////AAEAAR7+//+D////CgAAAAAAAAAAjQABAAEd/v//fv///wAAAAABAQEc/v//g////woAAAAAAAAAACMAAQABG/7//37///8BAAAAARr+//+D////CgAAAAAAAAAAjQABAAEZ/v//fv///wAAAAAAAAEY/v//g////woAAAAAAAAAACMAAQABF/7//37///8BAAAACYkAAAABFf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABFP7//3X///8AAAET/v//g////woAAAAAAAAAAI0AAQABEv7//3P///8AAAAAAAABEf7//4P///8KAAAAAAAAAAAjAAEAARD+//9z////AQAAAAmJAAAAAQ/+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAUhAAAAHFZpc2lWaWV3LklsbHVtaW5hdGlvblNldHRpbmcHAAAABE5hbWURRXhwb3N1cmVVbml0SW5kZXgIRXhwb3N1cmUJRU1DQ0RHYWluBXZhbGlkDEF1dG9FeHBvc3VyZRJBdXRvRXhwb3N1cmVUYXJnZXQBAAAAAAAACAgIAQEIAgAAAAbyAQAABltOb25lXQAAAABkAAAAZAAAAAEAMgAAAAEiAAAAIQAAAAbzAQAAB0NvbmY0MDUAAAAAyAAAAGQAAAABADIAAAABIwAAACEAAAAG9AEAAA5Db25mNDg4RHVhbDU2MQAAAAAKAAAAZAAAAAEAMgAAAAEkAAAAIQAAAAb1AQAAB0NvbmY0ODgAAAAAZAAAAGQAAAABADIAAAABJQAAACEAAAAG9gEAAAdDb25mNTYxAAAAAMgAAABkAAAAAQAyAAAAASYAAAAhAAAABvcBAAAOQ29uZjU2MUR1YWw0ODgAAAAA9AEAAGQAAAABADIAAAABJwAAACEAAAAG+AEAAAdDb25mNjQwAAAAAMgAAABkAAAAAQAyAAAAASgAAAAhAAAABvkBAAALQ29uZjY0MER1YWwAAAAAZAAAAGQAAAABADIAAAABKQAAACEAAAAG+gEAAA5Db25mNDA1bXVsdGlFTQAAAABkAAAAZAAAAAEAMgAAAAEqAAAAIQAAAAb7AQAADkNvbmY0ODhtdWx0aUVNAAAAAGQAAABkAAAAAQAyAAAAASsAAAAhAAAABvwBAAAOQ29uZjU2MW11bHRpRU0AAAAAZAAAAGQAAAABADIAAAABLAAAACEAAAAG/QEAAA5Db25mNjQwbXVsdGlFTQAAAABkAAAAZAAAAAEAMgAAAAEtAAAAIQAAAAb+AQAAFENvbmY0MDVtdWx0aUVNdHJpcGxlAAAAAGQAAABkAAAAAQAyAAAAAS4AAAAhAAAABv8BAAAUQ29uZjQ4OG11bHRpRU10cmlwbGUAAAAAZAAAAGQAAAABADIAAAABLwAAACEAAAAGAAIAABRDb25mNTYxbXVsdGlFTXRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAEwAAAAIQAAAAYBAgAACU9jdWxhckdGUAAAAABkAAAAZAAAAAEAMgAAAAExAAAAIQAAAAYCAgAACk9jdWxhckRBUEkAAAAAZAAAAGQAAAABADIAAAABMgAAACEAAAAGAwIAAAlPY3VsYXJSRlAAAAAAZAAAAGQAAAABADIAAAABMwAAACEAAAAGBAIAABFPY3VsYXJCcmlnaHRmaWVsZAAAAABkAAAAZAAAAAEAMgAAAAE0AAAAIQAAAAYFAgAACENhbVdGR0ZQAAAAAGQAAABkAAAAAQAyAAAAATUAAAAhAAAABgYCAAASQ29uZjQ4OEJyaWdodGZpZWxkAAAAAAoAAABkAAAAAQAyAAAAATYAAAAhAAAABgcCAAASQ29uZkJyaWdodGZpZWxkNDg4AAAAAAoAAABkAAAAAQAyAAAAATcAAAAhAAAABggCAAAKQ29uZjQ4OC1UTAAAAABkAAAAZAAAAAEAMgAAAAE4AAAAIQAAAAYJAgAAClRMLUNvbmY0ODgAAAAAZAAAAGQAAAABADIAAAABOQAAACEAAAAGCgIAAAtPY3VsYXJHRlByegAAAABkAAAAZAAAAAEAMgAAAAE6AAAAIQAAAAYLAgAAC0NvbmY0ODhmZHJmAAAAAGQAAABkAAAAAQAyAAAAATsAAAAhAAAABgwCAAAUTWFkaGF2LUNvbmY0ODhUcmlwbGUAAAAAZAAAAGQAAAABADIAAAABPAAAACEAAAAGDQIAABRNYWRoYXYtQ29uZjU2MVRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAE9AAAAIQAAAAYOAgAAAldGAAAAAGQAAABkAAAAAQAyAAAAAT4AAAAhAAAABg8CAAAVTmlnZWwtQ29uZjU2MW92ZXJ2aWV3AAAAAGQAAABkAAAAAQAyAAAAAT8AAAAhAAAABhACAAANTmlnZWwtQ29uZjQ4OAAAAABkAAAAZAAAAAEAMgAAAAFAAAAAIQAAAAYRAgAAHFNtaXRhLUNvbmZCcmlnaHRmaWVsZDQ4OC1taW4AAAAAZAAAAGQAAAABADIAAAABQQAAACEAAAAGEgIAABxTbWl0YS1Db25mNDg4QnJpZ2h0ZmllbGQtbWluAAAAAGQAAABkAAAAAQAyAAAAAUIAAAAhAAAABhMCAAAbU21pdGEtQ29uZkJyaWdodGZpZWxkQUYtbWluAAAAAGQAAABkAAAAAQAyAAAAAUMAAAAhAAAABhQCAAAVSmVzc2ljYS1FeDQwNS1Db25mNTYxAAAAAGQAAABkAAAAAQAyAAAAAUQAAAAhAAAABhUCAAAVSmVzc2ljYS1FeDQwNS1Db25mNDg4AAAAAGQAAABkAAAAAQAyAAAAAUUAAAAhAAAABhYCAAAVSmVzc2ljYS1FeDQwNS1Db25mNjQwAAAAAGQAAABkAAAAAQAyAAAAAUYAAAAhAAAABhcCAAALQ29uZjQ4OGNhbTIAAAAAZAAAAGQAAAABADIAAAABRwAAACEAAAAGGAIAAA1Db25mNDA1dHJpcGxlAAAAAGQAAABkAAAAAQAyAAAAAUgAAAAhAAAABhkCAAAdU21pdGEtQ29uZkJyaWdodGZpZWxkNDg4LWZ1bGwAAAAAZAAAAGQAAAABADIAAAABSQAAACEAAAAGGgIAAB1Db25mNTYxLXdpdGhTSU1CcmlnaHRmaWVsZDQ4OAAAAABkAAAAZAAAAAEAMgAAAAFKAAAAIQAAAAYbAgAADkFyZ29saWdodC1DYW0xAAAAAPQBAABkAAAAAQAyAAAAAUsAAAAhAAAABhwCAAAOQXJnb2xpZ2h0LUNhbTIAAAAAZAAAAGQAAAABADIAAAABTAAAACEAAAAGHQIAABZNaWNoYWVsYS1Db25mNDA1LVRyYW5zAAAAAGQAAABkAAAAAQAyAAAAAU0AAAAhAAAABh4CAAAWTWljaGFlbGEtVHJhbnMtQ29uZjQwNQAAAABkAAAAZAAAAAEAMgAAAAFOAAAAIQAAAAYfAgAAGU1pY2hhZWxhLTV4LUNvbmY0MDUtVHJhbnMAAAAAZAAAAGQAAAABADIAAAABTwAAACEAAAAGIAIAABlNaWNoYWVsYS01eC1UcmFucy1Db25mNDA1AAAAAGQAAABkAAAAAQAyAAAAAVAAAAAhAAAABiECAAAWQW50b25pby1Db25mNTYxLVRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAFRAAAAIQAAAAYiAgAAFU1pZ3VlbC1Db25mNDg4RHVhbDU2MQAAAABkAAAAZAAAAAEAMgAAAAFSAAAAIQAAAAYjAgAAFU1pZ3VlbC1Db25mNTYxRHVhbDQ4OAAAAABkAAAAZAAAAAEAMgAAAAFTAAAAIQAAAAYkAgAAEU1hcml0LVNpbS1ESUMtNDg4AAAAAGQAAABkAAAAAQAyAAAAAVQAAAAhAAAABiUCAAAMTWFyaXQtRElDSUlJAAAAAGQAAABkAAAAAQAyAAAAAVUAAAAhAAAABiYCAAAGRElDSUlJAAAAAGQAAABkAAAAAQAyAAAAAVYAAAAhAAAABicCAAAaR3Jvc3NoYW5zLVNlcS1ESUNJSS1ub0Rpc2sAAAAAZAAAAGQAAAABADIAAAABVwAAACEAAAAGKAIAABtHcm9zc2hhbnMtU2VxLURJQ0lJSS1ub0Rpc2sAAAAAZAAAAGQAAAABADIAAAABWAAAACEAAAAGKQIAABFHcm9zc2hhbnMtU2VxLUdGUAAAAABkAAAAZAAAAAEAMgAAAAFZAAAAIQAAAAYqAgAAFUdyb3NzaGFucy1TZXEtbUNoZXJyeQAAAABkAAAAZAAAAAEAMgAAAAFaAAAAIQAAAAYrAgAAIEdyb3NzaGFucy01eC1CcmlnaHRmaWVsZC1Ib2VjaHN0AAAAAGQAAABkAAAAAQAyAAAAAVsAAAAhAAAABiwCAAAgR3Jvc3NoYW5zLTV4LUhvZWNoc3QtQnJpZ2h0ZmllbGQAAAAAZAAAAGQAAAABADIAAAABXAAAACEAAAAGLQIAAB1Hcm9zc2hhbnMtQnJpZ2h0ZmllbGQtSG9lY2hzdAAAAABkAAAAZAAAAAEAMgAAAAFdAAAAIQAAAAYuAgAAHUdyb3NzaGFucy1Ib2VjaHN0LUJyaWdodGZpZWxkAAAAAGQAAABkAAAAAQAyAAAAAV4AAAAhAAAABi8CAAAUR3Jvc3NoYW5zLVNXSS1CRi1HRlAAAAAACgAAAGQAAAABADIAAAABXwAAACEAAAAGMAIAABRHcm9zc2hhbnMtU1dJLUdGUC1CRgAAAAAKAAAAZAAAAAEAMgAAAAFgAAAAIQAAAAYxAgAAGEdyb3NzaGFucy1TV0ktQkYtR0ZQLU1pbgAAAABkAAAAZAAAAAEAMgAAAAFhAAAAIQAAAAYyAgAAGEdyb3NzaGFucy1TV0ktR0ZQLUJGLU1pbgAAAABkAAAAZAAAAAEAMgAAAAFiAAAAIQAAAAYzAgAAHkdyb3NzaGFucy1TV0ltYWNyby1EdWFsQ29uZkdGUAAAAABkAAAAZAAAAAEAMgAAAAFjAAAAIQAAAAY0AgAAIkdyb3NzaGFucy1TV0ltYWNyby1EdWFsQ29uZm1DaGVycnkAAAAAZAAAAGQAAAABADIAAAABZAAAACEAAAAGNQIAAB5Hcm9zc2hhbnMtU1dJbWFjcm8tQnJpZ2h0ZmllbGQAAAAAZAAAAGQAAAABADIAAAABZQAAACEAAAAGNgIAACFHcm9zc2hhbnMtU1dJbWFjcm8tRElDdGhyb3VnaERpc2sAAAAAZAAAAGQAAAABADIAAAABZgAAACEAAAAGNwIAAAlDb25mVHJhbnMAAAAAMgAAAGQAAAABADIAAAABZwAAACEAAAAGOAIAAAlEYXJrRnJhbWUAAAAAZAAAAGQAAAABADIAAAABaAAAACEAAAAGOQIAAA1Db25mNDg4dHJpcGxlAAAAAGQAAABkAAAAAQAyAAAAAWkAAAAhAAAABjoCAAANQ29uZjU2MXRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAFqAAAAIQAAAAY7AgAAEENvbmY0MDUtTGFzZXIxMDAAAAAAZAAAAGQAAAABADIAAAABawAAACEAAAAGPAIAABBDb25mNDg4LUxhc2VyMTAwAAAAAGQAAABkAAAAAQAyAAAAAWwAAAAhAAAABj0CAAAQQ29uZjU2MS1MYXNlcjEwMAAAAABkAAAAZAAAAAEAMgAAAAFtAAAAIQAAAAY+AgAAEENvbmY2NDAtTGFzZXIxMDAAAAAACgAAAGQAAAABADIAAAABbgAAACEAAAAGPwIAAAtDb25mNDA1Y2FtMgAAAABkAAAAZAAAAAEAMgAAAAFvAAAAIQAAAAZAAgAAEkNvbmZCcmlnaHRmaWVsZC01eAAAAABkAAAAZAAAAAEAMgAAAAFwAAAAIQAAAAZBAgAAFE9jdWxhckJyaWdodGZpZWxkLTV4AAAAAGQAAABkAAAAAQAyAAAAAXEAAAAhAAAABkICAAANRElDSUlJLXRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAFyAAAAIQAAAAZDAgAAFENvbmY0ODh0cmlwbGUtZm9yRElDAAAAAGQAAABkAAAAAQAyAAAAAXMAAAAhAAAABkQCAAANT2N1bGFyR0ZQLVJGUAAAAABkAAAAZAAAAAEAMgAAAAF0AAAAIQAAAAZFAgAAFENvbmY1NjEtd2l0aFNJTUJGNDg4AAAAABQAAABkAAAAAQAyAAAAAXUAAAAhAAAABkYCAAALQnJpZ2h0ZmllbGQAAAAACgAAAGQAAAABADIAAAABdgAAACEAAAAGRwIAABVDb25mQnJpZ2h0ZmllbGQtTm90NXgAAAAACgAAAGQAAAABADIAAAABdwAAACEAAAAGSAIAABlCcmlnaHRmaWVsZFRyaXBsZURpY2hyb2ljAAAAAAUAAABkAAAAAQAyAAAACw==,,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAaVmlzaVZpZXcuSWxsdW1pbmF0aW9uRW50cnkMAAAABE5hbWUKV2F2ZWxlbmd0aApDb21wb25lbnRzElNwbGl0Vmlld0FyZWFJbmRleAtDYW1lcmFJbmRleANUYWcFT3duZXIHSXNBZG1pbghEZW55UmVhZAlEZW55V3JpdGUKRGVueURlbGV0ZQxFeFdhdmVsZW5ndGgBAAQAAAEBAAAAAAAIIFZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudFtdAgAAAAgIAQEBAQgCAAAABgMAAAASQ29uZjQ4OEJyaWdodGZpZWxkJgIAAAkEAAAAAAAAAAEAAAAGBQAAABVDb25mX0R1YWxTaW11bHRhbmVvdXMKAAAAAOgBAAAHBAAAAAABAAAAEAAAAAQeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50AgAAAAkGAAAACQcAAAAJCAAAAAkJAAAACQoAAAAJCwAAAAkMAAAACQ0AAAAJDgAAAAkPAAAACRAAAAAJEQAAAAkSAAAACRMAAAAJFAAAAAkVAAAADBYAAABDRGV2aWNlVG9vbHMsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUGAAAAHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAoAAAAFc3RhdGUPcmVtZW1iZXJlZFN0YXRlBmFjdGl2ZQdlbmFibGVkBXZhbGlkEkRldmljZUhhcmR3YXJlVHlwZQRUeXBlCkRldmljZU5hbWUNQ29tcG9uZW50TmFtZQVWYWxpZAAAAAAAAQQBAQAFBQEBARxWaXNpVmlldy5EZXZpY2VDb21wb25lbnRUeXBlFgAAAAECAAAAATEBMAAAAQYXAAAAGFplaXNzIE1UQjIwMDQgTWljcm9zY29wZQXo////HFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUBAAAAB3ZhbHVlX18ACBYAAAAAAAAABhkAAAAFWmVpc3MGGgAAAAlSTFNodXR0ZXIBAQcAAAAGAAAAATABMAAAAQkXAAAAAeT////o////AQAAAAkZAAAABh4AAAAQUmVmbGVjdG9yQ2hhbmdlcgEBCAAAAAYAAAABMAEwAAABCRcAAAAB4P///+j///8BAAAACRkAAAAGIgAAABhDb25kZW5zZXJDb250cmFzdENoYW5nZXIBAQkAAAAGAAAAATEBMAAAAQYjAAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wB3P///+j///8AAAAABiUAAAAGVmlydGV4BiYAAAALTGFzZXI0MDUgQTABAQoAAAAGAAAAATEBMAEAAQkjAAAAAdj////o////AAAAAAklAAAABioAAAALTGFzZXI0ODggQTEBAQsAAAAGAAAAATEBMAAAAQkjAAAAAdT////o////AAAAAAklAAAABi4AAAALTGFzZXI1NjEgQTIBAQwAAAAGAAAAATEBMAAAAQkjAAAAAdD////o////AAAAAAklAAAABjIAAAALTGFzZXI2NDAgQTMBAQ0AAAAGAAAAATABMAAAAQkjAAAAAcz////o////AAAAAAklAAAABjYAAAAKL1VubG9jayBCNAEBDgAAAAYAAAABMQEwAQABCSMAAAAByP///+j///8AAAAACSUAAAAGOgAAAA1TaHV0dGVyIHBUMTAwAQEPAAAABgAAAAExATAAAAEGOwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQHE////6P///wAAAAAGPQAAAAxQcmVjaXNFeGNpdGUGPgAAAAdTaHV0dGVyAQEQAAAABgAAAAEwATAAAAEGPwAAABFZb2tvZ2F3YSBDU1UyMi9YMQHA////6P///wAAAAAGQQAAAANDU1UGQgAAAAdTaHV0dGVyAQERAAAABgAAAAEwATAAAAEJPwAAAAG8////6P///wEAAAAJQQAAAAZGAAAAD0RpY2hyb2ljIEZpbHRlcgEBEgAAAAYAAAABNQEwAAABCT8AAAABuP///+j///8BAAAACUEAAAAGSgAAAA1GaWx0ZXJXaGVlbCAxAQETAAAABgAAAAExATAAAAEJPwAAAAG0////6P///wEAAAAJQQAAAAZOAAAADUZpbHRlcldoZWVsIDIBARQAAAAGAAAAATABMAAAAQk/AAAAAbD////o////AQAAAAlBAAAABlIAAAALQ2FtZXJhIFBvcnQBARUAAAAGAAAAATEBMAAAAQk/AAAAAaz////o////AQAAAAlBAAAABlYAAAAEUGF0aAEL,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAaVmlzaVZpZXcuSWxsdW1pbmF0aW9uRW50cnkMAAAABE5hbWUKV2F2ZWxlbmd0aApDb21wb25lbnRzElNwbGl0Vmlld0FyZWFJbmRleAtDYW1lcmFJbmRleANUYWcFT3duZXIHSXNBZG1pbghEZW55UmVhZAlEZW55V3JpdGUKRGVueURlbGV0ZQxFeFdhdmVsZW5ndGgBAAQAAAEBAAAAAAAIIFZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudFtdAgAAAAgIAQEBAQgCAAAABgMAAAASQ29uZkJyaWdodGZpZWxkNDg4AAAAAAkEAAAAAAAAAAAAAAAGBQAAABVDb25mX0R1YWxTaW11bHRhbmVvdXMKAAAAAAAAAAAHBAAAAAABAAAAEAAAAAQeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50AgAAAAkGAAAACQcAAAAJCAAAAAkJAAAACQoAAAAJCwAAAAkMAAAACQ0AAAAJDgAAAAkPAAAACRAAAAAJEQAAAAkSAAAACRMAAAAJFAAAAAkVAAAADBYAAABDRGV2aWNlVG9vbHMsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUGAAAAHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAoAAAAFc3RhdGUPcmVtZW1iZXJlZFN0YXRlBmFjdGl2ZQdlbmFibGVkBXZhbGlkEkRldmljZUhhcmR3YXJlVHlwZQRUeXBlCkRldmljZU5hbWUNQ29tcG9uZW50TmFtZQVWYWxpZAAAAAAAAQQBAQAFBQEBARxWaXNpVmlldy5EZXZpY2VDb21wb25lbnRUeXBlFgAAAAECAAAAATEBMAAAAQYXAAAAGFplaXNzIE1UQjIwMDQgTWljcm9zY29wZQXo////HFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUBAAAAB3ZhbHVlX18ACBYAAAAAAAAABhkAAAAFWmVpc3MGGgAAAAlSTFNodXR0ZXIBAQcAAAAGAAAAATABMAAAAQkXAAAAAeT////o////AQAAAAkZAAAABh4AAAAQUmVmbGVjdG9yQ2hhbmdlcgEBCAAAAAYAAAABMAEwAAABCRcAAAAB4P///+j///8BAAAACRkAAAAGIgAAABhDb25kZW5zZXJDb250cmFzdENoYW5nZXIBAQkAAAAGAAAAATEBMAAAAQYjAAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wB3P///+j///8AAAAABiUAAAAGVmlydGV4BiYAAAALTGFzZXI0MDUgQTABAQoAAAAGAAAAATEBMAEAAQkjAAAAAdj////o////AAAAAAklAAAABioAAAALTGFzZXI0ODggQTEBAQsAAAAGAAAAATEBMAAAAQkjAAAAAdT////o////AAAAAAklAAAABi4AAAALTGFzZXI1NjEgQTIBAQwAAAAGAAAAATEBMAAAAQkjAAAAAdD////o////AAAAAAklAAAABjIAAAALTGFzZXI2NDAgQTMBAQ0AAAAGAAAAATABMAAAAQkjAAAAAcz////o////AAAAAAklAAAABjYAAAAKL1VubG9jayBCNAEBDgAAAAYAAAABMQEwAQABCSMAAAAByP///+j///8AAAAACSUAAAAGOgAAAA1TaHV0dGVyIHBUMTAwAQEPAAAABgAAAAExATAAAAEGOwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQHE////6P///wAAAAAGPQAAAAxQcmVjaXNFeGNpdGUGPgAAAAdTaHV0dGVyAQEQAAAABgAAAAEwATAAAAEGPwAAABFZb2tvZ2F3YSBDU1UyMi9YMQHA////6P///wAAAAAGQQAAAANDU1UGQgAAAAdTaHV0dGVyAQERAAAABgAAAAEwATAAAAEJPwAAAAG8////6P///wEAAAAJQQAAAAZGAAAAD0RpY2hyb2ljIEZpbHRlcgEBEgAAAAYAAAABNQEwAAABCT8AAAABuP///+j///8BAAAACUEAAAAGSgAAAA1GaWx0ZXJXaGVlbCAxAQETAAAABgAAAAExATAAAAEJPwAAAAG0////6P///wEAAAAJQQAAAAZOAAAADUZpbHRlcldoZWVsIDIBARQAAAAGAAAAATABMAAAAQk/AAAAAbD////o////AQAAAAlBAAAABlIAAAALQ2FtZXJhIFBvcnQBARUAAAAGAAAAATEBMAAAAQk/AAAAAaz////o////AQAAAAlBAAAABlYAAAAEUGF0aAEL</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:20w1">
+      <Description>DimensionType</Description>
+      <Value>z</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:22w1">
+      <Description>GeneralDescription</Description>
+      <Value>Exposure: 10 ms
+Binning: 4
+Offset: 0,0
+Digitizer: not implemented
+Gain: 0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:23w1">
+      <Description>ScanAngle</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:24w1">
+      <Description>ScanStageDirectionXInvert</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:25w1">
+      <Description>ScanStageDirectionYInvert</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <MapAnnotation ID="EventMarksList">
+      <Description>List of Event Marks</Description>
+      <Value />
+    </MapAnnotation>
+    <TagAnnotation ID="Annotation:1w2">
+      <Description>Look up table type</Description>
+      <Value>4</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:3w2">
+      <Description>XOffset</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:4w2">
+      <Description>YOffset</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TimestampAnnotation ID="Annotation:2w2">
+      <Description>ModifyDate</Description>
+      <Value>2026-06-24T09:45:51.7686929+02:00</Value>
+    </TimestampAnnotation>
+    <TagAnnotation ID="Annotation:5w2">
+      <Description>ImageRegionX</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:6w2">
+      <Description>ImageRegionY</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:7w2">
+      <Description>ImageRegionWidth</Description>
+      <Value>512</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:8w2">
+      <Description>ImageRegionHeight</Description>
+      <Value>512</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:10w2">
+      <Description>CameraChipWidth</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:9w2">
+      <Description>CameraChipHeight</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:11w2">
+      <Description>CameraName</Description>
+      <Value>Cam1</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:12w2">
+      <Description>CameraSettingFlipX</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:13w2">
+      <Description>CameraSettingFlipY</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:14w2">
+      <Description>CameraSettingRotate</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:15w2">
+      <Description>CameraSettingModeIndex</Description>
+      <Value>-1</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:16w2">
+      <Description>CameraSettingDigitizerIndex</Description>
+      <Value>1</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:17w2">
+      <Description>CameraSettingGainIndex</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:19w2">
+      <Description>ScanOverlap</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:18w2">
+      <Description>UniversalData</Description>
+      <Value />
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:21w2">
+      <Description>AcquisitionSettings</Description>
+      <Value>AWEZ,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBwEAAAAAAQAAACcAAAAEHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAIAAAAJAwAAAAkEAAAACQUAAAAJBgAAAAkHAAAACQgAAAAJCQAAAAkKAAAACQsAAAAJDAAAAAkNAAAACQ4AAAAJDwAAAAkQAAAACREAAAAJEgAAAAkTAAAACRQAAAAJFQAAAAkWAAAACRcAAAAJGAAAAAkZAAAACRoAAAAJGwAAAAkcAAAACR0AAAAJHgAAAAkfAAAACSAAAAAJIQAAAAkiAAAACSMAAAAJJAAAAAklAAAACSYAAAAJJwAAAAkoAAAACSkAAAAMKgAAAENEZXZpY2VUb29scywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQMAAAAeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50CgAAAAVzdGF0ZQ9yZW1lbWJlcmVkU3RhdGUGYWN0aXZlB2VuYWJsZWQFdmFsaWQSRGV2aWNlSGFyZHdhcmVUeXBlBFR5cGUKRGV2aWNlTmFtZQ1Db21wb25lbnROYW1lBVZhbGlkAAAAAAABBAEBAAUFAQEBHFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUqAAAAAQIAAAABMQEwAAAABisAAAAYWmVpc3MgTVRCMjAwNCBNaWNyb3Njb3BlBdT///8cVmlzaVZpZXcuRGV2aWNlQ29tcG9uZW50VHlwZQEAAAAHdmFsdWVfXwAIKgAAAAAAAAAGLQAAAAVaZWlzcwYuAAAACVJMU2h1dHRlcgEBBAAAAAMAAAABMAEwAAAACSsAAAAB0P///9T///8BAAAACS0AAAAGMgAAABBSZWZsZWN0b3JDaGFuZ2VyAQEFAAAAAwAAAAEwATAAAAAJKwAAAAHM////1P///wEAAAAJLQAAAAY2AAAAGENvbmRlbnNlckNvbnRyYXN0Q2hhbmdlcgEBBgAAAAMAAAABMAEwAAAACSsAAAAByP///9T///8BAAAACS0AAAAGOgAAABlDb25kZW5zZXJGcm9udExlbnNDaGFuZ2VyAQEHAAAAAwAAAAMxMDABMAAAAAkrAAAAAcT////U////AgAAAAktAAAABj4AAAAOVExBcGVydHVyZVN0b3ABAQgAAAADAAAAATEBMAAAAAY/AAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wBwP///9T///8AAAAABkEAAAAGVmlydGV4BkIAAAALTGFzZXI0MDUgQTABAQkAAAADAAAAATEBMAAAAAk/AAAAAbz////U////AAAAAAlBAAAABkYAAAALTGFzZXI0ODggQTEBAQoAAAADAAAAATEBMAAAAAk/AAAAAbj////U////AAAAAAlBAAAABkoAAAALTGFzZXI1NjEgQTIBAQsAAAADAAAAATEBMAAAAAk/AAAAAbT////U////AAAAAAlBAAAABk4AAAALTGFzZXI2NDAgQTMBAQwAAAADAAAAATEBMAAAAAk/AAAAAbD////U////AAAAAAlBAAAABlIAAAAML0ZSQVBDdHJsIEIyAQENAAAAAwAAAAEwATAAAAAJPwAAAAGs////1P///wAAAAAJQQAAAAZWAAAACi9VbmxvY2sgQjQBAQ4AAAADAAAAATEBMAAAAAk/AAAAAaj////U////AAAAAAlBAAAABloAAAANU2h1dHRlciBwVDEwMAEBDwAAAAMAAAABMQEwAAAACT8AAAABpP///9T///8AAAAACUEAAAAGXgAAAA1TaHV0dGVyIHBFMzAwAQEQAAAAAwAAAAExATAAAAAJPwAAAAGg////1P///wAAAAAJQQAAAAZiAAAACVNodXR0ZXJBNAEBEQAAAAMAAAABMQEwAAAACT8AAAABnP///9T///8AAAAACUEAAAAGZgAAAAlTaHV0dGVyQTUBARIAAAADAAAAAzEwMAEwAAAABmcAAAATQ29oZXJlbnQgT2JpcyBMYXNlcgGY////1P///wIAAAAGaQAAAAdPYmlzNDA1BmoAAAAITGFzZXI0MDUBARMAAAADAAAAAjQyATAAAAAGawAAABNDb2hlcmVudCBPYmlzIExhc2VyAZT////U////AgAAAAZtAAAAB09iaXM0ODgGbgAAAAhMYXNlcjQ4OAEBFAAAAAMAAAADMTAwATAAAAAGbwAAABNDb2hlcmVudCBPYmlzIExhc2VyAZD////U////AgAAAAZxAAAAB09iaXM1NjEGcgAAAAhMYXNlcjU2MQEBFQAAAAMAAAADMTAwATAAAAAGcwAAABNDb2hlcmVudCBPYmlzIExhc2VyAYz////U////AgAAAAZ1AAAAB09iaXM2NDAGdgAAAAhMYXNlcjY0MAEBFgAAAAMAAAABNgEwAAAABncAAAAUQ29vbExFRCBQcmVjaXNFeGNpdGUBiP///9T///8BAAAABnkAAAAMUHJlY2lzRXhjaXRlBnoAAAARcEUzMDAgTEVEIENoYW5nZXIBARcAAAADAAAAATEBMAAAAAl3AAAAAYT////U////AAAAAAl5AAAABn4AAAAHU2h1dHRlcgEBGAAAAAMAAAACNTABMAAAAAl3AAAAAYD////U////AgAAAAl5AAAABoIAAAAScEUzMDAgVVYgSW50ZW5zaXR5AQEZAAAAAwAAAAI1MAEwAAAACXcAAAABfP///9T///8CAAAACXkAAAAGhgAAABRwRTMwMCBCbHVlIEludGVuc2l0eQEBGgAAAAMAAAACNTABMAAAAAl3AAAAAXj////U////AgAAAAl5AAAABooAAAAVcEUzMDAgR3JlZW4gSW50ZW5zaXR5AQEbAAAAAwAAAAEwATAAAAAJdwAAAAF0////1P///wIAAAAJeQAAAAaOAAAAEEQgLS0tLSBJbnRlbnNpdHkBARwAAAADAAAAATABMAAAAAaPAAAAEVlva29nYXdhIENTVTIyL1gxAXD////U////AAAAAAaRAAAAA0NTVQaSAAAAB1NodXR0ZXIBAR0AAAADAAAAATEBMAAAAAmPAAAAAWz////U////AQAAAAmRAAAABpYAAAALRGlzayBNb3Rpb24BAR4AAAADAAAABDQwMDABMAAAAAmPAAAAAWj////U////AgAAAAmRAAAABpoAAAAOUm90YXRpb24gU3BlZWQBAR8AAAADAAAAATABMAAAAAmPAAAAAWT////U////AQAAAAmRAAAABp4AAAAPRGljaHJvaWMgRmlsdGVyAQEgAAAAAwAAAAE1ATAAAAAJjwAAAAFg////1P///wEAAAAJkQAAAAaiAAAADUZpbHRlcldoZWVsIDEBASEAAAADAAAAATEBMAAAAAmPAAAAAVz////U////AQAAAAmRAAAABqYAAAANRmlsdGVyV2hlZWwgMgEBIgAAAAMAAAABMAEwAAAACY8AAAABWP///9T///8BAAAACZEAAAAGqgAAAAtDYW1lcmEgUG9ydAEBIwAAAAMAAAABMQEwAAAACY8AAAABVP///9T///8BAAAACZEAAAAGrgAAAARQYXRoAQEkAAAAAwAAAAExATAAAAAGrwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQFQ////1P///wAAAAAGsQAAAA5QcmVjaXNFeGNpdGUtMgayAAAAB1NodXR0ZXIBASUAAAADAAAAAjE0ATAAAAAJrwAAAAFM////1P///wEAAAAJsQAAAAa2AAAAC0xFRCBDaGFuZ2VyAQEmAAAAAwAAAAEwATAAAAAJrwAAAAFI////1P///wIAAAAJsQAAAAa6AAAAEUEgNDAwbm0gSW50ZW5zaXR5AQEnAAAAAwAAAAEwATAAAAAJrwAAAAFE////1P///wIAAAAJsQAAAAa+AAAAEUIgNDkwbm0gSW50ZW5zaXR5AQEoAAAAAwAAAAEwATAAAAAJrwAAAAFA////1P///wIAAAAJsQAAAAbCAAAAEUMgNTY1bm0gSW50ZW5zaXR5AQEpAAAAAwAAAAEwATAAAAAJrwAAAAE8////1P///wIAAAAJsQAAAAbGAAAAEUQgNjM1bm0gSW50ZW5zaXR5AQs=,AS_AAEAAAD/////AQAAAAAAAAAMAgAAAENBY3F1aXNpdGlvbiwgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsDAMAAABRU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhDAQAAAA9U3RhZ2UsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAG1Zpc2lWaWV3LkFjcXVpc2l0aW9uc2V0dGluZ1YAAAAJVmVyc2lvbklEE19OdW1iZXJPZldhdmVsZW5ndGgcX051bWJlck9mU3BsaXRWaWV3V2F2ZWxlbmd0aBFDdXJyZW50V2F2ZWxlbmd0aBJXYXZlbGVuZ3RoU2V0dGluZ3MUSWxsdW1pbmF0aW9uU2V0dGluZ3MVVGltZUludGVydmFsVW5pdEluZGV4EUR1cmF0aW9uVW5pdEluZGV4C0NhbWVyYUluZGV4DFRpbWVJbnRlcnZhbAhEdXJhdGlvbgdCaW5uaW5nD1BpeGVsU2hpZnRMZXZlbAdMaXZlQmluCVRpbWVQb2ludA1DYW1lcmFUcmlnZ2VyEUNhbWVyYVN5bmNocm9uaXplD0xpdmVTeW5jaHJvbml6ZQ9UaW1lbGFwc2VTdHJlYW0MWlBsYW5lU3RyZWFtEFdhdmVsZW5ndGhTdHJlYW0QU2FtZUV4cG9zdXJlRmxhZxVTYW1lRXhwb3N1cmVVbml0SW5kZXgMU2FtZUV4cG9zdXJlDVNhbWVFTUNDREdhaW4GUmVnaW9uCkZ1bGxSZWdpb24PVGltZWxhcHNlU2VyaWVzEFdhdmVsZW5ndGhTZXJpZXMMWlBsYW5lU2VyaWVzD0lzQ2VudGVyZWRSYW5nZQ9Jc0ZvY3VzRWRpdE1vZGULU3RhZ2VTZXJpZXMNU3RhZ2VTZXF1ZW5jZRdTdGFnZVNwZWNpbWVuU2V0dGxlVGltZQ5DZW50ZXJlZFpSYW5nZQxUb3BaUmVsYXRpdmUPQm90dG9tWlJlbGF0aXZlCVpTdGVwU2l6ZQ5OdW1iZXJPZlpTdGVwcwpGaWxlU2F2aW5nE0ZpbGVTYXZpbmdEaXJlY3RvcnkSRmlsZVNhdmluZ0Jhc2VOYW1lEkZvcmNlU2VwYXJhdGVGaWxlcw1TZXBhcmF0ZUZpbGVzClNjYWxlUmFuZ2UPQXV0b0ZvY3VzQWN0aXZlEUF1dG9Gb2N1c0ludGVydmFsFEF1dG9FeHBvc3VyZUludGVydmFsGUF1dG9Gb2N1c0lsbHVtaW5hdGlvbk5hbWUOQXV0b0ZvY3VzUmFuZ2URQXV0b0ZvY3VzQWNjdXJhY3kYQXV0b0ZvY3VzTWF4aW11bVN0ZXBTaXplHUF1dG9Gb2N1c0ZpbmFsQ29ycmVjdGlvblN0ZXBzEUF1dG9Gb2N1c0V4cG9zdXJlEEF1dG9Gb2N1c0Jpbm5pbmcSQXV0b0ZvY3VzRU1DQ0RHYWluDUF1dG9Gb2N1c0Z1bGwPQXV0b0ZvY3VzUmVnaW9uG0F1dG9Gb2N1c0JhY2tsYXNoQ29ycmVjdGlvbgtIV0F1dG9Gb2N1cxhIV0F1dG9Gb2N1c1VzZUNvbnRpbnVvdXMaSFdBdXRvRm9jdXNEdXJpbmdTdGFnZU1vdmUdSFdBdXRvRm9jdXNEdXJpbmdUaW1lSW50ZXJ2YWwWSFdBdXRvRm9jdXNEdXJpbmdQYXVzZRtIV0F1dG9Gb2N1c01pbmltdW1UaW1lSW5TZWMVVXNlSFdBdXRvRm9jdXNPZmZzZXRzFEZvcmNlU2xpZGVyQ29sb3JNb2RlEFNhbWVBdXRvRXhwb3N1cmUWU2FtZUF1dG9FeHBvc3VyZVRhcmdldAxVc2VTcGxpdFZpZXcNVGltZWxhcHNlTGl2ZRZUaW1sYXBzZUxpdmVXaW5kb3dWaWV3HFRpbWVsYXBzZUxpdmVXYXZlbGVuZ3RoSW5kZXgdVGltZWxhcHNlTGl2ZUlsbHVtaW5hdGlvbk5hbWUKRnJhcEFjdGl2ZQxGcmFwUHJlQ291bnQZU3RvcEFjcXVpc2l0aW9uRHVyaW5nRnJhcBRGcmFwSWxsdW1pbmF0aW9uTmFtZQpGcmFwQ3ljbGVzEkZyYXBFdmVyeVRpbWVQb2ludA1TdGFnZVJlbGF0aXZlEEN1cnJlbnRBc3NheUZpbGUaQ3VycmVudEFzc2F5RmlsZU91dHB1dFR5cGUZTWF4aW11bU51bWJlck9mVGltZXBvaW50cxFGcmFwTGluZVRoaWNr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LldhdmVsZW5ndGhTZXR0aW5nJAAAAAROYW1lEUlsbHVtaW5hdGlvbkluZGV4GElsbHVtaW5hdGlvblNldHRpbmdJbmRleBJXYXZlbGVuZ3RoRmlsZU5hbWUaU2NhblNsaWVkZU92ZXJWaWV3RmlsZU5hbWUYQWNxdWlyZVdpbmRvd05lZWRzVXBkYXRlG1NjYW5TbGlkZU92ZXJWaWV3V2luZG93VmlldxZBY3F1aXJlRmlsZU5lZWRzQ2hhbmdlBUZpcnN0Ek92ZXJXcml0ZUxhc3RGcmFtZQlBdXRvU2NhbGUITG93U2NhbGUJSGlnaFNjYWxlFExvd0hpc3RvZ3JhbW1QZXJjZW50FUhpZ2hIaXN0b2dyYW1tUGVyY2VudA9TYXR1cmF0aW9uQ29sb3IOU2hvd1NhdHVyYXRpb24PU2F0dXJhdGlvbkxldmVsBUdhbW1hDERpc3BsYXlSYW5nZQpXaW5kb3dWaWV3DFpQbGFuZVNlcmllcwlWaWV3VmFsaWQSRGlzcGxheUZpbGVDaGFuZ2VkEVNwbGl0Vmlld0xhc3RQYXJ0ElNwbGl0Vmlld0ZpcnN0UGFydAxBY3RpdmUzRE1vZGUiU3BsaXRWaWV3TnVtYmVyT2ZTaW11bHRhbmVvdXNQYXJ0cxlBY3F1aXJlWFlTY2FsZUJhclBhcmFtdGVyGEFjcXVpcmVUaW1lU3RhbXBQYXJhbXRlchJSZWFsdGltZUNvcnJlY3Rpb24cUmVhbHRpbWVQcm9jZXNzaW5nUHJvcGVydGllcx1XYXZlbGVuZ3RoRW5hYmxlZE1vZHVsb0ZhY3Rvch1XYXZlbGVuZ3RoRW5hYmxlZE1vZHVsb09mZnNldBZVc2VGbGF0RmllbGRDb3JyZWN0aW9uGkFiZXJyYXRpb25Db3JyZWN0aW9uT2Zmc2V0AQAAAQEABAAAAAAAAAAABAAAAAQEAAAAAAAAAAQEAAQAAAAACAgBGFN5c3RlbS5EcmF3aW5nLlJlY3RhbmdsZQMAAAABAQEBCAgFBRRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABCAUjVmlzaVZpZXcuRGlzcGxheUR5bmFtaWNSYW5nZUluVG9vbHN4AAAAGFN5c3RlbS5EcmF3aW5nLlJlY3RhbmdsZQMAAAABAQEBAQEIHFZpc2lWaWV3LlhZU2NhbGVCYXJQYXJhbWV0ZXJ5AAAAG1Zpc2lWaWV3LlRpbWVTdGFtcFBhcmFtZXRlcnkAAAABNVZpc2lWaWV3LlByb2Nlc3NpbmdUb29scytSZWFsdGltZVByb2Nlc3NpbmdQcm9wZXJ0aWVzegAAAAgIAQUCAAAABnsAAAAUMDpDb25mNDg4QnJpZ2h0ZmllbGQWAAAAFAAAAAoKAAGE////+f///wAAAAAAAAAAAAAAAAAAAAAAAQABAAAAAPAPAAABMAEwBYP///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xvcgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAAjQABAAD+/wAAATEFgv///yNWaXNpVmlldy5EaXNwbGF5RHluYW1pY1JhbmdlSW5Ub29scwEAAAAHdmFsdWVfXwAIeAAAAAAAAAABgf////n///8pAAAAqAEAAAMBAAADAQAAAQEAAQEAAQAAAAWA////HFZpc2lWaWV3LlhZU2NhbGVCYXJQYXJhbWV0ZXIWAAAAB1Zpc2libGUMTGFiZWxWaXNpYmxlCk1vbm9jaHJvbWUOQmFyQm9yZGVyQ29sb3IYQmFyQm9yZGVyTW9ub2Nocm9tZUNvbG9yB0ZpbGxCYXIRRmlsbEJhck1vbm9jaHJvbWUMQmFyRmlsbENvbG9yFkJhckZpbGxNb25vY2hyb21lQ29sb3IKTGFibGVDb2xvchRMYWJsZU1vbm9jaHJvbWVDb2xvchRFcmFzZUxhYmxlQmFja2dyb3VuZx5FcmFzZUxhYmxlTW9ub2Nocm9tZUJhY2tncm91bmcUTGFiZWxCYWNrZ3JvdW5kQ29sb3IeTGFiZWxCYWNrZ3JvdW5kTW9ub2Nocm9tZUNvbG9yDUxhYmVsRm9udE5hbWUOTGFiZWxGb250U3l0bGUJQmFyTGVuZ3RoDUJhclNpemVIZWlnaHQMQmFyU2l6ZVdpZHRoElJlZmVyZW5jZVBvc2l0aW9uWRJSZWZlcmVuY2VQb3NpdGlvblgAAAAEBAAABAQEBAAABAQBBAAAAAAAAQEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACxWaXNpVmlldy5YWVNjYWxlQmFyUGFyYW1ldGVyK01vbm9jaHJvbWVDb2xvcnkAAAABARRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAsVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3J5AAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACxWaXNpVmlldy5YWVNjYWxlQmFyUGFyYW1ldGVyK01vbm9jaHJvbWVDb2xvcnkAAAABARRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAsVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3J5AAAAGFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQMAAAAICAgICHkAAAAAAQABf////4P///8KAAAAAAAAAACNAAEABX7///8sVmlzaVZpZXcuWFlTY2FsZUJhclBhcmFtZXRlcitNb25vY2hyb21lQ29sb3IBAAAAB3ZhbHVlX18ACHkAAAAAAAAAAQEBff///4P///8KAAAAAAAAAAAjAAEAAXz///9+////AQAAAAF7////g////woAAAAAAAAAAI0AAQABev///37///8AAAAAAAABef///4P///8KAAAAAAAAAAAjAAEAAXj///9+////AQAAAAaJAAAAAAV2////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAABkAAAACgAAAGQAAAAeAAAACgAAAAV1////G1Zpc2lWaWV3LlRpbWVTdGFtcFBhcmFtZXRlcg8AAAAHVmlzaWJsZQpNb25vY2hyb21lCkxhYmxlQ29sb3IUTGFibGVNb25vY2hyb21lQ29sb3IURXJhc2VMYWJsZUJhY2tncm91bmceRXJhc2VMYWJsZU1vbm9jaHJvbWVCYWNrZ3JvdW5nFExhYmVsQmFja2dyb3VuZENvbG9yHkxhYmVsQmFja2dyb3VuZE1vbm9jaHJvbWVDb2xvcg1MYWJlbEZvbnROYW1lDkxhYmVsRm9udFN5dGxlElJlZmVyZW5jZVBvc2l0aW9uWRJSZWZlcmVuY2VQb3NpdGlvblgLTGFibGVIZWlnaHQVTnVtYmVyT2ZEZWNpbWFsRGlnaXRzBkZvcm1hdAAABAQAAAQEAQQAAAAAAQEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACtWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yeQAAAAEBFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAACtWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yeQAAABhTeXN0ZW0uRHJhd2luZy5Gb250U3R5bGUDAAAACAgICHkAAAAAAAF0////g////woAAAAAAAAAAI0AAQAFc////ytWaXNpVmlldy5UaW1lU3RhbXBQYXJhbWV0ZXIrTW9ub2Nocm9tZUNvbG9yAQAAAAd2YWx1ZV9fAAh5AAAAAAAAAAAAAXL///+D////CgAAAAAAAAAAIwABAAFx////c////wEAAAAJiQAAAAFw////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEQAAABAAAAAGkQAAABQxOkNvbmY0ODhCcmlnaHRmaWVsZBYAAAAUAAAACgoAAW7////5////AAAAAAAAAAC8AgAAvAIAAAAAAAFLAAAA0gQAAAQwLjAxBDAuMDEBbf///4P///8KAAAAAAAAAACNAAEAAP4PAAABMQFs////gv///wAAAAABa/////n////5////IAAAAIQDAACEAwAAAQEAAAEAAgAAAAFq////gP///wABAAFp////g////woAAAAAAAAAAI0AAQABaP///37///8AAAAAAQEBZ////4P///8KAAAAAAAAAAAjAAEAAWb///9+////AQAAAAFl////g////woAAAAAAAAAAI0AAQABZP///37///8AAAAAAAABY////4P///8KAAAAAAAAAAAjAAEAAWL///9+////AQAAAAafAAAAFE1pY3Jvc29mdCBTYW5zIFNlcmlmAWD///92////AAAAAGQAAAAKAAAAZAAAAB4AAAAKAAAAAV////91////AAABXv///4P///8KAAAAAAAAAACNAAEAAV3///9z////AAAAAAAAAVz///+D////CgAAAAAAAAAAIwABAAFb////c////wEAAAAJiQAAAAFZ////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEgAAABAAAAAGqAAAABQyOkNvbmZCcmlnaHRmaWVsZDQ4OBcAAAAVAAAACgoAAVf////5////AAAAAAAAAAC8AgAAvAIAAAAAAAEBAAAAiwAAAAQwLjAxBDAuMDEBVv///4P///8KAAAAAAAAAACNAAEAAP4PAAABMQFV////gv///wAAAAABVP////n///+RAwAAJAAAAIQDAACEAwAAAQEAAQAAAgAAAAFT////gP///wABAAFS////g////woAAAAAAAAAAI0AAQABUf///37///8AAAAAAQEBUP///4P///8KAAAAAAAAAAAjAAEAAU////9+////AQAAAAFO////g////woAAAAAAAAAAI0AAQABTf///37///8AAAAAAAABTP///4P///8KAAAAAAAAAAAjAAEAAUv///9+////AQAAAAmJAAAAAUn///92////AAAAAGQAAAAKAAAAZAAAAB4AAAAKAAAAAUj///91////AAABR////4P///8KAAAAAAAAAACNAAEAAUb///9z////AAAAAAAAAUX///+D////CgAAAAAAAAAAIwABAAFE////c////wEAAAAJiQAAAAFD////dv///wAAAAAAAAAAZAAAAAwAAAADAAAACgAKAQAAAAAAAAAAATABEwAAABAAAAAGvgAAAAkzOkNvbmY0ODgBAAAAAwAAAAoKAAFB////+f///wAAAAAAAAAAAAAAAAAAAAAAAAABOwAAAMIDAAAEMC4wMQQwLjAxAUD///+D////CgAAAAAAAAAAjQABAAD+/wAAATEBP////4L///8AAAAAAT7////5////JgQAAEEAAADMAgAAzAIAAAEBAAEBAAEAAAABPf///4D///8AAQABPP///4P///8KAAAAAAAAAACNAAEAATv///9+////AAAAAAEBATr///+D////CgAAAAAAAAAAIwABAAE5////fv///wEAAAABOP///4P///8KAAAAAAAAAACNAAEAATf///9+////AAAAAAAAATb///+D////CgAAAAAAAAAAIwABAAE1////fv///wEAAAAJiQAAAAEz////dv///wAAAABkAAAACgAAAGQAAAAeAAAACgAAAAEy////df///wAAATH///+D////CgAAAAAAAAAAjQABAAEw////c////wAAAAAAAAEv////g////woAAAAAAAAAACMAAQABLv///3P///8BAAAACYkAAAABLf///3b///8AAAAAAAAAAGQAAAAMAAAAAwAAAAoACgEAAAAAAAAAAAEwARQAAAAQAAAABtQAAAAJNDpDb25mNDA1AAAAAAEAAAAKCgEBK/////n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQEq////g////woAAAAAAAAAAI0AAQAA/g8AAAExASn///+C////AAAAAAEo////+f///zwAAABgAgAAhAIAAIQCAAABAQABAQABAAAAASf///+A////AAEAASb///+D////CgAAAAAAAAAAjQABAAEl////fv///wAAAAABAQEk////g////woAAAAAAAAAACMAAQABI////37///8BAAAAASL///+D////CgAAAAAAAAAAjQABAAEh////fv///wAAAAAAAAEg////g////woAAAAAAAAAACMAAQABH////37///8BAAAACYkAAAABHf///3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABHP///3X///8AAAEb////g////woAAAAAAAAAAI0AAQABGv///3P///8AAAAAAAABGf///4P///8KAAAAAAAAAAAjAAEAARj///9z////AQAAAAmJAAAAARf///92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoBAAAAAAAAAAABMAEVAAAAEAAAAAbqAAAACDU6W05vbmVd/////wAAAAAKCgABFf////n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQEU////g////woAAAAAAAAAAI0AAQAA/g8AAAExARP///+C////AAAAAAES////+f///3oDAADYAQAArQEAAK0BAAABAQABAQABAAAAARH///+A////AAEAARD///+D////CgAAAAAAAAAAjQABAAEP////fv///wAAAAABAQEO////g////woAAAAAAAAAACMAAQABDf///37///8BAAAAAQz///+D////CgAAAAAAAAAAjQABAAEL////fv///wAAAAAAAAEK////g////woAAAAAAAAAACMAAQABCf///37///8BAAAACYkAAAABB////3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABBv///3X///8AAAEF////g////woAAAAAAAAAAI0AAQABBP///3P///8AAAAAAAABA////4P///8KAAAAAAAAAAAjAAEAAQL///9z////AQAAAAmJAAAAAQH///92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEWAAAAEAAAAAYAAQAACDY6W05vbmVd/////wAAAAAKCgAB//7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQH+/v//g////woAAAAAAAAAAI0AAQAA/g8AAAExAf3+//+C////AAAAAAH8/v//+f///zoFAADYAQAArQEAAK0BAAABAQABAQABAAAAAfv+//+A////AAEAAfr+//+D////CgAAAAAAAAAAjQABAAH5/v//fv///wAAAAABAQH4/v//g////woAAAAAAAAAACMAAQAB9/7//37///8BAAAAAfb+//+D////CgAAAAAAAAAAjQABAAH1/v//fv///wAAAAAAAAH0/v//g////woAAAAAAAAAACMAAQAB8/7//37///8BAAAACYkAAAAB8f7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAAB8P7//3X///8AAAHv/v//g////woAAAAAAAAAAI0AAQAB7v7//3P///8AAAAAAAAB7f7//4P///8KAAAAAAAAAAAjAAEAAez+//9z////AQAAAAmJAAAAAev+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEXAAAAEAAAAAYWAQAACDc6W05vbmVd/////wAAAAAKCgAB6f7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAQEAAACLAAAABDAuMDEEMC4wMQHo/v//g////woAAAAAAAAAAI0AAQAA/g8AAAExAef+//+C////AAAAAAHm/v//+f///zcFAADVAQAArQEAAK0BAAABAQABAQABAAAAAeX+//+A////AAEAAeT+//+D////CgAAAAAAAAAAjQABAAHj/v//fv///wAAAAABAQHi/v//g////woAAAAAAAAAACMAAQAB4f7//37///8BAAAAAeD+//+D////CgAAAAAAAAAAjQABAAHf/v//fv///wAAAAAAAAHe/v//g////woAAAAAAAAAACMAAQAB3f7//37///8BAAAACYkAAAAB2/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAAB2v7//3X///8AAAHZ/v//g////woAAAAAAAAAAI0AAQAB2P7//3P///8AAAAAAAAB1/7//4P///8KAAAAAAAAAAAjAAEAAdb+//9z////AQAAAAmJAAAAAdX+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEYAAAAEAAAAAYsAQAACDg6W05vbmVd/////wAAAAAKCgAB0/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAHS/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAdH+//+C////AAAAAAHQ/v//+f///wAAAAAAAAAAAAAAAAAAAAABAAABAQABAAAAAc/+//+A////AAEAAc7+//+D////CgAAAAAAAAAAjQABAAHN/v//fv///wAAAAABAQHM/v//g////woAAAAAAAAAACMAAQABy/7//37///8BAAAAAcr+//+D////CgAAAAAAAAAAjQABAAHJ/v//fv///wAAAAAAAAHI/v//g////woAAAAAAAAAACMAAQABx/7//37///8BAAAACYkAAAABxf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABxP7//3X///8AAAHD/v//g////woAAAAAAAAAAI0AAQABwv7//3P///8AAAAAAAABwf7//4P///8KAAAAAAAAAAAjAAEAAcD+//9z////AQAAAAmJAAAAAb/+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEZAAAAEAAAAAZCAQAACDE6W05vbmVd/////wAAAAAKCgABvf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAG8/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAbv+//+C////AAAAAAG6/v//+f///zIBAABnAQAAqQAAAKkAAAABAQABAQABAAAAAbn+//+A////AAEAAbj+//+D////CgAAAAAAAAAAjQABAAG3/v//fv///wAAAAABAQG2/v//g////woAAAAAAAAAACMAAQABtf7//37///8BAAAAAbT+//+D////CgAAAAAAAAAAjQABAAGz/v//fv///wAAAAAAAAGy/v//g////woAAAAAAAAAACMAAQABsf7//37///8BAAAACYkAAAABr/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABrv7//3X///8AAAGt/v//g////woAAAAAAAAAAI0AAQABrP7//3P///8AAAAAAAABq/7//4P///8KAAAAAAAAAAAjAAEAAar+//9z////AQAAAAmJAAAAAan+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEaAAAAEAAAAAZYAQAACDI6W05vbmVd/////wAAAAAKCgABp/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAGm/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAaX+//+C////AAAAAAGk/v//+f///w0AAABlAQAAqgAAAKoAAAABAQABAQABAAAAAaP+//+A////AAEAAaL+//+D////CgAAAAAAAAAAjQABAAGh/v//fv///wAAAAABAQGg/v//g////woAAAAAAAAAACMAAQABn/7//37///8BAAAAAZ7+//+D////CgAAAAAAAAAAjQABAAGd/v//fv///wAAAAAAAAGc/v//g////woAAAAAAAAAACMAAQABm/7//37///8BAAAACYkAAAABmf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABmP7//3X///8AAAGX/v//g////woAAAAAAAAAAI0AAQABlv7//3P///8AAAAAAAABlf7//4P///8KAAAAAAAAAAAjAAEAAZT+//9z////AQAAAAmJAAAAAZP+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEbAAAAEAAAAAZuAQAACDM6W05vbmVd/////wAAAAAKCgEBkf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAGQ/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAY/+//+C////AAAAAAGO/v//+f///wwAAADDAgAAewAAAHsAAAAAAQABAQABAAAAAY3+//+A////AAEAAYz+//+D////CgAAAAAAAAAAjQABAAGL/v//fv///wAAAAABAQGK/v//g////woAAAAAAAAAACMAAQABif7//37///8BAAAAAYj+//+D////CgAAAAAAAAAAjQABAAGH/v//fv///wAAAAAAAAGG/v//g////woAAAAAAAAAACMAAQABhf7//37///8BAAAACYkAAAABg/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABgv7//3X///8AAAGB/v//g////woAAAAAAAAAAI0AAQABgP7//3P///8AAAAAAAABf/7//4P///8KAAAAAAAAAAAjAAEAAX7+//9z////AQAAAAmJAAAAAX3+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEcAAAAEAAAAAaEAQAACDQ6W05vbmVd/////wAAAAAKCgEBe/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAASoBAAA+AgAAATABMAF6/v//g////woAAAAAAAAAAI0AAQAA/v8AAAExAXn+//+C////AAAAAAF4/v//+f///zwBAADLAgAAygAAAMoAAAAAAQABAAACAAAAAXf+//+A////AAEAAXb+//+D////CgAAAAAAAAAAjQABAAF1/v//fv///wAAAAABAQF0/v//g////woAAAAAAAAAACMAAQABc/7//37///8BAAAAAXL+//+D////CgAAAAAAAAAAjQABAAFx/v//fv///wAAAAAAAAFw/v//g////woAAAAAAAAAACMAAQABb/7//37///8BAAAACYkAAAABbf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABbP7//3X///8AAAFr/v//g////woAAAAAAAAAAI0AAQABav7//3P///8AAAAAAAABaf7//4P///8KAAAAAAAAAAAjAAEAAWj+//9z////AQAAAAmJAAAAAWf+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEdAAAAEAAAAAaaAQAACDU6W05vbmVd/////wAAAAAKCgABZf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAFk/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAWP+//+C////AAAAAAFi/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWH+//+A////AAEAAWD+//+D////CgAAAAAAAAAAjQABAAFf/v//fv///wAAAAABAQFe/v//g////woAAAAAAAAAACMAAQABXf7//37///8BAAAAAVz+//+D////CgAAAAAAAAAAjQABAAFb/v//fv///wAAAAAAAAFa/v//g////woAAAAAAAAAACMAAQABWf7//37///8BAAAACYkAAAABV/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABVv7//3X///8AAAFV/v//g////woAAAAAAAAAAI0AAQABVP7//3P///8AAAAAAAABU/7//4P///8KAAAAAAAAAAAjAAEAAVL+//9z////AQAAAAmJAAAAAVH+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEeAAAAEAAAAAawAQAACDY6W05vbmVd/////wAAAAAKCgABT/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAFO/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwAU3+//+C////AAAAAAFM/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUv+//+A////AAEAAUr+//+D////CgAAAAAAAAAAjQABAAFJ/v//fv///wAAAAABAQFI/v//g////woAAAAAAAAAACMAAQABR/7//37///8BAAAAAUb+//+D////CgAAAAAAAAAAjQABAAFF/v//fv///wAAAAAAAAFE/v//g////woAAAAAAAAAACMAAQABQ/7//37///8BAAAACYkAAAABQf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABQP7//3X///8AAAE//v//g////woAAAAAAAAAAI0AAQABPv7//3P///8AAAAAAAABPf7//4P///8KAAAAAAAAAAAjAAEAATz+//9z////AQAAAAmJAAAAATv+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEfAAAAEAAAAAbGAQAACDc6W05vbmVd/////wAAAAAKCgABOf7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAE4/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwATf+//+C////AAAAAAE2/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATX+//+A////AAEAATT+//+D////CgAAAAAAAAAAjQABAAEz/v//fv///wAAAAABAQEy/v//g////woAAAAAAAAAACMAAQABMf7//37///8BAAAAATD+//+D////CgAAAAAAAAAAjQABAAEv/v//fv///wAAAAAAAAEu/v//g////woAAAAAAAAAACMAAQABLf7//37///8BAAAACYkAAAABK/7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABKv7//3X///8AAAEp/v//g////woAAAAAAAAAAI0AAQABKP7//3P///8AAAAAAAABJ/7//4P///8KAAAAAAAAAAAjAAEAASb+//9z////AQAAAAmJAAAAASX+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAEgAAAAEAAAAAbcAQAACDg6W05vbmVd/////wAAAAAKCgABI/7///n///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATABMAEi/v//g////woAAAAAAAAAAI0AAQAA/v8AAAEwASH+//+C////AAAAAAEg/v//+f///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR/+//+A////AAEAAR7+//+D////CgAAAAAAAAAAjQABAAEd/v//fv///wAAAAABAQEc/v//g////woAAAAAAAAAACMAAQABG/7//37///8BAAAAARr+//+D////CgAAAAAAAAAAjQABAAEZ/v//fv///wAAAAAAAAEY/v//g////woAAAAAAAAAACMAAQABF/7//37///8BAAAACYkAAAABFf7//3b///8AAAAAZAAAAAoAAABkAAAAHgAAAAoAAAABFP7//3X///8AAAET/v//g////woAAAAAAAAAAI0AAQABEv7//3P///8AAAAAAAABEf7//4P///8KAAAAAAAAAAAjAAEAARD+//9z////AQAAAAmJAAAAAQ/+//92////AAAAAAAAAABkAAAADAAAAAMAAAAKAAoAAAAAAAAAAAABMAUhAAAAHFZpc2lWaWV3LklsbHVtaW5hdGlvblNldHRpbmcHAAAABE5hbWURRXhwb3N1cmVVbml0SW5k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AAAAZAAAAGQAAAABADIAAAABZgAAACEAAAAGNwIAAAlDb25mVHJhbnMAAAAAMgAAAGQAAAABADIAAAABZwAAACEAAAAGOAIAAAlEYXJrRnJhbWUAAAAAZAAAAGQAAAABADIAAAABaAAAACEAAAAGOQIAAA1Db25mNDg4dHJpcGxlAAAAAGQAAABkAAAAAQAyAAAAAWkAAAAhAAAABjoCAAANQ29uZjU2MXRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAFqAAAAIQAAAAY7AgAAEENvbmY0MDUtTGFzZXIxMDAAAAAAZAAAAGQAAAABADIAAAABawAAACEAAAAGPAIAABBDb25mNDg4LUxhc2VyMTAwAAAAAGQAAABkAAAAAQAyAAAAAWwAAAAhAAAABj0CAAAQQ29uZjU2MS1MYXNlcjEwMAAAAABkAAAAZAAAAAEAMgAAAAFtAAAAIQAAAAY+AgAAEENvbmY2NDAtTGFzZXIxMDAAAAAACgAAAGQAAAABADIAAAABbgAAACEAAAAGPwIAAAtDb25mNDA1Y2FtMgAAAABkAAAAZAAAAAEAMgAAAAFvAAAAIQAAAAZAAgAAEkNvbmZCcmlnaHRmaWVsZC01eAAAAABkAAAAZAAAAAEAMgAAAAFwAAAAIQAAAAZBAgAAFE9jdWxhckJyaWdodGZpZWxkLTV4AAAAAGQAAABkAAAAAQAyAAAAAXEAAAAhAAAABkICAAANRElDSUlJLXRyaXBsZQAAAABkAAAAZAAAAAEAMgAAAAFyAAAAIQAAAAZDAgAAFENvbmY0ODh0cmlwbGUtZm9yRElDAAAAAGQAAABkAAAAAQAyAAAAAXMAAAAhAAAABkQCAAANT2N1bGFyR0ZQLVJGUAAAAABkAAAAZAAAAAEAMgAAAAF0AAAAIQAAAAZFAgAAFENvbmY1NjEtd2l0aFNJTUJGNDg4AAAAABQAAABkAAAAAQAyAAAAAXUAAAAhAAAABkYCAAALQnJpZ2h0ZmllbGQAAAAACgAAAGQAAAABADIAAAABdgAAACEAAAAGRwIAABVDb25mQnJpZ2h0ZmllbGQtTm90NXgAAAAACgAAAGQAAAABADIAAAABdwAAACEAAAAGSAIAABlCcmlnaHRmaWVsZFRyaXBsZURpY2hyb2ljAAAAAAUAAABkAAAAAQAyAAAACw==,,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAaVmlzaVZpZXcuSWxsdW1pbmF0aW9uRW50cnkMAAAABE5hbWUKV2F2ZWxlbmd0aApDb21wb25lbnRzElNwbGl0Vmlld0FyZWFJbmRleAtDYW1lcmFJbmRleANUYWcFT3duZXIHSXNBZG1pbghEZW55UmVhZAlEZW55V3JpdGUKRGVueURlbGV0ZQxFeFdhdmVsZW5ndGgBAAQAAAEBAAAAAAAIIFZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudFtdAgAAAAgIAQEBAQgCAAAABgMAAAASQ29uZjQ4OEJyaWdodGZpZWxkJgIAAAkEAAAAAAAAAAEAAAAGBQAAABVDb25mX0R1YWxTaW11bHRhbmVvdXMKAAAAAOgBAAAHBAAAAAABAAAAEAAAAAQeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50AgAAAAkGAAAACQcAAAAJCAAAAAkJAAAACQoAAAAJCwAAAAkMAAAACQ0AAAAJDgAAAAkPAAAACRAAAAAJEQAAAAkSAAAACRMAAAAJFAAAAAkVAAAADBYAAABDRGV2aWNlVG9vbHMsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUGAAAAHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAoAAAAFc3RhdGUPcmVtZW1iZXJlZFN0YXRlBmFjdGl2ZQdlbmFibGVkBXZhbGlkEkRldmljZUhhcmR3YXJlVHlwZQRUeXBlCkRldmljZU5hbWUNQ29tcG9uZW50TmFtZQVWYWxpZAAAAAAAAQQBAQAFBQEBARxWaXNpVmlldy5EZXZpY2VDb21wb25lbnRUeXBlFgAAAAECAAAAATEBMAAAAQYXAAAAGFplaXNzIE1UQjIwMDQgTWljcm9zY29wZQXo////HFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUBAAAAB3ZhbHVlX18ACBYAAAAAAAAABhkAAAAFWmVpc3MGGgAAAAlSTFNodXR0ZXIBAQcAAAAGAAAAATABMAAAAQkXAAAAAeT////o////AQAAAAkZAAAABh4AAAAQUmVmbGVjdG9yQ2hhbmdlcgEBCAAAAAYAAAABMAEwAAABCRcAAAAB4P///+j///8BAAAACRkAAAAGIgAAABhDb25kZW5zZXJDb250cmFzdENoYW5nZXIBAQkAAAAGAAAAATEBMAAAAQYjAAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wB3P///+j///8AAAAABiUAAAAGVmlydGV4BiYAAAALTGFzZXI0MDUgQTABAQoAAAAGAAAAATEBMAEAAQkjAAAAAdj////o////AAAAAAklAAAABioAAAALTGFzZXI0ODggQTEBAQsAAAAGAAAAATEBMAAAAQkjAAAAAdT////o////AAAAAAklAAAABi4AAAALTGFzZXI1NjEgQTIBAQwAAAAGAAAAATEBMAAAAQkjAAAAAdD////o////AAAAAAklAAAABjIAAAALTGFzZXI2NDAgQTMBAQ0AAAAGAAAAATABMAAAAQkjAAAAAcz////o////AAAAAAklAAAABjYAAAAKL1VubG9jayBCNAEBDgAAAAYAAAABMQEwAQABCSMAAAAByP///+j///8AAAAACSUAAAAGOgAAAA1TaHV0dGVyIHBUMTAwAQEPAAAABgAAAAExATAAAAEGOwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQHE////6P///wAAAAAGPQAAAAxQcmVjaXNFeGNpdGUGPgAAAAdTaHV0dGVyAQEQAAAABgAAAAEwATAAAAEGPwAAABFZb2tvZ2F3YSBDU1UyMi9YMQHA////6P///wAAAAAGQQAAAANDU1UGQgAAAAdTaHV0dGVyAQERAAAABgAAAAEwATAAAAEJPwAAAAG8////6P///wEAAAAJQQAAAAZGAAAAD0RpY2hyb2ljIEZpbHRlcgEBEgAAAAYAAAABNQEwAAABCT8AAAABuP///+j///8BAAAACUEAAAAGSgAAAA1GaWx0ZXJXaGVlbCAxAQETAAAABgAAAAExATAAAAEJPwAAAAG0////6P///wEAAAAJQQAAAAZOAAAADUZpbHRlcldoZWVsIDIBARQAAAAGAAAAATABMAAAAQk/AAAAAbD////o////AQAAAAlBAAAABlIAAAALQ2FtZXJhIFBvcnQBARUAAAAGAAAAATEBMAAAAQk/AAAAAaz////o////AQAAAAlBAAAABlYAAAAEUGF0aAEL,AAEAAAD/////AQAAAAAAAAAMAgAAAExJbGx1bWluYXRpb25IYW5kbGluZywgVmVyc2lvbj03LjAuMC4xMSwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1udWxsBQEAAAAaVmlzaVZpZXcuSWxsdW1pbmF0aW9uRW50cnkMAAAABE5hbWUKV2F2ZWxlbmd0aApDb21wb25lbnRzElNwbGl0Vmlld0FyZWFJbmRleAtDYW1lcmFJbmRleANUYWcFT3duZXIHSXNBZG1pbghEZW55UmVhZAlEZW55V3JpdGUKRGVueURlbGV0ZQxFeFdhdmVsZW5ndGgBAAQAAAEBAAAAAAAIIFZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudFtdAgAAAAgIAQEBAQgCAAAABgMAAAASQ29uZkJyaWdodGZpZWxkNDg4AAAAAAkEAAAAAAAAAAAAAAAGBQAAABVDb25mX0R1YWxTaW11bHRhbmVvdXMKAAAAAAAAAAAHBAAAAAABAAAAEAAAAAQeVmlzaVZpZXcuSWxsdW1pbmF0aW9uQ29tcG9uZW50AgAAAAkGAAAACQcAAAAJCAAAAAkJAAAACQoAAAAJCwAAAAkMAAAACQ0AAAAJDgAAAAkPAAAACRAAAAAJEQAAAAkSAAAACRMAAAAJFAAAAAkVAAAADBYAAABDRGV2aWNlVG9vbHMsIFZlcnNpb249Ny4wLjAuMTEsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUGAAAAHlZpc2lWaWV3LklsbHVtaW5hdGlvbkNvbXBvbmVudAoAAAAFc3RhdGUPcmVtZW1iZXJlZFN0YXRlBmFjdGl2ZQdlbmFibGVkBXZhbGlkEkRldmljZUhhcmR3YXJlVHlwZQRUeXBlCkRldmljZU5hbWUNQ29tcG9uZW50TmFtZQVWYWxpZAAAAAAAAQQBAQAFBQEBARxWaXNpVmlldy5EZXZpY2VDb21wb25lbnRUeXBlFgAAAAECAAAAATEBMAAAAQYXAAAAGFplaXNzIE1UQjIwMDQgTWljcm9zY29wZQXo////HFZpc2lWaWV3LkRldmljZUNvbXBvbmVudFR5cGUBAAAAB3ZhbHVlX18ACBYAAAAAAAAABhkAAAAFWmVpc3MGGgAAAAlSTFNodXR0ZXIBAQcAAAAGAAAAATABMAAAAQkXAAAAAeT////o////AQAAAAkZAAAABh4AAAAQUmVmbGVjdG9yQ2hhbmdlcgEBCAAAAAYAAAABMAEwAAABCRcAAAAB4P///+j///8BAAAACRkAAAAGIgAAABhDb25kZW5zZXJDb250cmFzdENoYW5nZXIBAQkAAAAGAAAAATEBMAAAAQYjAAAAGVZpcnRleCBFeHBlcmltZW50IENvbnRyb2wB3P///+j///8AAAAABiUAAAAGVmlydGV4BiYAAAALTGFzZXI0MDUgQTABAQoAAAAGAAAAATEBMAEAAQkjAAAAAdj////o////AAAAAAklAAAABioAAAALTGFzZXI0ODggQTEBAQsAAAAGAAAAATEBMAAAAQkjAAAAAdT////o////AAAAAAklAAAABi4AAAALTGFzZXI1NjEgQTIBAQwAAAAGAAAAATEBMAAAAQkjAAAAAdD////o////AAAAAAklAAAABjIAAAALTGFzZXI2NDAgQTMBAQ0AAAAGAAAAATABMAAAAQkjAAAAAcz////o////AAAAAAklAAAABjYAAAAKL1VubG9jayBCNAEBDgAAAAYAAAABMQEwAQABCSMAAAAByP///+j///8AAAAACSUAAAAGOgAAAA1TaHV0dGVyIHBUMTAwAQEPAAAABgAAAAExATAAAAEGOwAAABRDb29sTEVEIFByZWNpc0V4Y2l0ZQHE////6P///wAAAAAGPQAAAAxQcmVjaXNFeGNpdGUGPgAAAAdTaHV0dGVyAQEQAAAABgAAAAEwATAAAAEGPwAAABFZb2tvZ2F3YSBDU1UyMi9YMQHA////6P///wAAAAAGQQAAAANDU1UGQgAAAAdTaHV0dGVyAQERAAAABgAAAAEwATAAAAEJPwAAAAG8////6P///wEAAAAJQQAAAAZGAAAAD0RpY2hyb2ljIEZpbHRlcgEBEgAAAAYAAAABNQEwAAABCT8AAAABuP///+j///8BAAAACUEAAAAGSgAAAA1GaWx0ZXJXaGVlbCAxAQETAAAABgAAAAExATAAAAEJPwAAAAG0////6P///wEAAAAJQQAAAAZOAAAADUZpbHRlcldoZWVsIDIBARQAAAAGAAAAATABMAAAAQk/AAAAAbD////o////AQAAAAlBAAAABlIAAAALQ2FtZXJhIFBvcnQBARUAAAAGAAAAATEBMAAAAQk/AAAAAaz////o////AQAAAAlBAAAABlYAAAAEUGF0aAEL</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:20w2">
+      <Description>DimensionType</Description>
+      <Value>z</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:22w2">
+      <Description>GeneralDescription</Description>
+      <Value>Exposure: 10 ms
+Binning: 4
+Offset: 0,0
+Digitizer: not implemented
+Gain: 0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:23w2">
+      <Description>ScanAngle</Description>
+      <Value>0</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:24w2">
+      <Description>ScanStageDirectionXInvert</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+    <TagAnnotation ID="Annotation:25w2">
+      <Description>ScanStageDirectionYInvert</Description>
+      <Value>False</Value>
+    </TagAnnotation>
+  </StructuredAnnotations>
+  <Image ID="Image:1" Name="20260624_4pos_2simCh_3planes_5time_1_1:6_sg:0">
+    <AcquisitionDate>2026-06-24T09:45:08.1063808+02:00</AcquisitionDate>
+    <ObjectiveSettings ID="Objective:20x" RefractiveIndex="1" />
+    <StageLabel Name="1:6_sg:0" />
+    <Pixels ID="Pixels:0:0" DimensionOrder="XYZCT" Type="uint16" SizeX="512" SizeY="512" SizeZ="3" SizeC="2" SizeT="5" PhysicalSizeX="1.29586947" PhysicalSizeY="1.29586947" PhysicalSizeZ="1" TimeIncrement="10000" TimeIncrementUnit="ms">
+      <Channel ID="Channel:0" Name="Conf488Brightfield" SamplesPerPixel="1" ExcitationWavelength="488" EmissionWavelength="550">
+        <LightSourceSettings ID="LightSource:0:0" Attenuation="0.42" Wavelength="488" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <Channel ID="Channel:1" Name="ConfBrightfield488" SamplesPerPixel="1">
+        <LightSourceSettings ID="LightSource:0:0" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <TiffData PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t1.ome.tif">urn:uuid:a7dd376c-08ca-4d98-936b-9c0dd0bb5f71</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t1.ome.tif">urn:uuid:a7dd376c-08ca-4d98-936b-9c0dd0bb5f71</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t1.ome.tif">urn:uuid:a7dd376c-08ca-4d98-936b-9c0dd0bb5f71</UUID>
+      </TiffData>
+      <TiffData FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t1.ome.tif">urn:uuid:88cab0fb-27f0-42f4-aec7-656c988828c8</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t1.ome.tif">urn:uuid:88cab0fb-27f0-42f4-aec7-656c988828c8</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t1.ome.tif">urn:uuid:88cab0fb-27f0-42f4-aec7-656c988828c8</UUID>
+      </TiffData>
+      <TiffData FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t2.ome.tif">urn:uuid:b1ee3029-a380-48e8-ab33-a20781e2aa2c</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t2.ome.tif">urn:uuid:b1ee3029-a380-48e8-ab33-a20781e2aa2c</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t2.ome.tif">urn:uuid:b1ee3029-a380-48e8-ab33-a20781e2aa2c</UUID>
+      </TiffData>
+      <TiffData FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t2.ome.tif">urn:uuid:40cdf3b0-8291-41be-81b3-33517f4dda0f</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t2.ome.tif">urn:uuid:40cdf3b0-8291-41be-81b3-33517f4dda0f</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t2.ome.tif">urn:uuid:40cdf3b0-8291-41be-81b3-33517f4dda0f</UUID>
+      </TiffData>
+      <TiffData FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t3.ome.tif">urn:uuid:0ee5d859-deb7-4737-b71f-0ee4d2532de5</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t3.ome.tif">urn:uuid:0ee5d859-deb7-4737-b71f-0ee4d2532de5</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t3.ome.tif">urn:uuid:0ee5d859-deb7-4737-b71f-0ee4d2532de5</UUID>
+      </TiffData>
+      <TiffData FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t3.ome.tif">urn:uuid:56d7e4f8-60ae-46aa-b4bb-a75c17c457c6</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t3.ome.tif">urn:uuid:56d7e4f8-60ae-46aa-b4bb-a75c17c457c6</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t3.ome.tif">urn:uuid:56d7e4f8-60ae-46aa-b4bb-a75c17c457c6</UUID>
+      </TiffData>
+      <TiffData FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t4.ome.tif">urn:uuid:37e06d42-1187-46ea-8ce2-9069bcaccfc0</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t4.ome.tif">urn:uuid:37e06d42-1187-46ea-8ce2-9069bcaccfc0</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t4.ome.tif">urn:uuid:37e06d42-1187-46ea-8ce2-9069bcaccfc0</UUID>
+      </TiffData>
+      <TiffData FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t4.ome.tif">urn:uuid:37fe8104-d04c-46ff-87ca-1c08cd37d5ca</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t4.ome.tif">urn:uuid:37fe8104-d04c-46ff-87ca-1c08cd37d5ca</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t4.ome.tif">urn:uuid:37fe8104-d04c-46ff-87ca-1c08cd37d5ca</UUID>
+      </TiffData>
+      <TiffData FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t5.ome.tif">urn:uuid:7d843675-3155-4300-9503-039af7344ba8</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t5.ome.tif">urn:uuid:7d843675-3155-4300-9503-039af7344ba8</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s2_t5.ome.tif">urn:uuid:7d843675-3155-4300-9503-039af7344ba8</UUID>
+      </TiffData>
+      <TiffData FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t5.ome.tif">urn:uuid:5309ec87-d277-48eb-b288-4cfd96889e5e</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t5.ome.tif">urn:uuid:5309ec87-d277-48eb-b288-4cfd96889e5e</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s2_t5.ome.tif">urn:uuid:5309ec87-d277-48eb-b288-4cfd96889e5e</UUID>
+      </TiffData>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="0" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="0.1545772" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="0.3011072" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="0.0108842" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="0.1655113" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="0.3089858" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="0" DeltaT="10.1786938" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="0" DeltaT="10.33416" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="0" DeltaT="10.4836512" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="1" DeltaT="10.1910133" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="1" DeltaT="10.3459988" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="1" DeltaT="10.4928875" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="0" DeltaT="20.257782" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="0" DeltaT="20.3902626" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="0" DeltaT="20.5458584" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="1" DeltaT="20.2480946" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="1" DeltaT="20.4025669" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="1" DeltaT="20.55958" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="0" DeltaT="30.3327675" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="0" DeltaT="30.48892" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="0" DeltaT="30.6422176" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="1" DeltaT="30.3454628" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="1" DeltaT="30.4988422" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="1" DeltaT="30.652668" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="0" DeltaT="40.3899422" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="0" DeltaT="40.5399323" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="0" DeltaT="40.6931763" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="1" DeltaT="40.4025345" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="1" DeltaT="40.5494041" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="1" DeltaT="40.70848" PositionX="-10703.9" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+    </Pixels>
+  </Image>
+  <Image ID="Image:2" Name="20260624_4pos_2simCh_3planes_5time_1_2:7_sg:0">
+    <AcquisitionDate>2026-06-24T09:45:09.3879549+02:00</AcquisitionDate>
+    <ObjectiveSettings ID="Objective:20x" RefractiveIndex="1" />
+    <StageLabel Name="2:7_sg:0" />
+    <Pixels ID="Pixels:0:0" DimensionOrder="XYZCT" Type="uint16" SizeX="512" SizeY="512" SizeZ="3" SizeC="2" SizeT="5" PhysicalSizeX="1.29586947" PhysicalSizeY="1.29586947" PhysicalSizeZ="1" TimeIncrement="10000" TimeIncrementUnit="ms">
+      <Channel ID="Channel:0" Name="Conf488Brightfield" SamplesPerPixel="1" ExcitationWavelength="488" EmissionWavelength="550">
+        <LightSourceSettings ID="LightSource:0:0" Attenuation="0.42" Wavelength="488" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <Channel ID="Channel:1" Name="ConfBrightfield488" SamplesPerPixel="1">
+        <LightSourceSettings ID="LightSource:0:0" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <TiffData PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t1.ome.tif">urn:uuid:b64dc9ca-005e-4d39-b309-1fb347101312</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t1.ome.tif">urn:uuid:b64dc9ca-005e-4d39-b309-1fb347101312</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t1.ome.tif">urn:uuid:b64dc9ca-005e-4d39-b309-1fb347101312</UUID>
+      </TiffData>
+      <TiffData FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t1.ome.tif">urn:uuid:53fab939-2298-485a-bba2-9d46329a41eb</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t1.ome.tif">urn:uuid:53fab939-2298-485a-bba2-9d46329a41eb</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t1.ome.tif">urn:uuid:53fab939-2298-485a-bba2-9d46329a41eb</UUID>
+      </TiffData>
+      <TiffData FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t2.ome.tif">urn:uuid:2fbfd70a-f31c-4dc8-b13a-723660a98c92</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t2.ome.tif">urn:uuid:2fbfd70a-f31c-4dc8-b13a-723660a98c92</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t2.ome.tif">urn:uuid:2fbfd70a-f31c-4dc8-b13a-723660a98c92</UUID>
+      </TiffData>
+      <TiffData FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t2.ome.tif">urn:uuid:0a7c4c39-ecf2-4cee-ac8d-8389ca9646fe</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t2.ome.tif">urn:uuid:0a7c4c39-ecf2-4cee-ac8d-8389ca9646fe</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t2.ome.tif">urn:uuid:0a7c4c39-ecf2-4cee-ac8d-8389ca9646fe</UUID>
+      </TiffData>
+      <TiffData FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t3.ome.tif">urn:uuid:f4ecee2e-e826-4dbb-b5b4-0756162a96b7</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t3.ome.tif">urn:uuid:f4ecee2e-e826-4dbb-b5b4-0756162a96b7</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t3.ome.tif">urn:uuid:f4ecee2e-e826-4dbb-b5b4-0756162a96b7</UUID>
+      </TiffData>
+      <TiffData FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t3.ome.tif">urn:uuid:b307dbfd-376b-4a1f-8d09-014f933c9cd1</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t3.ome.tif">urn:uuid:b307dbfd-376b-4a1f-8d09-014f933c9cd1</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t3.ome.tif">urn:uuid:b307dbfd-376b-4a1f-8d09-014f933c9cd1</UUID>
+      </TiffData>
+      <TiffData FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t4.ome.tif">urn:uuid:5e53a50f-25ac-4da3-a099-edfe02e35d02</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t4.ome.tif">urn:uuid:5e53a50f-25ac-4da3-a099-edfe02e35d02</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t4.ome.tif">urn:uuid:5e53a50f-25ac-4da3-a099-edfe02e35d02</UUID>
+      </TiffData>
+      <TiffData FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t4.ome.tif">urn:uuid:46e38311-7931-4e29-92af-54761da5224c</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t4.ome.tif">urn:uuid:46e38311-7931-4e29-92af-54761da5224c</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t4.ome.tif">urn:uuid:46e38311-7931-4e29-92af-54761da5224c</UUID>
+      </TiffData>
+      <TiffData FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t5.ome.tif">urn:uuid:49f709b1-f968-4fa6-a3c7-96c502dcaba4</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t5.ome.tif">urn:uuid:49f709b1-f968-4fa6-a3c7-96c502dcaba4</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s3_t5.ome.tif">urn:uuid:49f709b1-f968-4fa6-a3c7-96c502dcaba4</UUID>
+      </TiffData>
+      <TiffData FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t5.ome.tif">urn:uuid:5cec9694-2845-481e-b1cb-e63d3fc7cddb</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t5.ome.tif">urn:uuid:5cec9694-2845-481e-b1cb-e63d3fc7cddb</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s3_t5.ome.tif">urn:uuid:5cec9694-2845-481e-b1cb-e63d3fc7cddb</UUID>
+      </TiffData>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="0" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="0.1553064" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="0.3110931" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="0.0112477" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="0.166856" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="0.3220638" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="0" DeltaT="10.2009544" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="0" DeltaT="10.3558407" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="0" DeltaT="10.5053139" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="1" DeltaT="10.2133226" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="1" DeltaT="10.3667383" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="1" DeltaT="10.5170212" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="0" DeltaT="20.2491188" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="0" DeltaT="20.40823" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="0" DeltaT="20.5561428" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="1" DeltaT="20.2648182" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="1" DeltaT="20.42039" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="1" DeltaT="20.5655479" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="0" DeltaT="30.3236351" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="0" DeltaT="30.4786663" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="0" DeltaT="30.6342564" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="1" DeltaT="30.3363075" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="1" DeltaT="30.4895287" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="1" DeltaT="30.6454678" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="0" DeltaT="40.4126968" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="0" DeltaT="40.568325" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="0" DeltaT="40.71507" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="1" DeltaT="40.4253044" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="1" DeltaT="40.5780754" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="1" DeltaT="40.7236137" PositionX="-12261.1" PositionXUnit="µm" PositionY="-2986.8" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+    </Pixels>
+  </Image>
+  <Image ID="Image:3" Name="20260624_4pos_2simCh_3planes_5time_1_3:8_sg:0">
+    <AcquisitionDate>2026-06-24T09:45:10.9525524+02:00</AcquisitionDate>
+    <ObjectiveSettings ID="Objective:20x" RefractiveIndex="1" />
+    <StageLabel Name="3:8_sg:0" />
+    <Pixels ID="Pixels:0:0" DimensionOrder="XYZCT" Type="uint16" SizeX="512" SizeY="512" SizeZ="3" SizeC="2" SizeT="5" PhysicalSizeX="1.29586947" PhysicalSizeY="1.29586947" PhysicalSizeZ="1" TimeIncrement="10000" TimeIncrementUnit="ms">
+      <Channel ID="Channel:0" Name="Conf488Brightfield" SamplesPerPixel="1" ExcitationWavelength="488" EmissionWavelength="550">
+        <LightSourceSettings ID="LightSource:0:0" Attenuation="0.42" Wavelength="488" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <Channel ID="Channel:1" Name="ConfBrightfield488" SamplesPerPixel="1">
+        <LightSourceSettings ID="LightSource:0:0" />
+        <DetectorSettings ID="Detector:0" Binning="4x4" />
+      </Channel>
+      <TiffData PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t1.ome.tif">urn:uuid:7ce1992d-465f-4afa-bf5d-175c05bb74df</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t1.ome.tif">urn:uuid:7ce1992d-465f-4afa-bf5d-175c05bb74df</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t1.ome.tif">urn:uuid:7ce1992d-465f-4afa-bf5d-175c05bb74df</UUID>
+      </TiffData>
+      <TiffData FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t1.ome.tif">urn:uuid:a50ff69f-a65e-46f5-879b-d5dc591c29f4</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t1.ome.tif">urn:uuid:a50ff69f-a65e-46f5-879b-d5dc591c29f4</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t1.ome.tif">urn:uuid:a50ff69f-a65e-46f5-879b-d5dc591c29f4</UUID>
+      </TiffData>
+      <TiffData FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t2.ome.tif">urn:uuid:618dd877-1e60-4121-a07d-37a7b0918a3f</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t2.ome.tif">urn:uuid:618dd877-1e60-4121-a07d-37a7b0918a3f</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t2.ome.tif">urn:uuid:618dd877-1e60-4121-a07d-37a7b0918a3f</UUID>
+      </TiffData>
+      <TiffData FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t2.ome.tif">urn:uuid:aa430a67-d9df-41db-b72b-ce503e7e4440</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t2.ome.tif">urn:uuid:aa430a67-d9df-41db-b72b-ce503e7e4440</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="1" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t2.ome.tif">urn:uuid:aa430a67-d9df-41db-b72b-ce503e7e4440</UUID>
+      </TiffData>
+      <TiffData FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t3.ome.tif">urn:uuid:12cce53d-559b-4345-96a6-20b5be219dac</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t3.ome.tif">urn:uuid:12cce53d-559b-4345-96a6-20b5be219dac</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t3.ome.tif">urn:uuid:12cce53d-559b-4345-96a6-20b5be219dac</UUID>
+      </TiffData>
+      <TiffData FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t3.ome.tif">urn:uuid:1c9df5b0-1deb-48b7-8f58-a694a5d26a43</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t3.ome.tif">urn:uuid:1c9df5b0-1deb-48b7-8f58-a694a5d26a43</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="2" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t3.ome.tif">urn:uuid:1c9df5b0-1deb-48b7-8f58-a694a5d26a43</UUID>
+      </TiffData>
+      <TiffData FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t4.ome.tif">urn:uuid:e3da948a-7ecf-4d88-8433-1fa08593fc7a</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t4.ome.tif">urn:uuid:e3da948a-7ecf-4d88-8433-1fa08593fc7a</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t4.ome.tif">urn:uuid:e3da948a-7ecf-4d88-8433-1fa08593fc7a</UUID>
+      </TiffData>
+      <TiffData FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t4.ome.tif">urn:uuid:0e5d1faa-2573-48b4-a7db-d7ab50ad69a7</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t4.ome.tif">urn:uuid:0e5d1faa-2573-48b4-a7db-d7ab50ad69a7</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="3" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t4.ome.tif">urn:uuid:0e5d1faa-2573-48b4-a7db-d7ab50ad69a7</UUID>
+      </TiffData>
+      <TiffData FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t5.ome.tif">urn:uuid:ed3a11ee-b305-44b2-93a3-5f02b566ec4d</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t5.ome.tif">urn:uuid:ed3a11ee-b305-44b2-93a3-5f02b566ec4d</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w1Conf488Brightfield_s4_t5.ome.tif">urn:uuid:ed3a11ee-b305-44b2-93a3-5f02b566ec4d</UUID>
+      </TiffData>
+      <TiffData FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t5.ome.tif">urn:uuid:f1f6ed93-5961-43e6-ab98-4fa4fa09c88f</UUID>
+      </TiffData>
+      <TiffData IFD="1" FirstZ="1" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t5.ome.tif">urn:uuid:f1f6ed93-5961-43e6-ab98-4fa4fa09c88f</UUID>
+      </TiffData>
+      <TiffData IFD="2" FirstZ="2" FirstT="4" FirstC="1" PlaneCount="1">
+        <UUID FileName="20260624_4pos_2simCh_3planes_5time_1_w2ConfBrightfield488_s4_t5.ome.tif">urn:uuid:f1f6ed93-5961-43e6-ab98-4fa4fa09c88f</UUID>
+      </TiffData>
+      <Plane TheZ="0" TheT="0" TheC="0" DeltaT="0" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="0" DeltaT="0.1477976" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="0" DeltaT="0.2969693" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="0" TheC="1" DeltaT="0.0075951" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="0" TheC="1" DeltaT="0.1545742" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="0" TheC="1" DeltaT="0.3077844" PositionX="-12261.2" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="0" DeltaT="10.2756834" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="0" DeltaT="10.43113" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="0" DeltaT="10.5867729" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="1" TheC="1" DeltaT="10.2882977" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="1" TheC="1" DeltaT="10.4432783" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="1" TheC="1" DeltaT="10.5975914" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="0" DeltaT="20.3053" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="0" DeltaT="20.4583435" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="0" DeltaT="20.60234" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="2" TheC="1" DeltaT="20.3154221" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="2" TheC="1" DeltaT="20.4663868" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="2" TheC="1" DeltaT="20.6081448" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="0" DeltaT="30.3223248" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="0" DeltaT="30.4796371" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="0" DeltaT="30.6290512" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="3" TheC="1" DeltaT="30.3333912" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="3" TheC="1" DeltaT="30.4919548" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="3" TheC="1" DeltaT="30.6415443" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="0" DeltaT="40.515892" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="0" DeltaT="40.6540337" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="0" DeltaT="40.80607" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="0" TheT="4" TheC="1" DeltaT="40.5012665" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="74" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="1" TheT="4" TheC="1" DeltaT="40.66627" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="75" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+      <Plane TheZ="2" TheT="4" TheC="1" DeltaT="40.81614" PositionX="-12261.1" PositionXUnit="µm" PositionY="-1629.1" PositionYUnit="µm" PositionZ="76" PositionZUnit="µm">
+        <AnnotationRef ID="Annotation:DimensionType" />
+      </Plane>
+    </Pixels>
+  </Image>
+</OME>

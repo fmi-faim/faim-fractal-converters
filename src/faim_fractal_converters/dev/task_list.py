@@ -19,6 +19,6 @@ TASK_LIST = [
         category="Conversion",
         tags=[
             "Visiview",
-        ]
+        ],
     )
 ]
