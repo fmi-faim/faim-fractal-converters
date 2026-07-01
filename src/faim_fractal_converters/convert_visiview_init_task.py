@@ -13,7 +13,7 @@ from ome_zarr_converters_tools import (
     tiles_aggregation_pipeline,
 )
 from pathlib import Path
-from .utils import reverse_mapping
+from faim_fractal_converters.utils import reverse_mapping
 
 
 def convert_visiview_init_task(
@@ -104,3 +104,8 @@ def convert_visiview_init_task(
     )
 
     return {"parallelization_list": parallelization_list}
+
+
+if __name__ == "__main__":
+    from fractal_task_tools.task_wrapper import run_fractal_task
+    run_fractal_task(task_function=convert_visiview_init_task, skip_logging_configuration=True)

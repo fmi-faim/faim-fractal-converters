@@ -3,6 +3,7 @@ name = "faim-fractal-converters"
 requires-python = ">= 3.11"
 authors = [{ name = "Jan Eglinger", email = "jan.eglinger@fmi.ch" }]
 dependencies = [
+  "fractal-task-tools>=0.5.0,<0.6",
   "ome-zarr-converters-tools>=0.10.0,<0.11",
   "ome2xarray>=0.7.0,<0.8",
   "loguru>=0.7.3,<0.8"
@@ -11,7 +12,7 @@ dynamic = ["version"]
 
 [dependency-groups]
 dev = [
-  "fractal-task-tools>=0.5.0,<0.6",
+  "hatch>=1.17.0,<2",
   "pytest>=9.1.0,<10",
   "pytest-cov>=7.1.0,<8",
   "ruff>=0.15.17,<0.16"
