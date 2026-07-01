@@ -31,6 +31,7 @@ def convert_visiview_init_task(
     # TODO optionally sanitize metadata
 
     tiles: list[Tile] = []
+    converter_options = ConverterOptions.model_validate(converter_options)
 
     # each image index goes into a separate ome-zarr dataset
     for index, image in enumerate(ome.images):
