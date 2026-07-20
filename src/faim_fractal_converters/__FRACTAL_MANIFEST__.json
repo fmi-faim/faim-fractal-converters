@@ -15,26 +15,29 @@
       "args_schema_non_parallel": {
         "$defs": {
           "AutoTiling": {
+            "additionalProperties": false,
+            "description": "Automatically pick between `Snap to Grid` and `Snap to Corners`.",
             "properties": {
               "mode": {
                 "const": "Auto",
                 "default": "Auto",
-                "description": "Automatically determine if Snap to Grid is possible, otherwise use Snap to Corners.",
+                "description": "Automatically use `Snap to Grid` when the field of view positions\nalign to a regular grid, `Snap to Corners` otherwise.",
                 "title": "Mode",
                 "type": "string"
               },
               "tolerance": {
                 "default": 1,
+                "description": "Maximum misalignment (in pixels) tolerated when checking whether the\nfield of view positions fit a regular grid.",
                 "minimum": 0,
                 "title": "Tiling Tolerance (in pixels)",
                 "type": "number"
               }
             },
-            "title": "AutoTiling",
-            "type": "object",
-            "description": "Missing description for AutoTiling."
+            "title": "Auto",
+            "type": "object"
           },
           "BackendType": {
+            "description": "File format used to store tables (e.g. ROI tables) in the OME-Zarr.",
             "enum": [
               "anndata",
               "json",
@@ -42,8 +45,7 @@
               "parquet"
             ],
             "title": "BackendType",
-            "type": "string",
-            "description": "Missing description for BackendType."
+            "type": "string"
           },
           "ConverterOptions": {
             "additionalProperties": false,
@@ -52,57 +54,54 @@
               "writer_mode": {
                 "$ref": "#/$defs/WriterMode",
                 "default": "By FOV",
-                "description": "Mode for writing data during conversion.\n\n- By Tile: Write data one tile at a time. This consumes less memory, but may be\n  slower.\n- By Tile (Using Dask): Write tiles in parallel using Dask. This is usually faster\n  than writing by tile sequentially, but may consume more memory.\n- By FOV: Write data one field of view at a time. This may the best compromise\n  between speed and memory usage in most cases.\n- By FOV (Using Dask): Write fields of view in parallel using Dask. This is usually\n  faster than writing by FOV sequentially, but may consume more memory.\n- In Memory: Load all data into memory before writing.",
+                "description": "Mode for writing data during conversion.\n\n- `By Tile`: Write data one tile at a time. This consumes less memory, but may be\n  slower.\n- `By Tile (Using Dask)`: Write tiles in parallel using Dask. This is\n  usually faster than writing by tile sequentially, but may consume more\n  memory.\n- `By FOV`: Write data one field of view at a time. Often the best compromise\n  between speed and memory usage in most cases.\n- `By FOV (Using Dask)`: Write fields of view in parallel using Dask.\n  This is usually faster than writing by FOV sequentially, but may consume\n  more memory.\n- `In Memory`: Load all data into memory before writing.",
                 "title": "Writer Mode"
               },
-              "tiling_strategy": {
+              "grouping": {
                 "default": {
-                  "mode": "Auto",
-                  "tolerance": 1.0
+                  "mode": "Mosaic",
+                  "tiling_strategy": {
+                    "mode": "Auto",
+                    "tolerance": 1.0
+                  }
                 },
-                "description": "Tiling strategy to use during conversion.\n\n- Auto: Automatically determine if Snap to Grid is possible, otherwise use Snap to\n  Corners. Accepts an optional tolerance (in pixels) for grid alignment.\n- Snap to Grid: Tile images to fit a regular grid. This is only possible if image\n  positions align to a grid (potentially with overlap). Accepts an optional\n  tolerance (in pixels).\n- Snap to Corners: Tile images to fit a grid defined by the corner positions.\n- Inplace: Write tiles in their original positions without tiling. This may lead to\n  artifacts if microscope stage positions are not precise.\n- No Tiling: Each field of view is written as a single OME-Zarr.",
+                "description": "How fields of view are grouped into output images.\n\n- `Mosaic`: Aggregate all fields of view of an acquisition into one OME-Zarr,\n  arranged by the nested `tiling_strategy`.\n- `Per-FOV`: Write each field of view as its own OME-Zarr image (no mosaic,\n  no tiling strategy).",
                 "discriminator": {
                   "mapping": {
-                    "Auto": "#/$defs/AutoTiling",
-                    "Inplace": "#/$defs/InplaceTiling",
-                    "No Tiling": "#/$defs/NoTiling",
-                    "Snap to Corners": "#/$defs/SnapToCornersTiling",
-                    "Snap to Grid": "#/$defs/SnapToGridTiling"
+                    "Mosaic": "#/$defs/MosaicGrouping",
+                    "Per-FOV": "#/$defs/PerFovGrouping"
                   },
                   "propertyName": "mode"
                 },
                 "oneOf": [
                   {
-                    "$ref": "#/$defs/AutoTiling"
+                    "$ref": "#/$defs/MosaicGrouping"
                   },
                   {
-                    "$ref": "#/$defs/SnapToGridTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/SnapToCornersTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/InplaceTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/NoTiling"
+                    "$ref": "#/$defs/PerFovGrouping"
                   }
                 ],
-                "title": "Tiling Strategy"
+                "title": "Grouping"
               },
               "stage_position_corrections": {
                 "$ref": "#/$defs/StagePositionCorrections",
                 "default": {
-                  "align_xy": false,
-                  "align_z": false,
-                  "align_t": false
+                  "remove_xy_offset": "Global",
+                  "remove_z_offset": "Global",
+                  "remove_t_offset": "Global",
+                  "remove_xy_jitter": true,
+                  "reindex_channels": true
                 },
+                "description": "Stage position correction options.",
                 "title": "Stage Position Corrections"
               },
               "omezarr_options": {
                 "$ref": "#/$defs/OmeZarrOptions",
                 "default": {
-                  "num_levels": 5,
+                  "levels": {
+                    "mode": "Number of Levels",
+                    "num_levels": 5
+                  },
                   "chunks": {
                     "c_chunk": 1,
                     "mode": "Same as FOV",
@@ -111,8 +110,9 @@
                     "z_chunk": 10
                   },
                   "ngff_version": "0.4",
-                  "table_backend": "anndata"
+                  "table_backend": "csv"
                 },
+                "description": "Options specific to OME-Zarr writing.",
                 "title": "OME-Zarr Options"
               },
               "runtime_settings": {
@@ -120,7 +120,7 @@
                 "default": {
                   "use_zarrs_codec": false,
                   "dask_scheduler": {
-                    "type": "Default"
+                    "mode": "Default"
                   },
                   "temp_json_options": {
                     "max_in_memory_bytes": 10485760,
@@ -128,7 +128,7 @@
                     "temp_url": "{zarr_dir}/_tmp_json"
                   }
                 },
-                "description": "Runtime knobs (zarr codec, dask scheduler) applied via a scoped\ncontext manager during conversion.",
+                "description": "Advanced performance settings: parallelism, storage codec, and\ntemporary storage. The defaults are safe for most conversions.",
                 "title": "Runtime Settings"
               }
             },
@@ -137,26 +137,27 @@
           },
           "DefaultScheduler": {
             "additionalProperties": false,
-            "description": "Do not set a Dask scheduler; leave it up to the caller.",
+            "description": "Keep the environment's default parallelism settings unchanged.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Default",
                 "default": "Default",
-                "description": "The dask scheduler will not be modified when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "DefaultScheduler",
+            "title": "Default",
             "type": "object"
           },
           "FixedSizeChunking": {
-            "description": "Chunking strategy with fixed chunk sizes.",
+            "additionalProperties": false,
+            "description": "Store the image in chunks of a fixed size.",
             "properties": {
               "mode": {
                 "const": "Fixed Size",
                 "default": "Fixed Size",
-                "description": "Fixed size chunking.",
+                "description": "How the image is split into storage chunks.",
                 "title": "Mode",
                 "type": "string"
               },
@@ -189,23 +190,24 @@
                 "type": "integer"
               }
             },
-            "title": "FixedSizeChunking",
+            "title": "Fixed Size",
             "type": "object"
           },
           "FovBasedChunking": {
-            "description": "Chunking strategy that matches the field of view.",
+            "additionalProperties": false,
+            "description": "Store the image in chunks sized like the fields of view.",
             "properties": {
               "mode": {
                 "const": "Same as FOV",
                 "default": "Same as FOV",
-                "description": "Chunking based on FOV size.",
+                "description": "How the image is split into storage chunks.",
                 "title": "Mode",
                 "type": "string"
               },
               "xy_scaling": {
                 "$ref": "#/$defs/Scalings",
                 "default": "1",
-                "description": "Scaling factor for XY chunk size. If set to 1, chunk size matches FOV size.\nIf set to 0.5, chunk size is half the FOV size (smaller chunks, more files).\nIf set to 2, chunk size is double the FOV size (larger chunks, less files).",
+                "description": "Scaling factor for the XY chunk size, relative to the field of view size.\n\n- `1`: chunks match the field of view size.\n- `0.5`: chunks are half the field of view (smaller chunks, more files).\n- `2`: chunks are double the field of view (larger chunks, fewer files).",
                 "title": "XY Scaling Factor"
               },
               "z_chunk": {
@@ -230,47 +232,145 @@
                 "type": "integer"
               }
             },
-            "title": "FovBasedChunking",
+            "title": "Same as FOV",
             "type": "object"
           },
           "InplaceTiling": {
+            "additionalProperties": false,
+            "description": "Keep every field of view at its original stage position.",
             "properties": {
               "mode": {
                 "const": "Inplace",
                 "default": "Inplace",
-                "description": "Write tiles in their original stage positions.\nThis may lead to artifacts if microscope stage positions are not precise,\nwhen tiles overlap the last written tile will overwrite previous tiles in the\noverlapping region.",
+                "description": "Keep every field of view at its original stage position. Imprecise\nstage positions **may produce artifacts**: where tiles overlap, the last\nwritten tile wins.",
                 "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "InplaceTiling",
-            "type": "object",
-            "description": "Missing description for InplaceTiling."
+            "title": "Inplace",
+            "type": "object"
           },
-          "NoTiling": {
+          "MosaicGrouping": {
+            "additionalProperties": false,
+            "description": "Aggregate all fields of view of an acquisition into one mosaic OME-Zarr.",
             "properties": {
               "mode": {
-                "const": "No Tiling",
-                "default": "No Tiling",
-                "description": "Each field of view is written as a single OME-Zarr.",
+                "const": "Mosaic",
+                "default": "Mosaic",
+                "description": "How fields of view are grouped into output images.",
                 "title": "Mode",
                 "type": "string"
+              },
+              "tiling_strategy": {
+                "default": {
+                  "mode": "Auto",
+                  "tolerance": 1.0
+                },
+                "description": "How the fields of view are arranged within the mosaic.\n\n- `Auto`: Automatically determine if `Snap to Grid` is possible,\n  otherwise use `Snap to Corners`. Accepts an optional tolerance\n  (in pixels) for grid alignment.\n- `Snap to Grid`: Tile images to fit a regular grid. This is only\n  possible if image positions align to a grid (potentially with\n  overlap). Accepts an optional tolerance (in pixels).\n- `Snap to Corners`: Tile images to fit a grid defined by the corner\n  positions.\n- `Inplace`: Write tiles in their original positions without tiling.\n  This may lead to artifacts if microscope stage positions are not\n  precise.",
+                "discriminator": {
+                  "mapping": {
+                    "Auto": "#/$defs/AutoTiling",
+                    "Inplace": "#/$defs/InplaceTiling",
+                    "Snap to Corners": "#/$defs/SnapToCornersTiling",
+                    "Snap to Grid": "#/$defs/SnapToGridTiling"
+                  },
+                  "propertyName": "mode"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/AutoTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/SnapToGridTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/SnapToCornersTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/InplaceTiling"
+                  }
+                ],
+                "title": "Tiling Strategy"
               }
             },
-            "title": "NoTiling",
-            "type": "object",
-            "description": "Missing description for NoTiling."
+            "title": "Mosaic",
+            "type": "object"
+          },
+          "NamedLevels": {
+            "additionalProperties": false,
+            "description": "Name each resolution level explicitly, from highest to lowest resolution.",
+            "properties": {
+              "mode": {
+                "const": "Custom Names",
+                "default": "Custom Names",
+                "description": "How the resolution levels of the pyramid are defined.",
+                "title": "Mode",
+                "type": "string"
+              },
+              "level_names": {
+                "description": "Names of the resolution levels, from highest to lowest resolution,\ne.g. `[\"s0\", \"s1\", \"s2\"]`. Each name becomes a path inside the OME-Zarr.",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "title": "Level Names",
+                "type": "array"
+              }
+            },
+            "required": [
+              "level_names"
+            ],
+            "title": "Custom Names",
+            "type": "object"
+          },
+          "NumberOfLevels": {
+            "additionalProperties": false,
+            "description": "Create a number of resolution levels with default names (`0`, `1`, ...).",
+            "properties": {
+              "mode": {
+                "const": "Number of Levels",
+                "default": "Number of Levels",
+                "description": "How the resolution levels of the pyramid are defined.",
+                "title": "Mode",
+                "type": "string"
+              },
+              "num_levels": {
+                "default": 5,
+                "description": "Number of resolution levels in the pyramid of the output image.",
+                "minimum": 1,
+                "title": "Number of Resolution Levels",
+                "type": "integer"
+              }
+            },
+            "title": "Number of Levels",
+            "type": "object"
           },
           "OmeZarrOptions": {
             "additionalProperties": false,
-            "description": "Options specific to OME-Zarr writing.",
+            "description": "Options controlling the layout of the output OME-Zarr.",
             "properties": {
-              "num_levels": {
-                "default": 5,
-                "description": "Number of resolution levels to create.",
-                "minimum": 1,
-                "title": "Num Levels",
-                "type": "integer"
+              "levels": {
+                "default": {
+                  "mode": "Number of Levels",
+                  "num_levels": 5
+                },
+                "description": "How many resolution levels the output pyramid has and how they are named.\n\n- `Number of Levels`: a number of levels with the default names\n  (`0`, `1`, ...).\n- `Custom Names`: an explicit list of level names, e.g. `[\"s0\", \"s1\"]`.",
+                "discriminator": {
+                  "mapping": {
+                    "Custom Names": "#/$defs/NamedLevels",
+                    "Number of Levels": "#/$defs/NumberOfLevels"
+                  },
+                  "propertyName": "mode"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/NumberOfLevels"
+                  },
+                  {
+                    "$ref": "#/$defs/NamedLevels"
+                  }
+                ],
+                "title": "Resolution Levels"
               },
               "chunks": {
                 "default": {
@@ -280,7 +380,7 @@
                   "c_chunk": 1,
                   "t_chunk": 1
                 },
-                "description": "Chunking strategy to use.",
+                "description": "How the image is split into storage chunks: sized like the fields of\nview (`Same as FOV`) or with fixed sizes (`Fixed Size`).",
                 "discriminator": {
                   "mapping": {
                     "Fixed Size": "#/$defs/FixedSizeChunking",
@@ -305,28 +405,43 @@
                   "0.4",
                   "0.5"
                 ],
-                "title": "Ngff Version",
+                "title": "NGFF Version",
                 "type": "string"
               },
               "table_backend": {
                 "$ref": "#/$defs/BackendType",
-                "default": "anndata",
-                "description": "Backend type for storing tables.",
+                "default": "csv",
+                "description": "File format used to store tables (e.g. ROI tables) inside the\nOME-Zarr.",
                 "title": "Table Backend"
               }
             },
             "title": "OmeZarrOptions",
             "type": "object"
           },
+          "PerFovGrouping": {
+            "additionalProperties": false,
+            "description": "Write each field of view as its own OME-Zarr image (no mosaic).",
+            "properties": {
+              "mode": {
+                "const": "Per-FOV",
+                "default": "Per-FOV",
+                "description": "How fields of view are grouped into output images.",
+                "title": "Mode",
+                "type": "string"
+              }
+            },
+            "title": "Per-FOV",
+            "type": "object"
+          },
           "ProcessScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's multiprocessing scheduler for parallelism.",
+            "description": "Parallelize the conversion using multiple processes.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Processes",
                 "default": "Processes",
-                "description": "The dask scheduler will be set to \"processes\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               },
               "num_workers": {
@@ -337,24 +452,24 @@
                 "type": "integer"
               }
             },
-            "title": "ProcessScheduler",
+            "title": "Processes",
             "type": "object"
           },
           "RuntimeSettings": {
             "additionalProperties": false,
-            "description": "Runtime knobs applied during conversion via a scoped context manager.",
+            "description": "Advanced performance settings; the defaults suit most conversions.",
             "properties": {
               "use_zarrs_codec": {
                 "default": false,
-                "description": "Use the `zarrs.ZarrsCodecPipeline` Rust codec backend.\n\nRequires the optional `zarrs` dependency.",
+                "description": "Read and write image data with the `zarrs` Rust backend, which is\nusually faster. **Requires** the optional `zarrs` dependency to be\ninstalled.",
                 "title": "Use Zarrs Codec Pipeline",
                 "type": "boolean"
               },
               "dask_scheduler": {
                 "default": {
-                  "type": "Default"
+                  "mode": "Default"
                 },
-                "description": "Dask scheduler to set via `dask.config.set` for the conversion call.\nIf set to `DefaultScheduler`, the scheduler will not be modified.",
+                "description": "How the conversion work is parallelized.\n\n- `Threads`: parallelize using multiple threads.\n- `Processes`: parallelize using multiple processes.\n- `Synchronous`: run sequentially, without parallelism.\n- `Default`: keep the environment's parallelism settings unchanged.",
                 "discriminator": {
                   "mapping": {
                     "Default": "#/$defs/DefaultScheduler",
@@ -362,7 +477,7 @@
                     "Synchronous": "#/$defs/SynchronousScheduler",
                     "Threads": "#/$defs/ThreadScheduler"
                   },
-                  "propertyName": "type"
+                  "propertyName": "mode"
                 },
                 "oneOf": [
                   {
@@ -387,7 +502,7 @@
                   "serialization": "Auto",
                   "max_in_memory_bytes": 10485760
                 },
-                "description": "Options for temporary JSON storage.",
+                "description": "Where and when intermediate conversion data is stored on disk.",
                 "title": "Temporary JSON Options"
               }
             },
@@ -395,6 +510,7 @@
             "type": "object"
           },
           "Scalings": {
+            "description": "Scaling factor applied to the field of view size to get the chunk size.",
             "enum": [
               "0.25",
               "0.5",
@@ -403,63 +519,90 @@
               "4"
             ],
             "title": "Scalings",
-            "type": "string",
-            "description": "Missing description for Scalings."
+            "type": "string"
           },
           "SnapToCornersTiling": {
+            "additionalProperties": false,
+            "description": "Arrange the fields of view on a grid defined by their corners.",
             "properties": {
               "mode": {
                 "const": "Snap to Corners",
                 "default": "Snap to Corners",
-                "description": "Tile images to fit a grid defined by the corner positions.",
+                "description": "Arrange the fields of view on a grid defined by their corner\npositions.",
                 "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "SnapToCornersTiling",
-            "type": "object",
-            "description": "Missing description for SnapToCornersTiling."
+            "title": "Snap to Corners",
+            "type": "object"
           },
           "SnapToGridTiling": {
+            "additionalProperties": false,
+            "description": "Arrange the fields of view on a regular grid.",
             "properties": {
               "mode": {
                 "const": "Snap to Grid",
                 "default": "Snap to Grid",
-                "description": "Tile images to fit a regular grid. This is only possible if image positions align\nto a grid (potentially with overlap).",
+                "description": "Arrange the fields of view on a regular grid. Only possible when\ntheir positions already align to a grid (potentially with overlap).",
                 "title": "Mode",
                 "type": "string"
               },
               "tolerance": {
                 "default": 1,
+                "description": "Maximum misalignment (in pixels) tolerated when checking whether the\nfield of view positions fit a regular grid.",
                 "minimum": 0,
                 "title": "Tiling Tolerance (in pixels)",
                 "type": "number"
               }
             },
-            "title": "SnapToGridTiling",
-            "type": "object",
-            "description": "Missing description for SnapToGridTiling."
+            "title": "Snap to Grid",
+            "type": "object"
           },
           "StagePositionCorrections": {
             "additionalProperties": false,
-            "description": "Stage position correction options.",
+            "description": "Corrections applied to the stage positions before writing the image.",
             "properties": {
-              "align_xy": {
-                "default": false,
-                "description": "Whether to align the positions in the XY plane by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align XY",
+              "remove_xy_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its XY origin is 0.\n\n- `Global`: Shift all positions together so the image origin is 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Global"
+                ],
+                "title": "Remove XY Offset",
+                "type": "string"
+              },
+              "remove_z_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its Z origin is 0.\n\n- `Global`: Shift all positions together so the Z origin is 0.\n- `Per-FOV`: Shift each field of view independently to Z origin 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Per-FOV",
+                  "Global"
+                ],
+                "title": "Remove Z Offset",
+                "type": "string"
+              },
+              "remove_t_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its time origin is 0.\n\n- `Global`: Shift all positions together so the time origin is 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Global"
+                ],
+                "title": "Remove T Offset",
+                "type": "string"
+              },
+              "remove_xy_jitter": {
+                "default": true,
+                "description": "Remove small stage position inconsistencies within a field of view by\nsnapping its sub-tiles to a shared origin.",
+                "title": "Remove XY Jitter",
                 "type": "boolean"
               },
-              "align_z": {
-                "default": false,
-                "description": "Whether to align the positions in the Z axis by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align Z",
-                "type": "boolean"
-              },
-              "align_t": {
-                "default": false,
-                "description": "Whether to align the positions in the T axis by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align T",
+              "reindex_channels": {
+                "default": true,
+                "description": "If enabled, only the channels actually present are converted; if\ndisabled, missing channels are stored as empty images.",
+                "title": "Reindex Channels",
                 "type": "boolean"
               }
             },
@@ -468,31 +611,32 @@
           },
           "SynchronousScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's synchronous scheduler (no parallelism).",
+            "description": "Run the conversion sequentially, without parallelism.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Synchronous",
                 "default": "Synchronous",
-                "description": "The dask scheduler will be set to \"synchronous\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "SynchronousScheduler",
+            "title": "Synchronous",
             "type": "object"
           },
           "TempJsonOptions": {
-            "description": "Options for temporary JSON storage during conversion.",
+            "additionalProperties": false,
+            "description": "Where and when intermediate conversion data is stored on disk.",
             "properties": {
               "temp_url": {
                 "default": "{zarr_dir}/_tmp_json",
-                "description": "Template for the temporary JSON URL.",
-                "title": "Temp Url",
+                "description": "Where intermediate JSON files are written. The `{zarr_dir}`\nplaceholder is replaced by the task's output directory.",
+                "title": "Temporary Storage URL",
                 "type": "string"
               },
               "serialization": {
                 "default": "Auto",
-                "description": "Serialization mode for tiled image data between init and compute phases.\n\n- ``\"Memory\"``: always keep data in-memory (skips all filesystem I/O).\n- ``\"JSON\"``: always write to a temporary JSON file on disk (required for\n  distributed Fractal runs where init and compute execute on different machines).\n- ``\"Auto\"``: use in-memory when the total serialized payload is \u226450 MB,\n  otherwise fall back to JSON files on disk.",
+                "description": "Serialization mode for tiled image data between init and compute phases.\n\n- `Memory`: always keep data in-memory (skips all filesystem I/O).\n- `JSON`: always write to a temporary JSON file on disk (**required** for\n  distributed Fractal runs where init and compute execute on different\n  machines).\n- `Auto`: use in-memory when the total serialized payload is within\n  `max_in_memory_bytes` (default 10 MiB), otherwise fall back to JSON files\n  on disk.",
                 "enum": [
                   "Auto",
                   "Memory",
@@ -503,7 +647,7 @@
               },
               "max_in_memory_bytes": {
                 "default": 10485760,
-                "description": "Maximum total size of serialized tiled image data to keep in-memory\nbetween init and compute phases when serialization=\"Auto\".\nIf the total size exceeds this threshold, data will be written to temporary\nJSON files on disk instead. Default is 10 MiB.",
+                "description": "Maximum total size of serialized tiled image data to keep in-memory\nbetween init and compute phases when `serialization` is `Auto`.\nIf the total size exceeds this threshold, data will be written to temporary\nJSON files on disk instead. Default is 10 MiB.",
                 "minimum": 1,
                 "title": "Max In-Memory Bytes",
                 "type": "integer"
@@ -514,13 +658,13 @@
           },
           "ThreadScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's threaded scheduler for parallelism.",
+            "description": "Parallelize the conversion using multiple threads.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Threads",
                 "default": "Threads",
-                "description": "The dask scheduler will be set to \"threads\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               },
               "num_workers": {
@@ -531,10 +675,11 @@
                 "type": "integer"
               }
             },
-            "title": "ThreadScheduler",
+            "title": "Threads",
             "type": "object"
           },
           "WriterMode": {
+            "description": "How image data is written, trading off speed against memory usage.",
             "enum": [
               "By Tile",
               "By FOV",
@@ -543,8 +688,7 @@
               "In Memory"
             ],
             "title": "WriterMode",
-            "type": "string",
-            "description": "Missing description for WriterMode."
+            "type": "string"
           }
         },
         "additionalProperties": false,
@@ -569,14 +713,19 @@
             "$ref": "#/$defs/ConverterOptions",
             "default": {
               "writer_mode": "By FOV",
-              "tiling_strategy": {
-                "mode": "Auto",
-                "tolerance": 1.0
+              "grouping": {
+                "mode": "Mosaic",
+                "tiling_strategy": {
+                  "mode": "Auto",
+                  "tolerance": 1.0
+                }
               },
               "stage_position_corrections": {
-                "align_t": false,
-                "align_xy": false,
-                "align_z": false
+                "reindex_channels": true,
+                "remove_t_offset": "Global",
+                "remove_xy_jitter": true,
+                "remove_xy_offset": "Global",
+                "remove_z_offset": "Global"
               },
               "omezarr_options": {
                 "chunks": {
@@ -586,13 +735,16 @@
                   "xy_scaling": "1",
                   "z_chunk": 10
                 },
+                "levels": {
+                  "mode": "Number of Levels",
+                  "num_levels": 5
+                },
                 "ngff_version": "0.4",
-                "num_levels": 5,
-                "table_backend": "anndata"
+                "table_backend": "csv"
               },
               "runtime_settings": {
                 "dask_scheduler": {
-                  "type": "Default"
+                  "mode": "Default"
                 },
                 "temp_json_options": {
                   "max_in_memory_bytes": 10485760,
@@ -616,26 +768,29 @@
       "args_schema_parallel": {
         "$defs": {
           "AutoTiling": {
+            "additionalProperties": false,
+            "description": "Automatically pick between `Snap to Grid` and `Snap to Corners`.",
             "properties": {
               "mode": {
                 "const": "Auto",
                 "default": "Auto",
-                "description": "Automatically determine if Snap to Grid is possible, otherwise use Snap to Corners.",
+                "description": "Automatically use `Snap to Grid` when the field of view positions\nalign to a regular grid, `Snap to Corners` otherwise.",
                 "title": "Mode",
                 "type": "string"
               },
               "tolerance": {
                 "default": 1,
+                "description": "Maximum misalignment (in pixels) tolerated when checking whether the\nfield of view positions fit a regular grid.",
                 "minimum": 0,
                 "title": "Tiling Tolerance (in pixels)",
                 "type": "number"
               }
             },
-            "title": "AutoTiling",
-            "type": "object",
-            "description": "Missing description for AutoTiling."
+            "title": "Auto",
+            "type": "object"
           },
           "BackendType": {
+            "description": "File format used to store tables (e.g. ROI tables) in the OME-Zarr.",
             "enum": [
               "anndata",
               "json",
@@ -643,11 +798,11 @@
               "parquet"
             ],
             "title": "BackendType",
-            "type": "string",
-            "description": "Missing description for BackendType."
+            "type": "string"
           },
           "ConvertParallelInitArgs": {
-            "description": "Arguments for the compute task.",
+            "additionalProperties": false,
+            "description": "Internal data handed from the init phase to compute; *filled automatically*.",
             "properties": {
               "tiled_image_json_dump_url": {
                 "anyOf": [
@@ -659,6 +814,7 @@
                   }
                 ],
                 "default": null,
+                "description": "Location of the temporary file describing the image to convert.",
                 "title": "Tiled Image Json Dump Url"
               },
               "tiled_image_json_str": {
@@ -671,15 +827,18 @@
                   }
                 ],
                 "default": null,
+                "description": "Inline description of the image to convert (used instead of a\ntemporary file for small conversions).",
                 "title": "Tiled Image Json Str"
               },
               "converter_options": {
                 "$ref": "#/$defs/ConverterOptions",
+                "description": "Converter options forwarded from the init phase.",
                 "title": "Converter_Options"
               },
               "overwrite_mode": {
                 "$ref": "#/$defs/OverwriteMode",
                 "default": "No Overwrite",
+                "description": "Overwrite mode forwarded from the init phase.",
                 "title": "Overwrite_Mode"
               }
             },
@@ -696,57 +855,54 @@
               "writer_mode": {
                 "$ref": "#/$defs/WriterMode",
                 "default": "By FOV",
-                "description": "Mode for writing data during conversion.\n\n- By Tile: Write data one tile at a time. This consumes less memory, but may be\n  slower.\n- By Tile (Using Dask): Write tiles in parallel using Dask. This is usually faster\n  than writing by tile sequentially, but may consume more memory.\n- By FOV: Write data one field of view at a time. This may the best compromise\n  between speed and memory usage in most cases.\n- By FOV (Using Dask): Write fields of view in parallel using Dask. This is usually\n  faster than writing by FOV sequentially, but may consume more memory.\n- In Memory: Load all data into memory before writing.",
+                "description": "Mode for writing data during conversion.\n\n- `By Tile`: Write data one tile at a time. This consumes less memory, but may be\n  slower.\n- `By Tile (Using Dask)`: Write tiles in parallel using Dask. This is\n  usually faster than writing by tile sequentially, but may consume more\n  memory.\n- `By FOV`: Write data one field of view at a time. Often the best compromise\n  between speed and memory usage in most cases.\n- `By FOV (Using Dask)`: Write fields of view in parallel using Dask.\n  This is usually faster than writing by FOV sequentially, but may consume\n  more memory.\n- `In Memory`: Load all data into memory before writing.",
                 "title": "Writer Mode"
               },
-              "tiling_strategy": {
+              "grouping": {
                 "default": {
-                  "mode": "Auto",
-                  "tolerance": 1.0
+                  "mode": "Mosaic",
+                  "tiling_strategy": {
+                    "mode": "Auto",
+                    "tolerance": 1.0
+                  }
                 },
-                "description": "Tiling strategy to use during conversion.\n\n- Auto: Automatically determine if Snap to Grid is possible, otherwise use Snap to\n  Corners. Accepts an optional tolerance (in pixels) for grid alignment.\n- Snap to Grid: Tile images to fit a regular grid. This is only possible if image\n  positions align to a grid (potentially with overlap). Accepts an optional\n  tolerance (in pixels).\n- Snap to Corners: Tile images to fit a grid defined by the corner positions.\n- Inplace: Write tiles in their original positions without tiling. This may lead to\n  artifacts if microscope stage positions are not precise.\n- No Tiling: Each field of view is written as a single OME-Zarr.",
+                "description": "How fields of view are grouped into output images.\n\n- `Mosaic`: Aggregate all fields of view of an acquisition into one OME-Zarr,\n  arranged by the nested `tiling_strategy`.\n- `Per-FOV`: Write each field of view as its own OME-Zarr image (no mosaic,\n  no tiling strategy).",
                 "discriminator": {
                   "mapping": {
-                    "Auto": "#/$defs/AutoTiling",
-                    "Inplace": "#/$defs/InplaceTiling",
-                    "No Tiling": "#/$defs/NoTiling",
-                    "Snap to Corners": "#/$defs/SnapToCornersTiling",
-                    "Snap to Grid": "#/$defs/SnapToGridTiling"
+                    "Mosaic": "#/$defs/MosaicGrouping",
+                    "Per-FOV": "#/$defs/PerFovGrouping"
                   },
                   "propertyName": "mode"
                 },
                 "oneOf": [
                   {
-                    "$ref": "#/$defs/AutoTiling"
+                    "$ref": "#/$defs/MosaicGrouping"
                   },
                   {
-                    "$ref": "#/$defs/SnapToGridTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/SnapToCornersTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/InplaceTiling"
-                  },
-                  {
-                    "$ref": "#/$defs/NoTiling"
+                    "$ref": "#/$defs/PerFovGrouping"
                   }
                 ],
-                "title": "Tiling Strategy"
+                "title": "Grouping"
               },
               "stage_position_corrections": {
                 "$ref": "#/$defs/StagePositionCorrections",
                 "default": {
-                  "align_xy": false,
-                  "align_z": false,
-                  "align_t": false
+                  "remove_xy_offset": "Global",
+                  "remove_z_offset": "Global",
+                  "remove_t_offset": "Global",
+                  "remove_xy_jitter": true,
+                  "reindex_channels": true
                 },
+                "description": "Stage position correction options.",
                 "title": "Stage Position Corrections"
               },
               "omezarr_options": {
                 "$ref": "#/$defs/OmeZarrOptions",
                 "default": {
-                  "num_levels": 5,
+                  "levels": {
+                    "mode": "Number of Levels",
+                    "num_levels": 5
+                  },
                   "chunks": {
                     "c_chunk": 1,
                     "mode": "Same as FOV",
@@ -755,8 +911,9 @@
                     "z_chunk": 10
                   },
                   "ngff_version": "0.4",
-                  "table_backend": "anndata"
+                  "table_backend": "csv"
                 },
+                "description": "Options specific to OME-Zarr writing.",
                 "title": "OME-Zarr Options"
               },
               "runtime_settings": {
@@ -764,7 +921,7 @@
                 "default": {
                   "use_zarrs_codec": false,
                   "dask_scheduler": {
-                    "type": "Default"
+                    "mode": "Default"
                   },
                   "temp_json_options": {
                     "max_in_memory_bytes": 10485760,
@@ -772,7 +929,7 @@
                     "temp_url": "{zarr_dir}/_tmp_json"
                   }
                 },
-                "description": "Runtime knobs (zarr codec, dask scheduler) applied via a scoped\ncontext manager during conversion.",
+                "description": "Advanced performance settings: parallelism, storage codec, and\ntemporary storage. The defaults are safe for most conversions.",
                 "title": "Runtime Settings"
               }
             },
@@ -781,26 +938,27 @@
           },
           "DefaultScheduler": {
             "additionalProperties": false,
-            "description": "Do not set a Dask scheduler; leave it up to the caller.",
+            "description": "Keep the environment's default parallelism settings unchanged.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Default",
                 "default": "Default",
-                "description": "The dask scheduler will not be modified when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "DefaultScheduler",
+            "title": "Default",
             "type": "object"
           },
           "FixedSizeChunking": {
-            "description": "Chunking strategy with fixed chunk sizes.",
+            "additionalProperties": false,
+            "description": "Store the image in chunks of a fixed size.",
             "properties": {
               "mode": {
                 "const": "Fixed Size",
                 "default": "Fixed Size",
-                "description": "Fixed size chunking.",
+                "description": "How the image is split into storage chunks.",
                 "title": "Mode",
                 "type": "string"
               },
@@ -833,23 +991,24 @@
                 "type": "integer"
               }
             },
-            "title": "FixedSizeChunking",
+            "title": "Fixed Size",
             "type": "object"
           },
           "FovBasedChunking": {
-            "description": "Chunking strategy that matches the field of view.",
+            "additionalProperties": false,
+            "description": "Store the image in chunks sized like the fields of view.",
             "properties": {
               "mode": {
                 "const": "Same as FOV",
                 "default": "Same as FOV",
-                "description": "Chunking based on FOV size.",
+                "description": "How the image is split into storage chunks.",
                 "title": "Mode",
                 "type": "string"
               },
               "xy_scaling": {
                 "$ref": "#/$defs/Scalings",
                 "default": "1",
-                "description": "Scaling factor for XY chunk size. If set to 1, chunk size matches FOV size.\nIf set to 0.5, chunk size is half the FOV size (smaller chunks, more files).\nIf set to 2, chunk size is double the FOV size (larger chunks, less files).",
+                "description": "Scaling factor for the XY chunk size, relative to the field of view size.\n\n- `1`: chunks match the field of view size.\n- `0.5`: chunks are half the field of view (smaller chunks, more files).\n- `2`: chunks are double the field of view (larger chunks, fewer files).",
                 "title": "XY Scaling Factor"
               },
               "z_chunk": {
@@ -874,47 +1033,145 @@
                 "type": "integer"
               }
             },
-            "title": "FovBasedChunking",
+            "title": "Same as FOV",
             "type": "object"
           },
           "InplaceTiling": {
+            "additionalProperties": false,
+            "description": "Keep every field of view at its original stage position.",
             "properties": {
               "mode": {
                 "const": "Inplace",
                 "default": "Inplace",
-                "description": "Write tiles in their original stage positions.\nThis may lead to artifacts if microscope stage positions are not precise,\nwhen tiles overlap the last written tile will overwrite previous tiles in the\noverlapping region.",
+                "description": "Keep every field of view at its original stage position. Imprecise\nstage positions **may produce artifacts**: where tiles overlap, the last\nwritten tile wins.",
                 "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "InplaceTiling",
-            "type": "object",
-            "description": "Missing description for InplaceTiling."
+            "title": "Inplace",
+            "type": "object"
           },
-          "NoTiling": {
+          "MosaicGrouping": {
+            "additionalProperties": false,
+            "description": "Aggregate all fields of view of an acquisition into one mosaic OME-Zarr.",
             "properties": {
               "mode": {
-                "const": "No Tiling",
-                "default": "No Tiling",
-                "description": "Each field of view is written as a single OME-Zarr.",
+                "const": "Mosaic",
+                "default": "Mosaic",
+                "description": "How fields of view are grouped into output images.",
                 "title": "Mode",
                 "type": "string"
+              },
+              "tiling_strategy": {
+                "default": {
+                  "mode": "Auto",
+                  "tolerance": 1.0
+                },
+                "description": "How the fields of view are arranged within the mosaic.\n\n- `Auto`: Automatically determine if `Snap to Grid` is possible,\n  otherwise use `Snap to Corners`. Accepts an optional tolerance\n  (in pixels) for grid alignment.\n- `Snap to Grid`: Tile images to fit a regular grid. This is only\n  possible if image positions align to a grid (potentially with\n  overlap). Accepts an optional tolerance (in pixels).\n- `Snap to Corners`: Tile images to fit a grid defined by the corner\n  positions.\n- `Inplace`: Write tiles in their original positions without tiling.\n  This may lead to artifacts if microscope stage positions are not\n  precise.",
+                "discriminator": {
+                  "mapping": {
+                    "Auto": "#/$defs/AutoTiling",
+                    "Inplace": "#/$defs/InplaceTiling",
+                    "Snap to Corners": "#/$defs/SnapToCornersTiling",
+                    "Snap to Grid": "#/$defs/SnapToGridTiling"
+                  },
+                  "propertyName": "mode"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/AutoTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/SnapToGridTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/SnapToCornersTiling"
+                  },
+                  {
+                    "$ref": "#/$defs/InplaceTiling"
+                  }
+                ],
+                "title": "Tiling Strategy"
               }
             },
-            "title": "NoTiling",
-            "type": "object",
-            "description": "Missing description for NoTiling."
+            "title": "Mosaic",
+            "type": "object"
+          },
+          "NamedLevels": {
+            "additionalProperties": false,
+            "description": "Name each resolution level explicitly, from highest to lowest resolution.",
+            "properties": {
+              "mode": {
+                "const": "Custom Names",
+                "default": "Custom Names",
+                "description": "How the resolution levels of the pyramid are defined.",
+                "title": "Mode",
+                "type": "string"
+              },
+              "level_names": {
+                "description": "Names of the resolution levels, from highest to lowest resolution,\ne.g. `[\"s0\", \"s1\", \"s2\"]`. Each name becomes a path inside the OME-Zarr.",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1,
+                "title": "Level Names",
+                "type": "array"
+              }
+            },
+            "required": [
+              "level_names"
+            ],
+            "title": "Custom Names",
+            "type": "object"
+          },
+          "NumberOfLevels": {
+            "additionalProperties": false,
+            "description": "Create a number of resolution levels with default names (`0`, `1`, ...).",
+            "properties": {
+              "mode": {
+                "const": "Number of Levels",
+                "default": "Number of Levels",
+                "description": "How the resolution levels of the pyramid are defined.",
+                "title": "Mode",
+                "type": "string"
+              },
+              "num_levels": {
+                "default": 5,
+                "description": "Number of resolution levels in the pyramid of the output image.",
+                "minimum": 1,
+                "title": "Number of Resolution Levels",
+                "type": "integer"
+              }
+            },
+            "title": "Number of Levels",
+            "type": "object"
           },
           "OmeZarrOptions": {
             "additionalProperties": false,
-            "description": "Options specific to OME-Zarr writing.",
+            "description": "Options controlling the layout of the output OME-Zarr.",
             "properties": {
-              "num_levels": {
-                "default": 5,
-                "description": "Number of resolution levels to create.",
-                "minimum": 1,
-                "title": "Num Levels",
-                "type": "integer"
+              "levels": {
+                "default": {
+                  "mode": "Number of Levels",
+                  "num_levels": 5
+                },
+                "description": "How many resolution levels the output pyramid has and how they are named.\n\n- `Number of Levels`: a number of levels with the default names\n  (`0`, `1`, ...).\n- `Custom Names`: an explicit list of level names, e.g. `[\"s0\", \"s1\"]`.",
+                "discriminator": {
+                  "mapping": {
+                    "Custom Names": "#/$defs/NamedLevels",
+                    "Number of Levels": "#/$defs/NumberOfLevels"
+                  },
+                  "propertyName": "mode"
+                },
+                "oneOf": [
+                  {
+                    "$ref": "#/$defs/NumberOfLevels"
+                  },
+                  {
+                    "$ref": "#/$defs/NamedLevels"
+                  }
+                ],
+                "title": "Resolution Levels"
               },
               "chunks": {
                 "default": {
@@ -924,7 +1181,7 @@
                   "c_chunk": 1,
                   "t_chunk": 1
                 },
-                "description": "Chunking strategy to use.",
+                "description": "How the image is split into storage chunks: sized like the fields of\nview (`Same as FOV`) or with fixed sizes (`Fixed Size`).",
                 "discriminator": {
                   "mapping": {
                     "Fixed Size": "#/$defs/FixedSizeChunking",
@@ -949,13 +1206,13 @@
                   "0.4",
                   "0.5"
                 ],
-                "title": "Ngff Version",
+                "title": "NGFF Version",
                 "type": "string"
               },
               "table_backend": {
                 "$ref": "#/$defs/BackendType",
-                "default": "anndata",
-                "description": "Backend type for storing tables.",
+                "default": "csv",
+                "description": "File format used to store tables (e.g. ROI tables) inside the\nOME-Zarr.",
                 "title": "Table Backend"
               }
             },
@@ -963,24 +1220,39 @@
             "type": "object"
           },
           "OverwriteMode": {
+            "description": "How to handle existing output data: fail, replace, or extend it.",
             "enum": [
               "No Overwrite",
               "Overwrite",
               "Extend"
             ],
             "title": "OverwriteMode",
-            "type": "string",
-            "description": "Missing description for OverwriteMode."
+            "type": "string"
+          },
+          "PerFovGrouping": {
+            "additionalProperties": false,
+            "description": "Write each field of view as its own OME-Zarr image (no mosaic).",
+            "properties": {
+              "mode": {
+                "const": "Per-FOV",
+                "default": "Per-FOV",
+                "description": "How fields of view are grouped into output images.",
+                "title": "Mode",
+                "type": "string"
+              }
+            },
+            "title": "Per-FOV",
+            "type": "object"
           },
           "ProcessScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's multiprocessing scheduler for parallelism.",
+            "description": "Parallelize the conversion using multiple processes.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Processes",
                 "default": "Processes",
-                "description": "The dask scheduler will be set to \"processes\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               },
               "num_workers": {
@@ -991,24 +1263,24 @@
                 "type": "integer"
               }
             },
-            "title": "ProcessScheduler",
+            "title": "Processes",
             "type": "object"
           },
           "RuntimeSettings": {
             "additionalProperties": false,
-            "description": "Runtime knobs applied during conversion via a scoped context manager.",
+            "description": "Advanced performance settings; the defaults suit most conversions.",
             "properties": {
               "use_zarrs_codec": {
                 "default": false,
-                "description": "Use the `zarrs.ZarrsCodecPipeline` Rust codec backend.\n\nRequires the optional `zarrs` dependency.",
+                "description": "Read and write image data with the `zarrs` Rust backend, which is\nusually faster. **Requires** the optional `zarrs` dependency to be\ninstalled.",
                 "title": "Use Zarrs Codec Pipeline",
                 "type": "boolean"
               },
               "dask_scheduler": {
                 "default": {
-                  "type": "Default"
+                  "mode": "Default"
                 },
-                "description": "Dask scheduler to set via `dask.config.set` for the conversion call.\nIf set to `DefaultScheduler`, the scheduler will not be modified.",
+                "description": "How the conversion work is parallelized.\n\n- `Threads`: parallelize using multiple threads.\n- `Processes`: parallelize using multiple processes.\n- `Synchronous`: run sequentially, without parallelism.\n- `Default`: keep the environment's parallelism settings unchanged.",
                 "discriminator": {
                   "mapping": {
                     "Default": "#/$defs/DefaultScheduler",
@@ -1016,7 +1288,7 @@
                     "Synchronous": "#/$defs/SynchronousScheduler",
                     "Threads": "#/$defs/ThreadScheduler"
                   },
-                  "propertyName": "type"
+                  "propertyName": "mode"
                 },
                 "oneOf": [
                   {
@@ -1041,7 +1313,7 @@
                   "serialization": "Auto",
                   "max_in_memory_bytes": 10485760
                 },
-                "description": "Options for temporary JSON storage.",
+                "description": "Where and when intermediate conversion data is stored on disk.",
                 "title": "Temporary JSON Options"
               }
             },
@@ -1049,6 +1321,7 @@
             "type": "object"
           },
           "Scalings": {
+            "description": "Scaling factor applied to the field of view size to get the chunk size.",
             "enum": [
               "0.25",
               "0.5",
@@ -1057,63 +1330,90 @@
               "4"
             ],
             "title": "Scalings",
-            "type": "string",
-            "description": "Missing description for Scalings."
+            "type": "string"
           },
           "SnapToCornersTiling": {
+            "additionalProperties": false,
+            "description": "Arrange the fields of view on a grid defined by their corners.",
             "properties": {
               "mode": {
                 "const": "Snap to Corners",
                 "default": "Snap to Corners",
-                "description": "Tile images to fit a grid defined by the corner positions.",
+                "description": "Arrange the fields of view on a grid defined by their corner\npositions.",
                 "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "SnapToCornersTiling",
-            "type": "object",
-            "description": "Missing description for SnapToCornersTiling."
+            "title": "Snap to Corners",
+            "type": "object"
           },
           "SnapToGridTiling": {
+            "additionalProperties": false,
+            "description": "Arrange the fields of view on a regular grid.",
             "properties": {
               "mode": {
                 "const": "Snap to Grid",
                 "default": "Snap to Grid",
-                "description": "Tile images to fit a regular grid. This is only possible if image positions align\nto a grid (potentially with overlap).",
+                "description": "Arrange the fields of view on a regular grid. Only possible when\ntheir positions already align to a grid (potentially with overlap).",
                 "title": "Mode",
                 "type": "string"
               },
               "tolerance": {
                 "default": 1,
+                "description": "Maximum misalignment (in pixels) tolerated when checking whether the\nfield of view positions fit a regular grid.",
                 "minimum": 0,
                 "title": "Tiling Tolerance (in pixels)",
                 "type": "number"
               }
             },
-            "title": "SnapToGridTiling",
-            "type": "object",
-            "description": "Missing description for SnapToGridTiling."
+            "title": "Snap to Grid",
+            "type": "object"
           },
           "StagePositionCorrections": {
             "additionalProperties": false,
-            "description": "Stage position correction options.",
+            "description": "Corrections applied to the stage positions before writing the image.",
             "properties": {
-              "align_xy": {
-                "default": false,
-                "description": "Whether to align the positions in the XY plane by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align XY",
+              "remove_xy_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its XY origin is 0.\n\n- `Global`: Shift all positions together so the image origin is 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Global"
+                ],
+                "title": "Remove XY Offset",
+                "type": "string"
+              },
+              "remove_z_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its Z origin is 0.\n\n- `Global`: Shift all positions together so the Z origin is 0.\n- `Per-FOV`: Shift each field of view independently to Z origin 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Per-FOV",
+                  "Global"
+                ],
+                "title": "Remove Z Offset",
+                "type": "string"
+              },
+              "remove_t_offset": {
+                "default": "Global",
+                "description": "Whether to shift the image so its time origin is 0.\n\n- `Global`: Shift all positions together so the time origin is 0.\n- `Keep`: Use the stage positions as-is. **Fails** if any position is\n  negative; positive positions produce empty padding at the image origin.",
+                "enum": [
+                  "Keep",
+                  "Global"
+                ],
+                "title": "Remove T Offset",
+                "type": "string"
+              },
+              "remove_xy_jitter": {
+                "default": true,
+                "description": "Remove small stage position inconsistencies within a field of view by\nsnapping its sub-tiles to a shared origin.",
+                "title": "Remove XY Jitter",
                 "type": "boolean"
               },
-              "align_z": {
-                "default": false,
-                "description": "Whether to align the positions in the Z axis by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align Z",
-                "type": "boolean"
-              },
-              "align_t": {
-                "default": false,
-                "description": "Whether to align the positions in the T axis by FOV.\nThis addresses minor imprecision that often occurs during image acquisition.",
-                "title": "Align T",
+              "reindex_channels": {
+                "default": true,
+                "description": "If enabled, only the channels actually present are converted; if\ndisabled, missing channels are stored as empty images.",
+                "title": "Reindex Channels",
                 "type": "boolean"
               }
             },
@@ -1122,31 +1422,32 @@
           },
           "SynchronousScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's synchronous scheduler (no parallelism).",
+            "description": "Run the conversion sequentially, without parallelism.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Synchronous",
                 "default": "Synchronous",
-                "description": "The dask scheduler will be set to \"synchronous\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               }
             },
-            "title": "SynchronousScheduler",
+            "title": "Synchronous",
             "type": "object"
           },
           "TempJsonOptions": {
-            "description": "Options for temporary JSON storage during conversion.",
+            "additionalProperties": false,
+            "description": "Where and when intermediate conversion data is stored on disk.",
             "properties": {
               "temp_url": {
                 "default": "{zarr_dir}/_tmp_json",
-                "description": "Template for the temporary JSON URL.",
-                "title": "Temp Url",
+                "description": "Where intermediate JSON files are written. The `{zarr_dir}`\nplaceholder is replaced by the task's output directory.",
+                "title": "Temporary Storage URL",
                 "type": "string"
               },
               "serialization": {
                 "default": "Auto",
-                "description": "Serialization mode for tiled image data between init and compute phases.\n\n- ``\"Memory\"``: always keep data in-memory (skips all filesystem I/O).\n- ``\"JSON\"``: always write to a temporary JSON file on disk (required for\n  distributed Fractal runs where init and compute execute on different machines).\n- ``\"Auto\"``: use in-memory when the total serialized payload is \u226450 MB,\n  otherwise fall back to JSON files on disk.",
+                "description": "Serialization mode for tiled image data between init and compute phases.\n\n- `Memory`: always keep data in-memory (skips all filesystem I/O).\n- `JSON`: always write to a temporary JSON file on disk (**required** for\n  distributed Fractal runs where init and compute execute on different\n  machines).\n- `Auto`: use in-memory when the total serialized payload is within\n  `max_in_memory_bytes` (default 10 MiB), otherwise fall back to JSON files\n  on disk.",
                 "enum": [
                   "Auto",
                   "Memory",
@@ -1157,7 +1458,7 @@
               },
               "max_in_memory_bytes": {
                 "default": 10485760,
-                "description": "Maximum total size of serialized tiled image data to keep in-memory\nbetween init and compute phases when serialization=\"Auto\".\nIf the total size exceeds this threshold, data will be written to temporary\nJSON files on disk instead. Default is 10 MiB.",
+                "description": "Maximum total size of serialized tiled image data to keep in-memory\nbetween init and compute phases when `serialization` is `Auto`.\nIf the total size exceeds this threshold, data will be written to temporary\nJSON files on disk instead. Default is 10 MiB.",
                 "minimum": 1,
                 "title": "Max In-Memory Bytes",
                 "type": "integer"
@@ -1168,13 +1469,13 @@
           },
           "ThreadScheduler": {
             "additionalProperties": false,
-            "description": "Use Dask's threaded scheduler for parallelism.",
+            "description": "Parallelize the conversion using multiple threads.",
             "properties": {
-              "type": {
+              "mode": {
                 "const": "Threads",
                 "default": "Threads",
-                "description": "The dask scheduler will be set to \"threads\" when this scheduler is selected.",
-                "title": "Type",
+                "description": "How the conversion work is parallelized.",
+                "title": "Mode",
                 "type": "string"
               },
               "num_workers": {
@@ -1185,10 +1486,11 @@
                 "type": "integer"
               }
             },
-            "title": "ThreadScheduler",
+            "title": "Threads",
             "type": "object"
           },
           "WriterMode": {
+            "description": "How image data is written, trading off speed against memory usage.",
             "enum": [
               "By Tile",
               "By FOV",
@@ -1197,8 +1499,7 @@
               "In Memory"
             ],
             "title": "WriterMode",
-            "type": "string",
-            "description": "Missing description for WriterMode."
+            "type": "string"
           }
         },
         "additionalProperties": false,
