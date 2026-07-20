@@ -1,6 +1,7 @@
 from ome_zarr_converters_tools import (
     ConverterOptions,
     OmeZarrOptions,
+    PerFovGrouping,
     exec_compound_task,
 )
 from pathlib import Path
@@ -29,7 +30,8 @@ def test_compound_converter_task(companion_ome_file, tmpdir):
             omezarr_options=OmeZarrOptions(
                 ngff_version="0.5",
                 table_backend="csv",
-            )
+            ),
+            grouping=PerFovGrouping(),
         ),
     }
     updates = exec_compound_task(
@@ -37,5 +39,4 @@ def test_compound_converter_task(companion_ome_file, tmpdir):
         compute_task_fn=single_image_compute_task,
         init_task_kwargs=init_task_kwargs,
     )
-    print(updates)
     assert len(updates) == 4
