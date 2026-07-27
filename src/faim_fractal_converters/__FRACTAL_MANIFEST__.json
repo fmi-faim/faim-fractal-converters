@@ -14,6 +14,114 @@
       "meta_parallel": {},
       "args_schema_non_parallel": {
         "$defs": {
+          "AcquisitionFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on their acquisition index (plates only).",
+            "properties": {
+              "name": {
+                "const": "Acquisition Filter",
+                "default": "Acquisition Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "acquisitions": {
+                "description": "List of acquisition indices to keep (`Include` mode) or remove\n(`Exclude` mode), e.g. `[0, 1]`.",
+                "items": {
+                  "type": "integer"
+                },
+                "title": "Acquisitions",
+                "type": "array"
+              }
+            },
+            "required": [
+              "acquisitions"
+            ],
+            "title": "Acquisition Filter",
+            "type": "object"
+          },
+          "AttributeFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on the value of one of their attributes.",
+            "properties": {
+              "name": {
+                "const": "Attribute Filter",
+                "default": "Attribute Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "key": {
+                "description": "Attribute key to match. The attribute must be present on every tile.",
+                "title": "Key",
+                "type": "string"
+              },
+              "values": {
+                "description": "Values to match against. A tile matches if *any* element of its\nattribute value matches one of these; matching tiles are kept in\n`Include` mode and removed in `Exclude` mode.",
+                "items": {
+                  "discriminator": {
+                    "mapping": {
+                      "Bool": "#/$defs/BoolValue",
+                      "Float": "#/$defs/FloatValue",
+                      "Integer": "#/$defs/IntValue",
+                      "Is None": "#/$defs/IsNoneValue",
+                      "Is Not None": "#/$defs/IsNotNoneValue",
+                      "String": "#/$defs/StringValue"
+                    },
+                    "propertyName": "type"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/BoolValue"
+                    },
+                    {
+                      "$ref": "#/$defs/StringValue"
+                    },
+                    {
+                      "$ref": "#/$defs/IntValue"
+                    },
+                    {
+                      "$ref": "#/$defs/FloatValue"
+                    },
+                    {
+                      "$ref": "#/$defs/IsNoneValue"
+                    },
+                    {
+                      "$ref": "#/$defs/IsNotNoneValue"
+                    }
+                  ]
+                },
+                "title": "Values",
+                "type": "array"
+              }
+            },
+            "required": [
+              "key",
+              "values"
+            ],
+            "title": "Attribute Filter",
+            "type": "object"
+          },
           "AutoTiling": {
             "additionalProperties": false,
             "description": "Automatically pick between `Snap to Grid` and `Snap to Corners`.",
@@ -46,6 +154,63 @@
             ],
             "title": "BackendType",
             "type": "string"
+          },
+          "BoolValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements equal to a true/false value.",
+            "properties": {
+              "type": {
+                "const": "Bool",
+                "default": "Bool",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              },
+              "value": {
+                "default": true,
+                "description": "The true/false value to match.",
+                "title": "Value",
+                "type": "boolean"
+              }
+            },
+            "title": "Boolean Value",
+            "type": "object"
+          },
+          "ChannelFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on their channel labels.",
+            "properties": {
+              "name": {
+                "const": "Channel Filter",
+                "default": "Channel Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "channel_labels": {
+                "description": "Channel labels to keep (`Include` mode) or remove (`Exclude` mode),\ne.g. `[\"DAPI\", \"GFP\"]`. A tile matches only if *all* of its channels are\nin this list; a partial match **fails the conversion**.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Channel Labels",
+                "type": "array"
+              }
+            },
+            "required": [
+              "channel_labels"
+            ],
+            "title": "Channel Filter",
+            "type": "object"
           },
           "ConverterOptions": {
             "additionalProperties": false,
@@ -193,6 +358,54 @@
             "title": "Fixed Size",
             "type": "object"
           },
+          "FloatValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements equal to a decimal value.",
+            "properties": {
+              "type": {
+                "const": "Float",
+                "default": "Float",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              },
+              "value": {
+                "description": "The decimal value to match.",
+                "title": "Value",
+                "type": "number"
+              }
+            },
+            "required": [
+              "value"
+            ],
+            "title": "Float Value",
+            "type": "object"
+          },
+          "FolderLoading": {
+            "description": "Load companion.ome files from folder.",
+            "properties": {
+              "mode": {
+                "const": "folder",
+                "default": "folder",
+                "title": "Mode",
+                "type": "string"
+              },
+              "folder_path": {
+                "title": "Folder Path",
+                "type": "string"
+              },
+              "glob_pattern": {
+                "default": "*.companion.ome",
+                "title": "Glob Pattern",
+                "type": "string"
+              }
+            },
+            "required": [
+              "folder_path"
+            ],
+            "title": "FolderLoading",
+            "type": "object"
+          },
           "FovBasedChunking": {
             "additionalProperties": false,
             "description": "Store the image in chunks sized like the fields of view.",
@@ -235,6 +448,39 @@
             "title": "Same as FOV",
             "type": "object"
           },
+          "FovNameFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on their field of view name.",
+            "properties": {
+              "name": {
+                "const": "FOV Name Filter",
+                "default": "FOV Name Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "regex": {
+                "description": "Regex pattern matched against the tile's `fov_name`.\n\n- `Include`: matching tiles are kept, all others removed.\n- `Exclude`: matching tiles are removed, all others kept.",
+                "title": "Regex",
+                "type": "string"
+              }
+            },
+            "required": [
+              "regex"
+            ],
+            "title": "FOV Name Filter",
+            "type": "object"
+          },
           "InplaceTiling": {
             "additionalProperties": false,
             "description": "Keep every field of view at its original stage position.",
@@ -248,6 +494,82 @@
               }
             },
             "title": "Inplace",
+            "type": "object"
+          },
+          "IntValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements equal to an integer value.",
+            "properties": {
+              "type": {
+                "const": "Integer",
+                "default": "Integer",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              },
+              "value": {
+                "description": "The integer value to match.",
+                "title": "Value",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "value"
+            ],
+            "title": "Integer Value",
+            "type": "object"
+          },
+          "IsNoneValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements that have no value (are `None`).",
+            "properties": {
+              "type": {
+                "const": "Is None",
+                "default": "Is None",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              }
+            },
+            "title": "Is None",
+            "type": "object"
+          },
+          "IsNotNoneValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements that have any value (are not `None`).",
+            "properties": {
+              "type": {
+                "const": "Is Not None",
+                "default": "Is Not None",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              }
+            },
+            "title": "Is Not None",
+            "type": "object"
+          },
+          "ListLoading": {
+            "description": "Load a list of specified companion.ome files.",
+            "properties": {
+              "mode": {
+                "const": "list",
+                "default": "list",
+                "title": "Mode",
+                "type": "string"
+              },
+              "ome_file_list": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Ome File List",
+                "type": "array"
+              }
+            },
+            "required": [
+              "ome_file_list"
+            ],
+            "title": "ListLoading",
             "type": "object"
           },
           "MosaicGrouping": {
@@ -455,6 +777,39 @@
             "title": "Processes",
             "type": "object"
           },
+          "RegexFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on their output image path.",
+            "properties": {
+              "name": {
+                "const": "Path Regex Filter",
+                "default": "Path Regex Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "regex": {
+                "description": "Regex pattern matched against the tile's base path.\n\n- `Include`: matching tiles are kept, all others removed.\n- `Exclude`: matching tiles are removed, all others kept.",
+                "title": "Regex",
+                "type": "string"
+              }
+            },
+            "required": [
+              "regex"
+            ],
+            "title": "Path Regex Filter",
+            "type": "object"
+          },
           "RuntimeSettings": {
             "additionalProperties": false,
             "description": "Advanced performance settings; the defaults suit most conversions.",
@@ -508,6 +863,33 @@
             },
             "title": "RuntimeSettings",
             "type": "object"
+          },
+          "SanitizingOptions": {
+            "properties": {
+              "channel_mapping": {
+                "anyOf": [
+                  {
+                    "additionalProperties": {
+                      "type": "string"
+                    },
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Channel Mapping"
+              },
+              "tf2_extension": {
+                "default": false,
+                "title": "Tf2 Extension",
+                "type": "boolean"
+              }
+            },
+            "title": "SanitizingOptions",
+            "type": "object",
+            "description": "Missing description for SanitizingOptions."
           },
           "Scalings": {
             "description": "Scaling factor applied to the field of view size to get the chunk size.",
@@ -609,6 +991,29 @@
             "title": "StagePositionCorrections",
             "type": "object"
           },
+          "StringValue": {
+            "additionalProperties": false,
+            "description": "Match attribute elements equal to a text value.",
+            "properties": {
+              "type": {
+                "const": "String",
+                "default": "String",
+                "description": "Type of the value to match.",
+                "title": "Type",
+                "type": "string"
+              },
+              "value": {
+                "description": "The text value to match.",
+                "title": "Value",
+                "type": "string"
+              }
+            },
+            "required": [
+              "value"
+            ],
+            "title": "String Value",
+            "type": "object"
+          },
           "SynchronousScheduler": {
             "additionalProperties": false,
             "description": "Run the conversion sequentially, without parallelism.",
@@ -622,6 +1027,47 @@
               }
             },
             "title": "Synchronous",
+            "type": "object"
+          },
+          "TRangeFilter": {
+            "additionalProperties": false,
+            "description": "Keep only tiles whose starting time point lies within a range.",
+            "properties": {
+              "name": {
+                "const": "Time Range Filter",
+                "default": "Time Range Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "min_t": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Minimum starting time point (inclusive). Leave empty for no lower\nbound. Tiles are kept or dropped **whole**, judged by their starting time\npoint only.",
+                "title": "Min T"
+              },
+              "max_t": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Maximum starting time point (inclusive). Leave empty for no upper\nbound. Tiles are kept or dropped **whole**, judged by their starting time\npoint only.",
+                "title": "Max T"
+              }
+            },
+            "title": "Time Range Filter",
             "type": "object"
           },
           "TempJsonOptions": {
@@ -678,6 +1124,42 @@
             "title": "Threads",
             "type": "object"
           },
+          "WellFilter": {
+            "additionalProperties": false,
+            "description": "Keep or remove tiles based on the well they belong to (plates only).",
+            "properties": {
+              "name": {
+                "const": "Well Filter",
+                "default": "Well Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "mode": {
+                "default": "Include",
+                "description": "Whether matching tiles are **included** (kept) or **excluded** (removed).",
+                "enum": [
+                  "Include",
+                  "Exclude"
+                ],
+                "title": "Mode",
+                "type": "string"
+              },
+              "wells": {
+                "description": "List of well identifiers to keep (`Include` mode) or remove\n(`Exclude` mode), e.g. `[\"A01\", \"B02\"]`.",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Wells",
+                "type": "array"
+              }
+            },
+            "required": [
+              "wells"
+            ],
+            "title": "Well Filter",
+            "type": "object"
+          },
           "WriterMode": {
             "description": "How image data is written, trading off speed against memory usage.",
             "enum": [
@@ -689,6 +1171,47 @@
             ],
             "title": "WriterMode",
             "type": "string"
+          },
+          "ZRangeFilter": {
+            "additionalProperties": false,
+            "description": "Keep only tiles whose starting Z position lies within a range.",
+            "properties": {
+              "name": {
+                "const": "Z Range Filter",
+                "default": "Z Range Filter",
+                "description": "Name of the filter.",
+                "title": "Name",
+                "type": "string"
+              },
+              "min_z": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Minimum starting Z position (inclusive). Leave empty for no lower\nbound. Tiles are kept or dropped **whole**, judged by their starting Z\nposition only.",
+                "title": "Min Z"
+              },
+              "max_z": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Maximum starting Z position (inclusive). Leave empty for no upper\nbound. Tiles are kept or dropped **whole**, judged by their starting Z\nposition only.",
+                "title": "Max Z"
+              }
+            },
+            "title": "Z Range Filter",
+            "type": "object"
           }
         },
         "additionalProperties": false,
@@ -698,15 +1221,36 @@
             "type": "string",
             "description": "Missing description"
           },
-          "companion_ome_file": {
-            "title": "Companion Ome File",
-            "type": "string",
+          "input_options": {
+            "discriminator": {
+              "mapping": {
+                "folder": "#/$defs/FolderLoading",
+                "list": "#/$defs/ListLoading"
+              },
+              "propertyName": "mode"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/FolderLoading"
+              },
+              {
+                "$ref": "#/$defs/ListLoading"
+              }
+            ],
+            "title": "Input Options",
             "description": "Missing description"
           },
-          "sanitize_metadata": {
-            "default": true,
-            "title": "Sanitize Metadata",
-            "type": "boolean",
+          "sanitizing_options": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/SanitizingOptions"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Sanitizing Options",
             "description": "Missing description"
           },
           "converter_options": {
@@ -756,11 +1300,65 @@
             },
             "title": "Converter Options",
             "description": "Missing description"
+          },
+          "filters": {
+            "anyOf": [
+              {
+                "items": {
+                  "discriminator": {
+                    "mapping": {
+                      "Acquisition Filter": "#/$defs/AcquisitionFilter",
+                      "Attribute Filter": "#/$defs/AttributeFilter",
+                      "Channel Filter": "#/$defs/ChannelFilter",
+                      "FOV Name Filter": "#/$defs/FovNameFilter",
+                      "Path Regex Filter": "#/$defs/RegexFilter",
+                      "Time Range Filter": "#/$defs/TRangeFilter",
+                      "Well Filter": "#/$defs/WellFilter",
+                      "Z Range Filter": "#/$defs/ZRangeFilter"
+                    },
+                    "propertyName": "name"
+                  },
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/RegexFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/WellFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/FovNameFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/AcquisitionFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/AttributeFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/ChannelFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/ZRangeFilter"
+                    },
+                    {
+                      "$ref": "#/$defs/TRangeFilter"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Filters",
+            "description": "Missing description"
           }
         },
         "required": [
           "zarr_dir",
-          "companion_ome_file"
+          "input_options"
         ],
         "type": "object",
         "title": "ConvertVisiviewInitTask"

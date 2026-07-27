@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Annotated, Any, Literal
 
 from loguru import logger
 from ome2xarray import CompanionFile
@@ -7,6 +7,7 @@ from ome_zarr_converters_tools import (
     ChannelInfo,
     ConverterOptions,
     DefaultImageLoader,
+    ImplementedFilters,
     OverwriteMode,
     SingleImage,
     Tile,
@@ -14,9 +15,36 @@ from ome_zarr_converters_tools import (
     tiles_aggregation_pipeline,
 )
 from pathlib import Path
+from pydantic import BaseModel, Field, validate_call
 from faim_fractal_converters.utils import reverse_mapping
 
 from ome_types.model import Channel
+
+
+class FolderLoading(BaseModel):
+    """Load companion.ome files from folder."""
+
+    mode: Literal["folder"] = "folder"
+    folder_path: str
+    glob_pattern: str = "*.companion.ome"
+
+
+class ListLoading(BaseModel):
+    """Load a list of specified companion.ome files."""
+
+    mode: Literal["list"] = "list"
+    ome_file_list: list[str]
+
+
+Loading = Annotated[
+    FolderLoading | ListLoading,
+    Field(discriminator="mode"),
+]
+
+
+class SanitizingOptions(BaseModel):
+    channel_mapping: dict[int, str] | None = None
+    tf2_extension: bool = False
 
 
 def _color_RGBA_int_to_RGB_hex(color: int) -> str:
@@ -37,6 +65,7 @@ def _generate_channel_info(channel: Channel):
 
 
 def _generate_image_naming(image: Any) -> tuple[str, str]:
+    """Get (Path, FOV name) from image metadata."""
     stage_label = getattr(image, "stage_label", None)
     if stage_label is None:
         return image.name, "default"
@@ -52,33 +81,29 @@ def _generate_image_naming(image: Any) -> tuple[str, str]:
     return image_name, f"s{stage_index}"
 
 
-def convert_visiview_init_task(
-    *,
-    # Fractal parameters
-    zarr_dir: str,
-    # Task parameters
-    companion_ome_file: str,
-    sanitize_metadata: bool = True,
-    converter_options: ConverterOptions = ConverterOptions(),
-) -> dict[str, list[dict[str, Any]]]:
-    """Initialization task: parse acquisition and build parallelization list."""
-    companion = CompanionFile(Path(companion_ome_file))
+def tile_list_from_single_ome(
+    companion_ome_path: Path,
+    sanitizing_options: SanitizingOptions | None = None,
+) -> list[Tile]:
+    companion = CompanionFile(companion_ome_path)
     ome = companion.get_ome_metadata()
     # optionally sanitize metadata
-    if sanitize_metadata:
+    if sanitizing_options is not None:
         for index, image in enumerate(ome.images):
-            companion.sanitize_image(image_index=index)
+            companion.sanitize_image(
+                image_index=index,
+                channel_mapping=sanitizing_options.channel_mapping,
+                big_tiff=sanitizing_options.tf2_extension,
+            )
         ome = companion.get_ome_metadata()
 
     tiles: list[Tile] = []
-    converter_options = ConverterOptions.model_validate(converter_options)
-
-    # each image index goes into a separate ome-zarr dataset
     for index, image in enumerate(ome.images):
         image_path, fov_name = _generate_image_naming(image)
         logger.info(f"Preparing image {index} ({image_path})...")
         collection = SingleImage(image_path=image_path)
         acquisition_details = AcquisitionDetails(
+            start_t_space="pixel",
             xy_pixel_size=image.pixels.physical_size_x,  # we only support isotropic xy values
             z_spacing=image.pixels.physical_size_z,
             t_spacing=image.pixels.time_increment,
@@ -96,6 +121,9 @@ def convert_visiview_init_task(
             tcz_to_file=tiff_block_dict,
             assert_unique_tc=True,
             assert_contiguous_z=True,
+        )
+        logger.info(
+            f"Image {index} ({image_path}) has {len(tifffile_to_plane_mapping)} unique files."
         )
         plane_position_dict = {}
         for plane in image.pixels.planes:
@@ -132,10 +160,51 @@ def convert_visiview_init_task(
                     acquisition_details=acquisition_details,
                 )
             )
+    return tiles
+
+
+@validate_call
+def convert_visiview_init_task(
+    *,
+    # Fractal parameters
+    zarr_dir: str,
+    # Task parameters
+    # companion_ome_file: str,
+    input_options: Loading,
+    sanitizing_options: SanitizingOptions | None = None,
+    converter_options: ConverterOptions = ConverterOptions(),
+    filters: list[ImplementedFilters] | None = None,
+) -> dict[str, list[dict[str, Any]]]:
+    """Initialization task: parse acquisition and build parallelization list."""
+    converter_options = ConverterOptions.model_validate(converter_options)
+
+    # Folder loading mode
+    if input_options.mode == "folder":
+        ome_file_list = sorted(
+            Path(input_options.folder_path).glob(input_options.glob_pattern)
+        )
+    # List loading mode
+    elif input_options.mode == "list":
+        ome_file_list = [Path(f) for f in input_options.ome_file_list]
+
+    # Ensure all input files exist
+    for ome_file_path in ome_file_list:
+        if not ome_file_path.exists():
+            raise FileNotFoundError(f"Companion OME file not found: {ome_file_path}")
+
+    tiles = []
+    for companion_ome_path in ome_file_list:
+        tiles.extend(
+            tile_list_from_single_ome(
+                companion_ome_path=companion_ome_path,
+                sanitizing_options=sanitizing_options,
+            )
+        )
 
     tiled_images = tiles_aggregation_pipeline(
         tiles=tiles,
         converter_options=converter_options,
+        filters=filters,
     )
 
     parallelization_list = setup_images_for_conversion(
