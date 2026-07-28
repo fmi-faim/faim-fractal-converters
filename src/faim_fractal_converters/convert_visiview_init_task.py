@@ -98,9 +98,9 @@ def tile_list_from_single_ome(
         ome = companion.get_ome_metadata()
 
     tiles: list[Tile] = []
+    logger.info(f"This companion file defines {len(ome.images)} images...")
     for index, image in enumerate(ome.images):
         image_path, fov_name = _generate_image_naming(image)
-        logger.info(f"Preparing image {index} ({image_path})...")
         collection = SingleImage(image_path=image_path)
         acquisition_details = AcquisitionDetails(
             start_t_space="pixel",
@@ -121,9 +121,6 @@ def tile_list_from_single_ome(
             tcz_to_file=tiff_block_dict,
             assert_unique_tc=True,
             assert_contiguous_z=True,
-        )
-        logger.info(
-            f"Image {index} ({image_path}) has {len(tifffile_to_plane_mapping)} unique files."
         )
         plane_position_dict = {}
         for plane in image.pixels.planes:
@@ -194,6 +191,7 @@ def convert_visiview_init_task(
 
     tiles = []
     for companion_ome_path in ome_file_list:
+        logger.info(f"Generating tile list for {companion_ome_path.name}")
         tiles.extend(
             tile_list_from_single_ome(
                 companion_ome_path=companion_ome_path,
@@ -201,6 +199,7 @@ def convert_visiview_init_task(
             )
         )
 
+    logger.info(f"Aggregating {len(tiles)} tiles ...")
     tiled_images = tiles_aggregation_pipeline(
         tiles=tiles,
         converter_options=converter_options,
@@ -213,7 +212,7 @@ def convert_visiview_init_task(
         converter_options=converter_options,
         collection_type="SingleImage",
         overwrite_mode=OverwriteMode.OVERWRITE,
-        ngff_version="0.5",
+        ngff_version=converter_options.omezarr_options.ngff_version,
     )
 
     return {"parallelization_list": parallelization_list}
