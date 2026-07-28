@@ -15,7 +15,7 @@ TASK_LIST = [
         executable_init="convert_visiview_init_task.py",
         executable="single_image_compute_task.py",
         meta_init={"cpus_per_task": 1, "mem": 12000},
-        meta={},
+        meta={"cpus_per_task": 1, "mem": 12000},
         category="Conversion",
         tags=[
             "Visiview",
