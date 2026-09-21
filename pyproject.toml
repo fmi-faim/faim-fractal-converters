@@ -6,7 +6,8 @@ dependencies = [
   "fractal-task-tools>=0.5.0,<0.6",
   "ome-zarr-converters-tools>=1.0.1,<2",
   "ome2xarray>=0.8.0,<0.9",
-  "loguru>=0.7.3,<0.8"
+  "loguru>=0.7.3,<0.8",
+  "metamorph-mda-parser>=0.2.0,<0.3",
 ]
 dynamic = ["version"]
 
@@ -61,3 +62,4 @@ tifffile = ">=2026.6.1,<2027"
 s3fs = ">=2026.4.0,<2027"
 toml = ">=0.10.2,<0.11"
 tqdm = ">=4.68.2,<5"
+metamorph-mda-parser = ">=0.2.0,<0.3"
