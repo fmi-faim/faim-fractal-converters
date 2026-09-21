@@ -1,7 +1,9 @@
+from pathlib import Path
 from typing import Annotated, Any, Literal
 
 from loguru import logger
 from ome2xarray import CompanionFile
+from ome_types.model import Channel
 from ome_zarr_converters_tools import (
     AcquisitionDetails,
     ChannelInfo,
@@ -14,11 +16,11 @@ from ome_zarr_converters_tools import (
     setup_images_for_conversion,
     tiles_aggregation_pipeline,
 )
-from pathlib import Path
 from pydantic import BaseModel, Field, validate_call
+
 from faim_fractal_converters.utils import reverse_mapping
 
-from ome_types.model import Channel
+DefaultConverterOptions = ConverterOptions()
 
 
 class FolderLoading(BaseModel):
@@ -105,8 +107,8 @@ def tile_list_from_single_ome(
         acquisition_details = AcquisitionDetails(
             start_t_space="pixel",
             xy_pixel_size=image.pixels.physical_size_x,  # we only support isotropic xy values
-            z_spacing=image.pixels.physical_size_z,
-            t_spacing=image.pixels.time_increment,
+            z_spacing=image.pixels.physical_size_z or 1.0,
+            t_spacing=image.pixels.time_increment or 1.0,
             channels=[
                 _generate_channel_info(channel) for channel in image.pixels.channels
             ],
@@ -169,7 +171,7 @@ def convert_visiview_init_task(
     # companion_ome_file: str,
     input_options: Loading,
     sanitizing_options: SanitizingOptions | None = None,
-    converter_options: ConverterOptions = ConverterOptions(),
+    converter_options: ConverterOptions = DefaultConverterOptions,
     filters: list[ImplementedFilters] | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     """Initialization task: parse acquisition and build parallelization list."""
@@ -177,12 +179,23 @@ def convert_visiview_init_task(
 
     # Folder loading mode
     if input_options.mode == "folder":
-        ome_file_list = sorted(
-            Path(input_options.folder_path).glob(input_options.glob_pattern)
-        )
+        input_folder_path = Path(input_options.folder_path)
+        if not input_folder_path.exists():
+            raise FileNotFoundError(f"Input folder not found: {input_folder_path}")
+        ome_file_list = sorted(input_folder_path.glob(input_options.glob_pattern))
+
     # List loading mode
     elif input_options.mode == "list":
         ome_file_list = [Path(f) for f in input_options.ome_file_list]
+
+    # Ensure non-empty file list
+    if not ome_file_list:
+        raise ValueError(
+            f"No companion OME files found in {input_folder_path} "
+            f"with pattern {input_options.glob_pattern}"
+            if input_options.mode == "folder"
+            else "No companion OME files provided in the list"
+        )
 
     # Ensure all input files exist
     for ome_file_path in ome_file_list:

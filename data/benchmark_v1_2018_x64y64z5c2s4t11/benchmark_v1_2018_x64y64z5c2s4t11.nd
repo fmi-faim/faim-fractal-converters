@@ -1,0 +1,21 @@
+"NDInfoFile", Version 1.0
+"Description", File recreated from images.
+"StartTime1", 20180824 13:04:51.481
+"DoTimelapse", FALSE
+"DoStage", TRUE
+"NStagePositions", 4
+"Stage1", "Row0_Col0"
+"Stage2", "Row1_Col0"
+"Stage3", "Row0_Col1"
+"Stage4", "Row1_Col1"
+"DoWave", TRUE
+"NWavelengths", 2
+"WaveName1", "Laser4054BD4BP"
+"WaveDoZ1", TRUE
+"WaveName2", "Laser4914BD4BP"
+"WaveDoZ2", TRUE
+"DoZSeries", TRUE
+"NZSteps", 5
+"ZStepSize", 10
+"WaveInFileName", TRUE
+"EndFile"

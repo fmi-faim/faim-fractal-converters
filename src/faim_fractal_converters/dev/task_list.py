@@ -20,5 +20,16 @@ TASK_LIST = [
         tags=[
             "Visiview",
         ],
-    )
+    ),
+    ConverterCompoundTask(
+        name="Convert Visiview .nd",
+        executable_init="convert_visiview_nd_init_task.py",
+        executable="single_image_compute_task.py",
+        meta_init={"cpus_per_task": 1, "mem": 12000},
+        meta={"cpus_per_task": 1, "mem": 12000},
+        category="Conversion",
+        tags=[
+            "Visiview",
+        ],
+    ),
 ]
