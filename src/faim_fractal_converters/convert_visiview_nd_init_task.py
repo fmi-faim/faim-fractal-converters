@@ -58,10 +58,10 @@ def _get_xy_pixel_size(tile: ImageFile) -> float:
         return stk.stk_metadata["XCalibration"]
 
 
-def tile_list_from_single_ome(
+def tile_list_from_single_nd(
     nd_path: Path,
 ) -> list[Tile]:
-    nd_info = NdInfo.from_path(nd_path)
+    nd_info = NdInfo.from_path(nd_path, fix_decimal_comma=True)
     tile_files = nd_info.get_tiles()
     tiles: list[Tile] = []
     logger.info(f"The file ({nd_path.name}) defines {len(tile_files)} images...")
@@ -138,7 +138,7 @@ def convert_visiview_nd_init_task(
     tiles = []
     for nd_file_path in nd_file_list:
         logger.info(f"Generating tile list for {nd_file_path.name}")
-        tiles.extend(tile_list_from_single_ome(nd_path=nd_file_path))
+        tiles.extend(tile_list_from_single_nd(nd_path=nd_file_path))
 
     logger.info(f"Aggregating {len(tiles)} tiles ...")
     tiled_images = tiles_aggregation_pipeline(
