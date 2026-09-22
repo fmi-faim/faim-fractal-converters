@@ -153,7 +153,6 @@ def convert_visiview_nd_init_task(
         converter_options=converter_options,
         collection_type="SingleImage",
         overwrite_mode=OverwriteMode.OVERWRITE,
-        ngff_version=converter_options.omezarr_options.ngff_version,
     )
 
     return {"parallelization_list": parallelization_list}
