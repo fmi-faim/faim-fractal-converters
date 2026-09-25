@@ -4,10 +4,10 @@ requires-python = ">= 3.11"
 authors = [{ name = "Jan Eglinger", email = "jan.eglinger@fmi.ch" }]
 dependencies = [
   "fractal-task-tools>=0.5.0,<0.6",
-  "ome-zarr-converters-tools>=1.0.1,<2",
+  "ome-zarr-converters-tools>=1.0.2,<2",
   "ome2xarray>=0.8.0,<0.9",
   "loguru>=0.7.3,<0.8",
-  "metamorph-mda-parser>=0.2.0,<0.3",
+  "metamorph-mda-parser>=0.3.0,<0.4",
 ]
 dynamic = ["version"]
 
@@ -16,7 +16,7 @@ dev = [
   "hatch>=1.17.0,<2",
   "pytest>=9.1.0,<10",
   "pytest-cov>=7.1.0,<8",
-  "ruff>=0.15.17,<0.16"
+  "ruff>=0.16.7,<0.17"
 ]
 
 [build-system]
@@ -62,4 +62,4 @@ tifffile = ">=2026.6.1,<2027"
 s3fs = ">=2026.4.0,<2027"
 toml = ">=0.10.2,<0.11"
 tqdm = ">=4.68.2,<5"
-metamorph-mda-parser = ">=0.2.0,<0.3"
+metamorph-mda-parser = ">=0.3.0,<0.4"
