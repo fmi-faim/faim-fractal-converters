@@ -1225,7 +1225,7 @@
           "zarr_dir": {
             "title": "Zarr Dir",
             "type": "string",
-            "description": "Missing description"
+            "description": "Directory where the output Zarr files will be stored."
           },
           "input_options": {
             "discriminator": {
@@ -1244,7 +1244,7 @@
               }
             ],
             "title": "Input Options",
-            "description": "Missing description"
+            "description": "Options for loading the input data."
           },
           "sanitizing_options": {
             "anyOf": [
@@ -1257,7 +1257,7 @@
             ],
             "default": null,
             "title": "Sanitizing Options",
-            "description": "Missing description"
+            "description": "Restore metadata for all timepoints, and additional sanitization options."
           },
           "converter_options": {
             "$ref": "#/$defs/ConverterOptions",
@@ -1305,7 +1305,7 @@
               }
             },
             "title": "Converter Options",
-            "description": "Missing description"
+            "description": "Options for the conversion process, by default DefaultConverterOptions."
           },
           "filters": {
             "anyOf": [
@@ -1359,7 +1359,7 @@
             ],
             "default": null,
             "title": "Filters",
-            "description": "Missing description"
+            "description": "List of filters to apply during conversion, by default None."
           }
         },
         "required": [

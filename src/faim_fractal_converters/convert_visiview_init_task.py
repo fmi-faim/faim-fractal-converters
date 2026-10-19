@@ -1,3 +1,4 @@
+import re
 from pathlib import Path
 from typing import Annotated, Any, Literal
 
@@ -73,7 +74,8 @@ def _generate_image_naming(image: Any) -> tuple[str, str]:
         return image.name, "default"
 
     stage_label_name = stage_label.name
-    image_name = image.name.removesuffix(f"_{stage_label_name}")
+    # image_name = image.name.removesuffix(f"_{stage_label_name}")
+    image_name = re.sub(r"_\d+:.*_sg:\d+$", "", image.name)
     stage_index = int(stage_label_name.split(":", maxsplit=1)[0]) + 1
 
     sg_suffix = stage_label_name.rpartition("_")[2]
@@ -174,7 +176,26 @@ def convert_visiview_init_task(
     converter_options: ConverterOptions = DefaultConverterOptions,
     filters: list[ImplementedFilters] | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
-    """Initialization task: parse acquisition and build parallelization list."""
+    """Initialization task: parse acquisition and build parallelization list.
+
+    Parameters
+    ----------
+    zarr_dir : str
+        Directory where the output Zarr files will be stored.
+    input_options : Loading
+        Options for loading the input data.
+    sanitizing_options : SanitizingOptions | None, optional
+        Restore metadata for all timepoints, and additional sanitization options.
+    converter_options : ConverterOptions, optional
+        Options for the conversion process, by default DefaultConverterOptions.
+    filters : list[ImplementedFilters] | None, optional
+        List of filters to apply during conversion, by default None.
+
+    Returns
+    -------
+    dict[str, list[dict[str, Any]]]
+        Dictionary containing the parallelization list for the conversion task.
+    """
     converter_options = ConverterOptions.model_validate(converter_options)
 
     # Folder loading mode
