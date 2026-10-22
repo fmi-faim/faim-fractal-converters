@@ -1,12 +1,13 @@
+from pathlib import Path
+
 import pytest
+from ome_zarr_converters_tools import ConverterOptions, MosaicGrouping, PerFovGrouping
+from ome_zarr_converters_tools.pipelines._filters import FovNameFilter
 
 from faim_fractal_converters.convert_visiview_init_task import (
     SanitizingOptions,
     convert_visiview_init_task,
 )
-from ome_zarr_converters_tools import ConverterOptions, PerFovGrouping, MosaicGrouping
-from ome_zarr_converters_tools.pipelines._filters import FovNameFilter
-from pathlib import Path
 
 
 @pytest.fixture
@@ -29,10 +30,10 @@ def companion_ome_file():
 def test_convert_visiview_init_task(companion_ome_file, grouping, num_images):
     parallelization_list = convert_visiview_init_task(
         zarr_dir="/tmp/test_visiview.zarr",
-        input_options=dict(
-            mode="list",
-            ome_file_list=[str(companion_ome_file)],
-        ),
+        input_options={
+            "mode": "list",
+            "ome_file_list": [str(companion_ome_file)],
+        },
         sanitizing_options=SanitizingOptions(
             channel_mapping={0: "Conf488Brightfield", 1: "ConfBrightfield488"},
         ),
@@ -47,10 +48,10 @@ def test_convert_visiview_init_task(companion_ome_file, grouping, num_images):
 def test_convert_visiview_init_task_partial(companion_ome_file):
     parallelization_list = convert_visiview_init_task(
         zarr_dir="/tmp/test_visiview.zarr",
-        input_options=dict(
-            mode="list",
-            ome_file_list=[str(companion_ome_file)],
-        ),
+        input_options={
+            "mode": "list",
+            "ome_file_list": [str(companion_ome_file)],
+        },
         sanitizing_options=SanitizingOptions(
             channel_mapping={1: "ConfBrightfield488"},
         ),
