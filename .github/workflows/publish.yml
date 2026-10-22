@@ -1,0 +1,71 @@
+name: Publish to PyPI
+
+on:
+  push:
+    tags:
+      - 'faim-fractal-converters-*'
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build wheel and source distribution
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+
+    environment: release
+    permissions:
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+
+    - name: Set up Pixi
+      uses: prefix-dev/setup-pixi@v0.11.2
+      with:
+        cache: true
+        environments: >-
+          py314
+
+    - name: Test
+      run: pixi run --environment py314 test
+
+    - name: Build package
+      run: pixi run --environment py314 hatch build
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v7
+      with:
+        name: python-artifacts
+        path: dist/*
+        if-no-files-found: error
+
+  publish:
+    name: Publish to PyPI
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    needs:
+      - build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write # IMPORTANT: this permission is mandatory for trusted publishing
+
+    steps:
+      - name: Download Python artifacts
+        uses: actions/download-artifact@v7
+        with:
+          name: python-artifacts
+          path: dist
+      - name: Add assets to release
+        uses: softprops/action-gh-release@v3
+        with:
+          files: dist/*
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.14.3
